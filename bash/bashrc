@@ -1,0 +1,25 @@
+#
+# MY PERSONAL BASHRC FILE
+# 
+# .bashrc file used on openSUSE
+#
+# AUTHOR: Gustavo Pantuza
+#
+
+
+# Colors definition
+BROWN="\e[1;33m";
+BLUE="\e[1;34m";
+END_COLOR="\e[0m";
+
+# Exports the default editor to GNU VIM
+export EDITOR=/usr/bin/vim
+
+# Run the alias file if it exists
+test -s ~/.alias && . ~/.alias || true
+
+# Run the git branch parser file
+test -s ~/.gitbranch && . ~/.gitbranch || true
+
+# Changes the default interactive prompt
+PS1="$BROWN\u @ \h :$BLUE \w $(parse_git_branch)$>$END_COLOR";

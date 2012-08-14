@@ -1,0 +1,11 @@
+#
+# Define bash alias
+#
+
+# makes grep ever use colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Defines the list directories full content
+alias ll='ls -ilha'
