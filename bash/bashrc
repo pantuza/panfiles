@@ -31,4 +31,4 @@ function parse_git_branch() {
 }
 
 # Changes the default interactive prompt
-PS1="$BROWN\u @ \h :$BLUE \w $GRAY$(parse_git_branch)$BROWN$>$END_COLOR";
+PS1="$BROWN\u @ \h :$BLUE \w $GRAY\$(parse_git_branch)$BROWN$>$END_COLOR"
