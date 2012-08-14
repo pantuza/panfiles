@@ -10,6 +10,7 @@
 # Colors definition
 BROWN="\e[1;33m";
 BLUE="\e[1;34m";
+GRAY="\e[1;30m";
 END_COLOR="\e[0m";
 
 # Exports the default editor to GNU VIM
@@ -21,5 +22,16 @@ test -s ~/.alias && . ~/.alias || true
 # Run the git branch parser file
 test -s ~/.gitbranch && . ~/.gitbranch || true
 
+# Bash file that defines the function to verify a git branch directory
+function parse_git_branch() {
+  local DIRTY STATUS
+  STATUS=$(git status --porcelain 2>/dev/null)
+  [ $? -eq 128 ] && return
+  [ -z "$(echo "$STATUS" | grep -e '^ M')"    ] || DIRTY="*"
+  [ -z "$(echo "$STATUS" | grep -e '^[MDA]')" ] || DIRTY="${DIRTY}+"
+  [ -z "$(git stash list)" ]                    || DIRTY="${DIRTY}^"
+  echo "($(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* //')$DIRTY)"
+}
+
 # Changes the default interactive prompt
-PS1="$BROWN\u @ \h :$BLUE \w $(parse_git_branch)$>$END_COLOR";
+PS1="$BROWN\u @ \h :$BLUE \w $GRAY$(parse_git_branch)$BROWN$>$END_COLOR";
