@@ -19,9 +19,6 @@ export EDITOR=/usr/bin/vim
 # Run the alias file if it exists
 test -s ~/.alias && . ~/.alias || true
 
-# Run the git branch parser file
-test -s ~/.gitbranch && . ~/.gitbranch || true
-
 # Bash file that defines the function to verify a git branch directory
 function parse_git_branch() {
   local DIRTY STATUS
