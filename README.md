@@ -7,9 +7,9 @@ Panfiles
 
 ### Description
 
-    Configuration files of environment, bash settings and development tools.
-consists in define a setup to start writing code with some useful changes 
-inside the files of the development tools
+        Configuration files of environment, bash settings and development tools.
+    Consists in define a setup to start writing code with some useful changes 
+    inside the files of the development tools
 
 ### Programs
 
