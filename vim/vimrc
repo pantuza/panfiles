@@ -1,0 +1,110 @@
+" 
+" MY PERSONAL VIM DEFINITIONS
+" 
+" Author: Gustavo Pantuza
+" Since: 14.08.2012
+
+" filetypes
+filetype plugin on
+filetype indent on
+
+" Tabs and spaces configuration
+set tabstop=4
+set expandtab
+set shiftwidth=4
+retab
+
+" Enables line numbers
+set number
+set numberwidth=1
+" Sets line number colors
+highlight LineNr ctermfg=Brown ctermbg=DarkGrey
+
+" Enables cursor line and defines its colors
+set cursorline
+highlight CursorLine cterm=None term=None ctermbg=DarkGrey
+
+" Enables syntax highlight
+syntax on
+
+" Makes vim search case insensitive
+set ignorecase
+set smartcase
+" Turns vim search incremental
+set incsearch
+" Highlight and show search matches
+set hlsearch
+set showmatch
+
+" show cursor all the time
+set ruler
+
+set encoding=utf8
+
+" atualiza arquivo caso tenha sido editado fora do vim
+set autoread
+
+" Sets auto indentation (disable when copying from clipboard)
+set autoindent
+
+"
+" Personal Key Mapping
+"
+
+" Tabs navigation
+:map <F9> :tabprevious<CR>
+:map <F10> :tabnext<CR>
+:imap <F9> <Esc>:tabprevious<CR>i
+:imap <F10> <Esc>:tabnext<CR>i
+
+" Enter search mode
+map <C-f> <CR>/
+imap <C-f> <Esc><CR>/
+
+" Select all the content file
+map <C-a> ggVG
+
+" Maps undo operation to ctrl+z 
+imap <C-z> <Esc><CR>ui
+
+" Maps save operation to ctrl+s (do not work on gonome-terminal)
+"map <C-s> <Esc><CR>:w
+"imap <C-s> <C-o><C-s>
+
+" Map horizontal identation to tab keys and shift_tab
+map <Tab> >> 
+map <S-Tab> <<
+imap <S-Tab> <Esc><<i
+
+" auto complete markers on insert mode
+imap { {}<left>
+imap ( ()<left>
+imap [ []<left>
+imap " ""<left>
+imap ' ''<left>
+
+" Commands alias
+cab W  w
+cab Wq wq
+cab wQ wq
+cab WQ wq
+cab Q  q
+
+"
+" Plugins definitions
+"
+
+" Maps the nerdtree plugin toggle
+map <F4> :NERDTreeToggle<cr>
+
+" Auto open taglist plugin when opening vim
+" let Tlist_Auto_Open=1
+" Maps the taglist plugin toggle
+" map <F5> :TaglistToggle<CR>
+
+"
+" Languages and file types definitions
+"
+
+" run pep8 tool for the current python file
+autocmd filetype python map <C-F8> <ESC>:w\|!clear; pep8 %<CR>

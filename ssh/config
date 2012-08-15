@@ -1,0 +1,4 @@
+Host {SERVER_NAME}
+    HostName {SERVER_IP_OR_DNS}
+    User {USER_LOGIN}
+    IdentityFile ~/.ssh/{PUBLIC_KEY_FILE}.pub
