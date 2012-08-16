@@ -90,8 +90,9 @@ cab wQ wq
 cab WQ wq
 cab Q  q
 
+
 "
-" Plugins definitions
+" Plugins definitions 
 "
 
 " Maps the nerdtree plugin toggle
@@ -100,7 +101,10 @@ map <F4> :NERDTreeToggle<cr>
 " Auto open taglist plugin when opening vim
 " let Tlist_Auto_Open=1
 " Maps the taglist plugin toggle
-" map <F5> :TaglistToggle<CR>
+map <F5> :TlistToggle<CR>
+" Open tag list plugin window on right side
+let Tlist_Use_Right_Window = 1
+
 
 "
 " Languages and file types definitions
