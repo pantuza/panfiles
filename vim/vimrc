@@ -80,8 +80,8 @@ imap <S-Tab> <Esc><<i
 imap { {}<left>
 imap ( ()<left>
 imap [ []<left>
-imap " ""<left>
-imap ' ''<left>
+imap " <C-V>"<C-V>"<left>
+imap ' <C-V>'<C-V>'<left>
 
 " Commands alias
 cab W  w
