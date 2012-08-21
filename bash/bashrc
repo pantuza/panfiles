@@ -30,5 +30,8 @@ function parse_git_branch() {
   echo "($(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* //')$DIRTY)"
 }
 
+# Resets standard input parameters to reasonable values
+stty sane
+
 # Changes the default interactive prompt
 PS1="$BROWN\u @ \h :$BLUE \w $GRAY\$(parse_git_branch)$BROWN$>$END_COLOR"
