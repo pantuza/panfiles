@@ -20,7 +20,7 @@ export EDITOR=/usr/bin/vim
 test -s ~/.alias && . ~/.alias || true
 
 # Bash file that defines the function to verify a git branch directory
-function parse_git_branch() {
+function parse_git() {
   local DIRTY STATUS
   STATUS=$(git status --porcelain 2>/dev/null)
   [ $? -eq 128 ] && return
@@ -31,7 +31,7 @@ function parse_git_branch() {
 }
 
 # Changes the default interactive prompt
-PS1="$BROWN\u @ \h :$BLUE \w $GRAY\$(parse_git_branch)$BROWN$>$END_COLOR"
+PS1="\[$BROWN\]\u @ \h :\[$BLUE\] \w \[$GRAY\]\$(parse_git)\[$BROWN\]$>\[$END_COLOR\]"
 
 # Welcome message
 echo -e "${GRAY}\n\nWelcome to ${HOSTNAME} $(id -un) o/\n--\n${END_COLOR}"
