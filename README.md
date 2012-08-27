@@ -18,6 +18,7 @@ Panfiles
 - vim
 - ssh
 - mysql
+- python
 
 ### Author
 
