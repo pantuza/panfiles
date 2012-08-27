@@ -12,7 +12,7 @@ command -v pip > $limbo
 # Verify pip instalation
 if [ "$?" == "1" ]; then
     echo "pip not found, install it!";
-    sudo easy_install pip;
+    sudo zypper install python-pip;
 fi;
 
 # install python development dependencies/tools

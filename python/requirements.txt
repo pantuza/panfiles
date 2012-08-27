@@ -2,4 +2,5 @@ nose
 rudolf2
 ipdb
 pylint
+pep8
 django
