@@ -4,3 +4,4 @@ ipdb
 pylint
 pep8
 django
+psycopg2
