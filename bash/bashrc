@@ -34,7 +34,7 @@ function parse_git() {
 stty sane
 
 # Changes the default interactive prompt
-PS1="\[$BROWN\]\u @ \h :\[$BLUE\] \w \[$GRAY\]\$(parse_git)\[$BROWN\]$▶\[$END_COLOR\]"
+PS1="\[$BROWN\]\u@\h :\[$BLUE\]\w\[$GRAY\]\$(parse_git)\[$BROWN\]▶\[$END_COLOR\]"
 
 # Welcome message
 echo -e "${GRAY}\n\nWelcome to ${HOSTNAME} $(id -un) o/\n--\n${END_COLOR}"
