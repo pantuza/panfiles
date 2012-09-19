@@ -110,5 +110,9 @@ let Tlist_Use_Right_Window = 1
 " Languages and file types definitions
 "
 
+" Do not create/write backup files *.swp, *~, etc
+set nobackup
+set nowritebackup
+
 " run pep8 tool for the current python file
 autocmd filetype python map <C-F8> <ESC>:w\|!clear; pep8 %<CR>
