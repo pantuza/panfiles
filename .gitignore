@@ -1,3 +1,5 @@
 # vim files
 *.swp
 *~
+# pip build 
+python/build/
