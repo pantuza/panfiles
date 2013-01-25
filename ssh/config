@@ -1,4 +1,6 @@
 Host {SERVER_NAME}
     HostName {SERVER_IP_OR_DNS}
     User {USER_LOGIN}
+    Port {PORT_NUMBER}
+    LocalForward {LOCAL_PORT_NUMBER} 127.0.0.1:{REMOTE_PORT_NUMBER}
     IdentityFile ~/.ssh/{PUBLIC_KEY_FILE}.pub
