@@ -25,9 +25,9 @@ export USER_NAME USER_HOME BROWN BLUE END_COLOR
 ############# ### ## #
 # TARGETS
 
-install: greetings bash bye
+install: greetings shell bye
 
-bash: ${BASH_DIR}/Makefile
+shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
 
 greetings: clear
