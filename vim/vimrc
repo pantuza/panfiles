@@ -99,7 +99,7 @@ cab Q  q
 map <F4> :NERDTreeToggle<cr>
 
 " Auto open taglist plugin when opening vim
-" let Tlist_Auto_Open=1
+let Tlist_Auto_Open=1
 " Maps the taglist plugin toggle
 map <F5> :TlistToggle<CR>
 " Open tag list plugin window on right side
