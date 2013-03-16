@@ -98,8 +98,13 @@ cab Q  q
 " Maps the nerdtree plugin toggle
 map <F4> :NERDTreeToggle<cr>
 
+" make NERDTree synced in all tabs
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
+
 " Auto open taglist plugin when opening vim
-let Tlist_Auto_Open=1
+" "let Tlist_Auto_Open=1
 " Maps the taglist plugin toggle
 map <F5> :TlistToggle<CR>
 " Open tag list plugin window on right side
