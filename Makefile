@@ -11,6 +11,7 @@ USER_HOME := $(shell getent passwd ${USER_NAME} | cut -d: -f6)
 
 BASH_DIR := bash
 GIT_DIR := git
+VIM_DIR := vim
 
 # Colors to messages during execution
 BROWN=\e[0;33m
@@ -26,13 +27,16 @@ export USER_NAME USER_HOME BROWN BLUE END_COLOR
 ############# ### ## #
 # TARGETS
 
-install: greetings shell versioning bye
+install: greetings shell versioning editor bye
 
 shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
 
-versioning:
+versioning: ${GIT_DIR}/Makefile
 	make install -C ${GIT_DIR}
+
+editor:	${VIM_DIR}/Makefile
+	make install -C ${VIM_DIR}
 
 greetings: clear
 	@echo -e "\n\n${BROWN}-- PANFILES --"
