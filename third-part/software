@@ -1,0 +1,12 @@
+gcc
+gcc-c++
+make
+git
+python-pip
+tcpdump
+tcptrace
+iptraf
+nmap
+whois
+lsof
+bash-completion
