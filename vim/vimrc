@@ -121,3 +121,10 @@ set nowritebackup
 
 " run pep8 tool for the current python file
 autocmd filetype python map <C-F8> <ESC>:w\|!clear; pep8 %<CR>
+
+" run make for c files
+autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
+
+" run make for Makefiles files
+autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
+
