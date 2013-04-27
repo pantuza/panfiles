@@ -7,6 +7,9 @@ tcpdump
 tcptrace
 iptraf
 nmap
+ncat
+nping
+zenmap
 whois
 lsof
 bash-completion
