@@ -110,9 +110,6 @@ map <F5> :TlistToggle<CR>
 " Open tag list plugin window on right side
 let Tlist_Use_Right_Window = 1
 
-" VIM7 fix for identify latex files
-let g:tex_flavor='latex'
-
 "
 " Languages and file types definitions
 "
@@ -130,5 +127,7 @@ autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
 " run make for Makefiles files
 autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
 
+" VIM7 fix for identify latex files
+let g:tex_flavor='latex'
 " run make latex for tex files
 autocmd filetype tex map <C-F5> <ESC>:w\|!clear; make latex<CR>
