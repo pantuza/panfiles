@@ -4,6 +4,25 @@
 " Author: Gustavo Pantuza
 " Since: 14.08.2012
 
+
+" Auto reload files on change
+autocmd! bufwritepost .vimrc source %
+
+" Toggle paste on and off
+set pastetoggle=<F2>
+" Show when paste is on or off
+set showmode
+
+" Ever copy and paste from clipboard register
+set clipboard=unnamedplus
+
+" Enable mouse
+set mouse=a
+
+" Correct backspace behavior
+set bs=2
+
+
 " filetypes
 filetype plugin on
 filetype indent on
@@ -72,9 +91,12 @@ imap <C-z> <Esc><CR>ui
 "imap <C-s> <C-o><C-s>
 
 " Map horizontal identation to tab keys and shift_tab
-map <Tab> >> 
-map <S-Tab> <<
-imap <S-Tab> <Esc><<i
+""map <Tab> >> 
+""map <S-Tab> <<
+""imap <S-Tab> <Esc><<i
+
+vnoremap < <gv
+vnoremap > >gv
 
 " auto complete markers on insert mode
 imap { {}<left>
