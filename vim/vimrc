@@ -5,27 +5,81 @@
 " Since: 14.08.2012
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" FILE HANDLING
+"
+
 " Auto reload files on change
 autocmd! bufwritepost .vimrc source %
+set autoread
 
-" Toggle paste on and off
-set pastetoggle=<F2>
-" Show when paste is on or off
-set showmode
-
-" Ever copy and paste from clipboard register
-set clipboard=unnamedplus
-
-" Enable mouse
-set mouse=a
-
-" Correct backspace behavior
-set bs=2
-
+" Do not create/write backup files *.swp, *~, etc
+set nobackup
+set nowritebackup
+set noswapfile
 
 " filetypes
 filetype plugin on
 filetype indent on
+
+" VIM7 fix for identify latex files
+let g:tex_flavor='latex'
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" EDITOR PREFERENCES
+"
+
+" Enable mouse
+set mouse=a
+
+" Enables line numbers
+set number
+set numberwidth=1
+
+" Enables cursor line and defines its colors
+set cursorline
+
+" Mark the column 80 with blue color
+set colorcolumn=80
+
+" Set history and undo size
+set history=500
+set undolevels=500
+
+" show cursor all the time
+set ruler
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" HIGHLIGHTS
+"
+
+" Sets line number colors
+highlight LineNr ctermfg=Brown ctermbg=DarkGrey
+
+" Highlights the cursor line
+highlight CursorLine cterm=None term=None ctermbg=DarkGrey
+
+" Highlights the 80th column
+highlight ColorColumn ctermbg=blue
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" CODING PREFERENCES
+"
+
+" Enables syntax highlight
+syntax on
+
+" Correct backspace behavior
+set bs=2
 
 " Tabs and spaces configuration
 set tabstop=4
@@ -33,18 +87,35 @@ set expandtab
 set shiftwidth=4
 retab
 
-" Enables line numbers
-set number
-set numberwidth=1
-" Sets line number colors
-highlight LineNr ctermfg=Brown ctermbg=DarkGrey
+" Set the text width to 79
+set textwidth=79
 
-" Enables cursor line and defines its colors
-set cursorline
-highlight CursorLine cterm=None term=None ctermbg=DarkGrey
+" Encoding
+set encoding=utf8
 
-" Enables syntax highlight
-syntax on
+" Sets auto indentation (disable when copying from clipboard)
+set autoindent
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" COPY AND PASTE
+"
+
+" Toggle paste on and off
+set pastetoggle=<F2>
+" Show when paste is on or off
+set showmode
+" Ever copy and paste from clipboard register
+set clipboard=unnamedplus
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" SEARCH
+"
 
 " Makes vim search case insensitive
 set ignorecase
@@ -55,19 +126,45 @@ set incsearch
 set hlsearch
 set showmatch
 
-" show cursor all the time
-set ruler
 
-set encoding=utf8
 
-" atualiza arquivo caso tenha sido editado fora do vim
-set autoread
 
-" Sets auto indentation (disable when copying from clipboard)
-set autoindent
-
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Commands alias
 "
-" Personal Key Mapping
+cab W  w
+cab Wq wq
+cab wQ wq
+cab WQ wq
+cab Q  q
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS DEFINITIONS
+"
+
+" Maps the nerdtree plugin toggle
+map <F4> :NERDTreeToggle<cr>
+
+" make NERDTree synced in all tabs
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
+
+" Auto open taglist plugin when opening vim
+" "let Tlist_Auto_Open=1
+" Maps the taglist plugin toggle
+map <F5> :TlistToggle<CR>
+" Open tag list plugin window on right side
+let Tlist_Use_Right_Window = 1
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY MAPPING
 "
 
 " Tabs navigation
@@ -91,12 +188,14 @@ imap <C-z> <Esc><CR>ui
 "imap <C-s> <C-o><C-s>
 
 " Map horizontal identation to tab keys and shift_tab
-""map <Tab> >> 
-""map <S-Tab> <<
-""imap <S-Tab> <Esc><<i
-
-vnoremap < <gv
-vnoremap > >gv
+" On visual mode
+map <Tab> >gv
+map <S-Tab> <gv
+" On normal mode
+nmap <Tab> >>
+nmap <S-Tab> <<
+" On insert mode
+imap <S-Tab> <Esc><<i
 
 " auto complete markers on insert mode
 imap { {}<left>
@@ -105,40 +204,12 @@ imap [ []<left>
 imap " <C-V>"<C-V>"<left>
 imap ' <C-V>'<C-V>'<left>
 
-" Commands alias
-cab W  w
-cab Wq wq
-cab wQ wq
-cab WQ wq
-cab Q  q
 
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" MACROS 
 "
-" Plugins definitions 
-"
-
-" Maps the nerdtree plugin toggle
-map <F4> :NERDTreeToggle<cr>
-
-" make NERDTree synced in all tabs
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-autocmd VimEnter * wincmd w
-
-" Auto open taglist plugin when opening vim
-" "let Tlist_Auto_Open=1
-" Maps the taglist plugin toggle
-map <F5> :TlistToggle<CR>
-" Open tag list plugin window on right side
-let Tlist_Use_Right_Window = 1
-
-"
-" Languages and file types definitions
-"
-
-" Do not create/write backup files *.swp, *~, etc
-set nobackup
-set nowritebackup
 
 " run pep8 tool for the current python file
 autocmd filetype python map <C-F8> <ESC>:w\|!clear; pep8 %<CR>
@@ -149,7 +220,5 @@ autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
 " run make for Makefiles files
 autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
 
-" VIM7 fix for identify latex files
-let g:tex_flavor='latex'
 " run make latex for tex files
 autocmd filetype tex map <C-F5> <ESC>:w\|!clear; make latex<CR>
