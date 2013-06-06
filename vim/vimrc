@@ -159,6 +159,8 @@ autocmd VimEnter * wincmd w
 map <F5> :TlistToggle<CR>
 " Open tag list plugin window on right side
 let Tlist_Use_Right_Window = 1
+" Adjust tag list window width
+let Tlist_WinWidth = 50
 
 
 
