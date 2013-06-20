@@ -20,3 +20,5 @@ lynx
 virtualbox
 ruby
 gnuplot
+autoconf
+automake
