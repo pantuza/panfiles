@@ -216,6 +216,9 @@ imap ' <C-V>'<C-V>'<left>
 " run pep8 tool for the current python file
 autocmd filetype python map <C-F8> <ESC>:w\|!clear; pep8 %<CR>
 
+" run the current python file
+autocmd filetype python map <C-F5> <ESC>:w\|!clear; python %<CR>
+
 " run make for c files
 autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
 
