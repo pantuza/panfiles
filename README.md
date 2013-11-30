@@ -15,10 +15,13 @@ Panfiles
 
 - bash
 - git
-- vim
-- ssh
+- irc
+- mutt
 - mysql
 - python
+- ssh
+- third-part
+- vim
 
 ### Author
 
