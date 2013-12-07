@@ -23,3 +23,5 @@ autoconf
 automake
 graphviz
 iperf
+htop
+aircrack-ng
