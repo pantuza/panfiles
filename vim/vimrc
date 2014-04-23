@@ -170,10 +170,10 @@ let Tlist_WinWidth = 50
 "
 
 " Tabs navigation
-:map <F9> :tabprevious<CR>
-:map <F10> :tabnext<CR>
-:imap <F9> <Esc>:tabprevious<CR>i
-:imap <F10> <Esc>:tabnext<CR>i
+:map <F8> :tabprevious<CR>
+:map <F9> :tabnext<CR>
+:imap <F8> <Esc>:tabprevious<CR>i
+:imap <F9> <Esc>:tabnext<CR>i
 
 " Enter search mode
 map <C-f> <CR>/
