@@ -221,6 +221,9 @@ autocmd filetype python map <C-F5> <ESC>:w\|!clear; python %<CR>
 
 " run make for c files
 autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
+"
+" run make for c++ files
+autocmd filetype cpp map <C-F5> <ESC>:w\|!clear; make<CR>
 
 " run make for Makefiles files
 autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
