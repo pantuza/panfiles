@@ -26,3 +26,5 @@ rubydev: ruby
 pythondev: python
 	sudo $(PKGMGR) install $(shell cat $+)
 
+browsing: browser
+	sudo $(PKGMGR) install $(shell cat $+)
