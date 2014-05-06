@@ -11,11 +11,18 @@ PKGMGR := zypper
 all: install
 
 
-install: C net
+install: cdev net ruby
 
 
-C: c
+cdev: c
 	sudo $(PKGMGR) install $(shell cat $+)
 
 network: net
 	sudo $(PKGMGR) install $(shell cat $+)
+
+rubydev: ruby
+	sudo $(PKGMGR) install $(shell cat $+)
+
+pythondev: python
+	sudo $(PKGMGR) install $(shell cat $+)
+
