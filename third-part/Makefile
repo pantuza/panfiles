@@ -2,16 +2,14 @@
 # Third part software rules
 #
 
-
+# Package Manager
 PKGMGR := zypper
 
-
-.PHONY: c
 
 all: install
 
 
-install: cdev network rubydev pythondev browsing osmgr videos
+install: cdev network rubydev pythondev browsing osmgr videos docs
 
 
 cdev: c
@@ -35,3 +33,5 @@ osmgr: os
 videos: video
 	sudo $(PKGMGR) install $(shell cat $+)
 
+docs: doc
+	sudo $(PKGMGR) install $(shell cat $+)
