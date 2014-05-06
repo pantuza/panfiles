@@ -11,7 +11,7 @@ PKGMGR := zypper
 all: install
 
 
-install: cdev net ruby
+install: cdev network rubydev pythondev browsing osmgr
 
 
 cdev: c
@@ -28,3 +28,7 @@ pythondev: python
 
 browsing: browser
 	sudo $(PKGMGR) install $(shell cat $+)
+
+osmgr: os
+	sudo $(PKGMGR) install $(shell cat $+)
+
