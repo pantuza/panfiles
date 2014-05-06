@@ -1,0 +1,7 @@
+gcc
+gcc-c++
+make
+man-pages-posix
+autoconf
+automake
+gdb
