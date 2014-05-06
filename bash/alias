@@ -8,4 +8,4 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Defines the list directories full content
-alias ll='ls -ilha'
+alias ll='ls -ilha --color'
