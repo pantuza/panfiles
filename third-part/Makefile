@@ -11,8 +11,11 @@ PKGMGR := zypper
 all: install
 
 
-install: C
+install: C net
 
 
 C: c
+	sudo $(PKGMGR) install $(shell cat $+)
+
+network: net
 	sudo $(PKGMGR) install $(shell cat $+)
