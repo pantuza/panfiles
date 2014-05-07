@@ -5,7 +5,8 @@
 SHELL := /bin/bash
 
 
-# uWSGI dir
+# uWSGI
+UWSGI := uwsgi
 UWSGI_DIR := /etc/uwsgi
 VASSALS := $(UWSGI_DIR)/vassals
 SKELETON := skel.ini
@@ -16,6 +17,7 @@ SKELETON := skel.ini
 
 install: $(SKELETON)
 	@echo -e "\n$(BROWN)# UWSGI CONFIGURATION INSTALL$(END_COLOR)"
+	zypper install $(UWSGI)
 	@mkdir -pv $(VASSALS)
 	install $(SKELETON) $(VASSALS)/$(SKELETON)
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
