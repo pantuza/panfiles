@@ -1,0 +1,13 @@
+# Create postgresql thirdpart instalation
+# Create postgresql configuration files
+# Create the script to export a table to csv
+
+
+# Copy command
+
+PSQL_CMD = "\copy $TABLE to $FILE_PATH.csv delimiter ',' csv header"
+
+psql  -U $USER_NAME \
+      -h $HOST_DNS \
+      -d $DB_NAME \
+      -c $PSQL_CMD
