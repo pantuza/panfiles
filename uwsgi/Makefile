@@ -32,7 +32,7 @@ UWSGI_GID := nginx
 
 install: $(SKELETON)
 	@echo -e "\n$(BROWN)# UWSGI CONFIGURATION INSTALL$(END_COLOR)"
-	zypper install $(UWSGI)
+	sudo zypper install $(UWSGI)
 	@mkdir -pv $(VASSALS)
 	@mkdir -pv $(LOG_DIR)
 	@chown $(UID):$(GID) $(LOG_DIR) -Rv
