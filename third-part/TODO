@@ -1,0 +1,6 @@
+Add Packman repository and refresh it before install 
+Add messaging to third part Makefile
+put third part install into global Makefile
+add sudo to uwsgi
+add cuda to third part 
+add --yes on zypper calls 
