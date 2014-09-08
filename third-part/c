@@ -6,3 +6,4 @@ autoconf
 automake
 gdb
 strace
+splint
