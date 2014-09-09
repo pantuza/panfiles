@@ -33,7 +33,7 @@ CC := g++
 
 
 # Defines the language standards for GCC
-STD := -std=gnu++11 # use -std=c99 for C code
+STD := -std=gnu++11 # use -std=gnu99 for C code. See man gcc for more options
 
 # Protection for stack-smashing attack
 STACK := -fstack-protector-all -Wstack-protector
