@@ -35,7 +35,9 @@ install: ${VIMRC}
 	@echo -e "\n${BLUE}Downloading clang_complete plugin${END_COLOR}"
 	wget -O $(USER_HOME)/.vim/clang_complete.vmb ${SRC_URL}${CLANG_COMPLETE}
 	vim $(USER_HOME)/.vim/clang_complete.vmb -c 'so %' -c 'q'
-	[ -x /usr/bin/clang ] || sudo zypper in clang
+	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
+	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in clang
+	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in ctags
 	@echo -e "\n${BLUE}Removing downloaded files${END_COLOR}"
 	rm -fv $(USER_HOME)/.vim/{*.zip,*.vmb}
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
