@@ -1,4 +1,8 @@
 texlive
+texlive-algorithm2e
+texlive-outlines
+texlive-collection-publishers
 gnuplot
 graphviz
 ImageMagick
+aspell
