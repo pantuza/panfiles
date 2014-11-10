@@ -240,3 +240,5 @@ autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
 
 " run make latex for tex files
 autocmd filetype tex map <C-F5> <ESC>:w\|!clear; make latex<CR>
+" Run spell check on current tex file
+autocmd filetype tex map <C-F8> <ESC>:w\|!aspell --lang=en --mode=tex check %<CR>
