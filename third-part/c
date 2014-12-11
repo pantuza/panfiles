@@ -4,6 +4,7 @@ make
 man-pages-posix
 autoconf
 automake
+libtool
 gdb
 strace
 splint
