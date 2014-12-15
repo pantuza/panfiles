@@ -5,12 +5,20 @@
 # Package Manager
 PKGMGR := zypper
 
+PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_13.2/"
+
 
 all: install
 
 
-install: cdev network rubydev pythondev browsing osmgr videos docs development audio
+install: repos cdev network rubydev pythondev browsing osmgr videos docs development audio
 
+repos:
+	sudo zypper addrepo --refresh \
+		--check \
+		--name "Packman Repository" \
+		$(PACKMAN_REPO) \
+		"ftp.gwdg.de-suse"
 
 cdev: c
 	sudo $(PKGMGR) install $(shell cat $+)
