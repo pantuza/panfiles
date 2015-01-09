@@ -6,3 +6,6 @@ python/build/
 
 # nodejs
 node_modules
+
+# cuda rpm file
+*.rpm
