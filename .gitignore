@@ -3,3 +3,6 @@
 *~
 # pip build 
 python/build/
+
+# nodejs
+node_modules
