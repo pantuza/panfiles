@@ -25,6 +25,10 @@ mkdir -pv dev ops bkp
 # Configure sshd
 vim /etc/ssh/sshd_config
 
+# Configures environment
+cd /home/$USERNAME/dev/panfiles
+make server
+
 # Install and Configure mail server
 yum install postfix maix
 vim /etc/postfix/main.cf
