@@ -21,7 +21,7 @@ BROWN=\e[0;33m
 BLUE=\e[1;34m
 END_COLOR=\e[0m
 
-.PHONY := install
+.PHONY := install server
 
 # make variables public to other make files
 export USER_NAME USER_HOME BROWN BLUE END_COLOR
@@ -31,6 +31,10 @@ export USER_NAME USER_HOME BROWN BLUE END_COLOR
 # TARGETS
 
 install: greetings shell versioning editor sshconfig mysqldb uwsgi bye
+
+greetings: clear
+	@echo -e "\n\n${BROWN}-- PANFILES --"
+	@echo -e "Setting up the development environment$(END_COLOR)\n"
 
 shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
@@ -50,12 +54,12 @@ mysqldb: ${MYSQL_DIR}/Makefile
 uwsgi: ${UWSGI_DIR}/Makefile
 	make install -C ${UWSGI_DIR}
 
-greetings: clear
-	@echo -e "\n\n${BROWN}-- PANFILES --"
-	@echo -e "Setting up the development environment$(END_COLOR)\n"
-
 bye:
 	@echo -e "\n$(BROWN)open your mind, happy coding :D$(END_COLOR)\n"
+
+server: greetings shell versioning editor bye
+
+services: greetings mysqldb uwsgi bye
 
 clear:
 	clear
