@@ -21,3 +21,11 @@ mkdir -pv dev ops bkp
 
 # Configure sshd
 vim /etc/ssh/sshd_config
+
+# Install and Configure mail server
+yum install postfix maix
+vim /etc/postfix/main.cf
+systemctl restart postfix.service
+
+# Configure system to send email on login
+install login.sh /etc/profile.d/
