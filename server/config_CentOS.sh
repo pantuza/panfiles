@@ -25,11 +25,6 @@ mkdir -pv dev ops bkp
 # Configure sshd
 vim /etc/ssh/sshd_config
 
-# Configure ssh keys
-mkdir -pv /home/$USERNAME/.ssh
-cd /home/$USERNAME/.ssh
-ssh-keygen -t rsa -C "$USER_EMAIL"
-
 # Install and Configure mail server
 yum install postfix maix
 vim /etc/postfix/main.cf
