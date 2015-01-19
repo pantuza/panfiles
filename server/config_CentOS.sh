@@ -8,6 +8,9 @@
 # User name
 USERNAME=pantuza
 
+# User email
+USER_EMAIL="gustavopantuza@gmail.com"
+
 
 # First system update
 yum update
@@ -21,6 +24,11 @@ mkdir -pv dev ops bkp
 
 # Configure sshd
 vim /etc/ssh/sshd_config
+
+# Configure ssh keys
+mkdir -pv /home/$USERNAME/.ssh
+cd /home/$USERNAME/.ssh
+ssh-keygen -t rsa -C "$USER_EMAIL"
 
 # Install and Configure mail server
 yum install postfix maix
