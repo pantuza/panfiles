@@ -19,6 +19,7 @@ VIM_DIR := vim
 SSH_DIR := ssh
 MYSQL_DIR := mysql
 UWSGI_DIR := uwsgi
+MUTT_DIR := mutt
 
 
 # Colors to messages during execution
@@ -38,7 +39,7 @@ export USER_NAME USER_HOME BROWN BLUE END_COLOR
 ############# ### ## #
 # TARGETS
 
-install: greetings shell versioning editor sshconfig mysqldb uwsgi bye
+install: greetings shell versioning editor mail sshconfig mysqldb uwsgi bye
 
 
 greetings: clear
@@ -68,6 +69,10 @@ mysqldb: ${MYSQL_DIR}/Makefile
 
 uwsgi: ${UWSGI_DIR}/Makefile
 	make install -C ${UWSGI_DIR}
+
+
+mail: ${MUTT_DIR}/muttrc
+	make install -C ${MUTT_DIR}
 
 
 bye:
