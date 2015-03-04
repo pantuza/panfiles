@@ -16,11 +16,14 @@ set hostname = gmail.com
 set mail_check = 120
 set timeout = 300
 set imap_keepalive = 300
-set postponed = "+[GMail]/Drafts"
-set record = "+[GMail]/Sent Mail"
+set postponed = "+Drafts"
+set record = "+Sent Mail"
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
+
+set signature=~/.mutt/signature
+
 set move = no
 set include
 set sort = 'threads'
@@ -37,8 +40,8 @@ bind editor ^T complete
 bind editor <space> noop 
 
 macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
-macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <delete-message>" "Gmail delete message"
+macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/Bin\"\n <delete-message>" "Gmail delete message"
 macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
-macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
-macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index,pager ga "<change-folder>=All Mail<enter>" "Go to all mail"
+macro index,pager gs "<change-folder>=Starred<enter>" "Go to starred messages"
+macro index,pager gd "<change-folder>=Drafts<enter>" "Go to drafts"
