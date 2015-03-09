@@ -229,6 +229,9 @@ autocmd filetype python map <C-F8> <ESC>:w\|!clear; pep8 %<CR>
 " run the current python file
 autocmd filetype python map <C-F5> <ESC>:w\|!clear; python %<CR>
 
+" Code snippet to insert python debugger on code
+autocmd filetype python imap <C-d> import ipdb<C-M>ipdb.set_trace(
+
 " run make for c files
 autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
 "
