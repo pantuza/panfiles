@@ -52,6 +52,10 @@ set undolevels=500
 " show cursor all the time
 set ruler
 
+" Spell check
+set aspell
+set spelllang=pt_BR
+
 
 
 
