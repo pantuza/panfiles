@@ -229,7 +229,12 @@ imap ' <C-V>'<C-V>'<left>
 nmap <CR> o<Esc>
 
 " Deleting character on command mode
-nmap <Del> <Esc>x
+nmap <Del> <Esc>i<Del>
+
+" Backspace on command mode
+nmap <BS> <Esc>i<BS>
+
+
 
 
 
