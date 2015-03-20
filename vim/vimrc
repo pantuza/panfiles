@@ -189,10 +189,10 @@ let g:clang_use_library = 1
 "
 
 " Tabs navigation
-:map <F8> :tabprevious<CR>
-:map <F9> :tabnext<CR>
-:imap <F8> <Esc>:tabprevious<CR>i
-:imap <F9> <Esc>:tabnext<CR>i
+map <F8> :tabprevious<CR>
+map <F9> :tabnext<CR>
+imap <F8> <Esc>:tabprevious<CR>i
+imap <F9> <Esc>:tabnext<CR>i
 
 " Enter search mode
 map <C-f> <CR>/
@@ -225,7 +225,8 @@ imap [ []<left>
 imap " <C-V>"<C-V>"<left>
 imap ' <C-V>'<C-V>'<left>
 
-
+" Line break on command mode
+nmap <CR> o<Esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
