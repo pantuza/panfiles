@@ -22,7 +22,7 @@ install: ${VIMRC}
 	install ${VIMRC} $(USER_HOME)/.$(VIMRC) -m 0644
 	# Download and install plugins
 	@echo -e "${BLUE}creating VIM directories:${END_COLOR}"
-	mkdir -pv $(USER_HOME)/.vim/{plugin,doc}
+	mkdir -pv $(USER_HOME)/.vim/{plugin,doc,spell}
 	@echo -e "\n${BLUE}Downloading NERD tree plugin${END_COLOR}"
 	wget -O $(USER_HOME)/.vim/nerdtree.zip ${SRC_URL}${NERDTREE}
 	unzip $(USER_HOME)/.vim/nerdtree.zip -d $(USER_HOME)/.vim/
@@ -38,6 +38,11 @@ install: ${VIMRC}
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
 	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in clang
 	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in ctags
+	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in aspell aspell-pt_BR
+	@echo -e "\n${BLUE}Generating pt-BR dictionary to spell check${END_COLOR}"
+	/usr/bin/aspell -l pt_BR dump master > pt-br-word-list
+	vim -c "mkspell pt pt-br-word-list | q"
+	@mv -vf pt.utf-8.spl $(USER_HOME)/.vim/spell/
 	@echo -e "\n${BLUE}Removing downloaded files${END_COLOR}"
-	rm -fv $(USER_HOME)/.vim/{*.zip,*.vmb}
+	rm -fv $(USER_HOME)/.vim/{*.zip,*.vmb} pt-br-word-list
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
