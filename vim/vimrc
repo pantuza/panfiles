@@ -59,14 +59,20 @@ set ruler
 " HIGHLIGHTS
 "
 
-" Sets line number colors
-highlight LineNr ctermfg=Brown ctermbg=DarkGrey
+" Sets number of colors
+set t_Co=256
+
+" Sets VIM backgroud
+set background=light
+
+" Sets line number colors to gray
+highlight LineNr ctermfg=102 ctermbg=236
 
 " Highlights the cursor line
-highlight CursorLine cterm=None term=None ctermbg=DarkGrey
+highlight CursorLine cterm=None term=None ctermbg=236
 
 " Highlights the 80th column
-highlight ColorColumn ctermbg=blue
+highlight ColorColumn ctermbg=236
 
 
 
