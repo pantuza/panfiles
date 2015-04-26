@@ -40,7 +40,7 @@ set number
 set numberwidth=1
 
 " Enables cursor line on insert mode
-autocmd InsertEnter * set cursorlne
+autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline
 
 " always show the last status bar
