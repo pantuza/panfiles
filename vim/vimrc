@@ -39,15 +39,24 @@ set mouse=a
 set number
 set numberwidth=1
 
-" Enables cursor line and defines its colors
-set cursorline
+" Enables cursor line on insert mode
+autocmd InsertEnter * set cursorlne
+autocmd InsertLeave * set nocursorline
+
+" always show the last status bar
+set laststatus=2
+
+" Customized statusline. The function EditorModeParser changes the statusline
+" color depending on the editor mode. The rest of the statusline string is 
+" the default statusline of VIM.
+set statusline='%{EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
 
 " Mark the column 80 with blue color
 set colorcolumn=80
 
 " Set history and undo size
-set history=500
-set undolevels=500
+set history=1000
+set undolevels=1000
 
 " show cursor all the time
 set ruler
@@ -266,3 +275,22 @@ autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
 autocmd filetype tex map <C-F5> <ESC>:w\|!clear; make latex<CR>
 " Run spell check on current tex file
 autocmd filetype tex map <C-F8> <ESC>:w\|!aspell --lang=en --mode=tex check %<CR>
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
+"
+
+" Function to parse the VIM modes. If in InsertMode the statusline color is
+" green. If in VisualMode the statusline color is red. Else, generally in 
+" NormalMode, the statusline color is blue
+function! EditorModeParser()
+    if mode() == 'i'
+        highlight StatusLine ctermfg=darkgreen ctermbg=black
+    elseif mode() == 'v'
+        highlight StatusLine ctermfg=red ctermbg=black
+    else
+        highlight StatusLine ctermfg=blue ctermbg=white
+    endif
+endfunction
