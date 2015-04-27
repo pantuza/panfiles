@@ -39,15 +39,24 @@ set mouse=a
 set number
 set numberwidth=1
 
-" Enables cursor line and defines its colors
-set cursorline
+" Enables cursor line on insert mode
+autocmd InsertEnter * set cursorline
+autocmd InsertLeave * set nocursorline
+
+" always show the last status bar
+set laststatus=2
+
+" Customized statusline. The function EditorModeParser changes the statusline
+" color depending on the editor mode. The rest of the statusline string is 
+" the default statusline of VIM.
+set statusline='%{EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
 
 " Mark the column 80 with blue color
 set colorcolumn=80
 
 " Set history and undo size
-set history=500
-set undolevels=500
+set history=1000
+set undolevels=1000
 
 " show cursor all the time
 set ruler
@@ -59,14 +68,20 @@ set ruler
 " HIGHLIGHTS
 "
 
-" Sets line number colors
-highlight LineNr ctermfg=Brown ctermbg=DarkGrey
+" Sets number of colors
+set t_Co=256
+
+" Sets VIM backgroud
+set background=light
+
+" Sets line number colors to gray
+highlight LineNr ctermfg=102 ctermbg=236
 
 " Highlights the cursor line
-highlight CursorLine cterm=None term=None ctermbg=DarkGrey
+highlight CursorLine cterm=None term=None ctermbg=236
 
 " Highlights the 80th column
-highlight ColorColumn ctermbg=blue
+highlight ColorColumn ctermbg=236
 
 
 
@@ -158,14 +173,21 @@ autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
 
+
 " Auto open taglist plugin when opening vim
 " "let Tlist_Auto_Open=1
+
 " Maps the taglist plugin toggle
 map <F5> :TlistToggle<CR>
+
 " Open tag list plugin window on right side
 let Tlist_Use_Right_Window = 1
+
 " Adjust tag list window width
 let Tlist_WinWidth = 50
+
+" Automatically updates taglist on file save
+autocmd BufWritePost * :TlistUpdate
 
 " - clang_complete plugin
 " automatic select entries in the popup menu
@@ -260,3 +282,22 @@ autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
 autocmd filetype tex map <C-F5> <ESC>:w\|!clear; make latex<CR>
 " Run spell check on current tex file
 autocmd filetype tex map <C-F8> <ESC>:w\|!aspell --lang=en --mode=tex check %<CR>
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
+"
+
+" Function to parse the VIM modes. If in InsertMode the statusline color is
+" green. If in VisualMode the statusline color is red. Else, generally in 
+" NormalMode, the statusline color is blue
+function! EditorModeParser()
+    if mode() == 'i'
+        highlight StatusLine ctermfg=darkgreen ctermbg=black
+    elseif mode() == 'v'
+        highlight StatusLine ctermfg=red ctermbg=black
+    else
+        highlight StatusLine ctermfg=blue ctermbg=white
+    endif
+endfunction
