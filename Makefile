@@ -10,7 +10,8 @@ USER_NAME := $(shell whoami)
 
 
 # get the user home directory
-USER_HOME := $(shell getent passwd ${USER_NAME} | cut -d: -f6)
+#USER_HOME := $(shell getent passwd ${USER_NAME} | cut -d: -f6)
+USER_HOME := $(shell echo ${HOME})
 
 
 BASH_DIR := bash
