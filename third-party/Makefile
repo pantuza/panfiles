@@ -11,7 +11,8 @@ PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_13.2/"
 all: install
 
 
-install: repos cdev network rubydev pythondev browsing osmgr videos docs development audio irccli
+install: repos cdev network rubydev pythondev browsing osmgr videos docs \
+	development audio irccli jdk
 
 repos:
 	sudo zypper addrepo --refresh \
@@ -51,4 +52,7 @@ audios: audio
 	sudo $(PKGMGR) install $(shell cat $+)
 
 irccli: irc
+	sudo $(PKGMGR) install $(shell cat $+)
+
+jdk: java
 	sudo $(PKGMGR) install $(shell cat $+)
