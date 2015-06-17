@@ -9,7 +9,8 @@ PKGMGR := zypper
 all: install
 
 
-install: cdev network rubydev pythondev browsing osmgr videos docs development
+install: cdev network rubydev pythondev browsing osmgr videos docs \
+	development jdk
 
 
 cdev: c
@@ -37,4 +38,7 @@ docs: doc
 	sudo $(PKGMGR) install $(shell cat $+)
 
 development: dev
+	sudo $(PKGMGR) install $(shell cat $+)
+
+jdk: java
 	sudo $(PKGMGR) install $(shell cat $+)
