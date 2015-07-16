@@ -140,7 +140,8 @@ set incsearch
 " Highlight and show search matches
 set hlsearch
 set showmatch
-
+" Delayed time to show matches
+set matchtime=2
 
 
 
