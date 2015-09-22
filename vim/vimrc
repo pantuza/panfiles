@@ -278,6 +278,18 @@ autocmd filetype tex map <C-F8> <ESC>:w\|!aspell --lang=en --mode=tex check %<CR
 
 
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ABBREVIATIONS
+"
+
+"
+autocmd filetype python :abbreviate ipdb import ipdb; ipdb.set_trace();
+autocmd filetype javascript :abbreviate deb debugger;
+
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " FUNCTIONS
 "
