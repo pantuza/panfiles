@@ -41,3 +41,13 @@ hi Statement guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Brown ctermbg=
 
 " Comments color
 hi Comment guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=DarkGray ctermbg=NONE cterm=NONE
+
+" Function names
+hi Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkCyan ctermbg=NONE cterm=bold
+
+" Completion menu colors
+hi PMenu ctermfg=Black ctermbg=LightYellow
+hi PMenuSel ctermbg=DarkYellow ctermfg=Black
+hi PMenuThumb ctermbg=White
+hi PMenuSBar ctermbg=DarkGray
+
