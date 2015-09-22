@@ -51,3 +51,5 @@ hi PMenuSel ctermbg=DarkYellow ctermfg=Black
 hi PMenuThumb ctermbg=White
 hi PMenuSBar ctermbg=DarkGray
 
+" Search colors
+hi Search ctermfg=Black ctermbg=Gray
