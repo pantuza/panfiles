@@ -18,7 +18,7 @@ set background=light
 "
 
 " Sets line number colors to gray
-highlight LineNr ctermfg=102 ctermbg=236
+highlight LineNr ctermfg=Black ctermbg=236
 
 " Highlights the cursor line
 highlight CursorLine cterm=None term=None ctermbg=236
