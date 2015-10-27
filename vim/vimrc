@@ -199,11 +199,18 @@ let g:clang_use_library = 1
 " KEY MAPPING
 "
 
+" Disables arrows in visual mode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
 " Tabs navigation
-map <F8> :tabprevious<CR>
-map <F9> :tabnext<CR>
-imap <F8> <Esc>:tabprevious<CR>i
-imap <F9> <Esc>:tabnext<CR>i
+map <C-left> :tabprevious<CR>
+map <C-right> :tabnext<CR>
+imap <C-left> <Esc>:tabprevious<CR>i
+imap <C-right> <Esc>:tabnext<CR>i
 
 " Enter search mode
 map <C-f> <CR>/
