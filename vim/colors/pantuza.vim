@@ -18,7 +18,10 @@ set background=light
 "
 
 " Sets line number colors to gray
-highlight LineNr ctermfg=Black ctermbg=236
+highlight LineNr ctermfg=Black ctermbg=Gray
+
+" Highlights the Vertical split bar
+highlight VertSplit ctermbg=black ctermfg=black cterm=bold
 
 " Highlights the cursor line
 highlight CursorLine cterm=None term=None ctermbg=236
