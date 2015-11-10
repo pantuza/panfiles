@@ -56,3 +56,6 @@ hi PMenuSBar ctermbg=DarkGray
 
 " Search colors
 hi Search ctermfg=Black ctermbg=Gray
+
+" Visual selection color
+highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
