@@ -2,3 +2,5 @@ kvm
 libvirt
 vm-install
 clusterssh
+docker
+docker-bash-completion
