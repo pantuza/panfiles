@@ -6,9 +6,8 @@
 
 # Ask for git installation
 [ -z "${GIT}" ] && {
-    ${ECHO} ${ECHOOPTS} "install git before as root:\n";
-    ${ECHO} ${ECHOOPTS} "${PKGMGR} install ${PKGMGROPTS} git\n";
-    exit 1;
+    ${ECHO} ${ECHOOPTS} "install git before:\n";
+    ${PKGMGR} install ${PKGMGROPTS} git;
 }
 
 
@@ -24,6 +23,26 @@ done;
 
 
 # Clones the panfiles project
-pushd ${HOME_DEV};
-${GIT} clone ${PANFILES_REPO};
+if [ ! -d "${PANFILES_DIR}" ]; then
+    
+    pushd ${HOME_DEV};
+    ${GIT} clone ${PANFILES_REPO};
+    popd;
+fi;
+
+# Update the repository
+pushd ${PANFILES_DIR};
+${GIT} pull origin master;
+
+# install bashrc
+[ -z "${MAKE}" ] && {
+    ${ECHO} ${ECHOOPTS} "install make before:\n";
+    ${PKGMGR} install ${PKGMGROPTS} make;
+}
+
+${MAKE} server;
 popd;
+
+
+# Change gitconfig variables
+. ./configure_git.sh
