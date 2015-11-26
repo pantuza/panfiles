@@ -36,9 +36,9 @@ install: ${VIMRC}
 	wget -O $(USER_HOME)/.vim/clang_complete.vmb ${SRC_URL}${CLANG_COMPLETE}
 	vim $(USER_HOME)/.vim/clang_complete.vmb -c 'so %' -c 'q'
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
-	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in clang
-	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in ctags
-	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in aspell aspell-pt_BR
+	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in clang --non-interactive
+	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in ctags --non-interactive
+	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in aspell aspell-pt_BR --non-interactive
 	@echo -e "\n${BLUE}Generating pt-BR dictionary to spell check${END_COLOR}"
 	/usr/bin/aspell -l pt_BR dump master > pt-br-word-list
 	vim -c "mkspell pt pt-br-word-list | q"
