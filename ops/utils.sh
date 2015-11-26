@@ -40,6 +40,12 @@ SSH_KEY_GEN=$(which ssh-keygen);
 
 CAT=$(which cat);
 
+MAKE=$(which make);
+
+SED=$(which sed);
+SEDOPTS="-i";
+
+
 # Directories
 
 HOMEDIR="/home/${NAME}";
@@ -53,6 +59,7 @@ HOME_SSH_DIR="${HOMEDIR}/.ssh";
 
 BASE_DIRS="${HOME_DEV} ${HOME_OPS} ${HOME_BKP}";
 
+PANFILES_DIR="${HOME_DEV}/panfiles";
 
 # Projects
 GITHUB_SSH="git@github.com";
@@ -61,3 +68,5 @@ PANFILES_REPO="${GITHUB_SSH}:${NAME}/panfiles.git";
 # Files
 
 PUB_KEY_FILE="id_rsa.pub";
+
+GIT_CONFIG_FILE="${HOMEDIR}/.gitconfig";
