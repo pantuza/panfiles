@@ -45,6 +45,11 @@ MAKE=$(which make);
 SED=$(which sed);
 SEDOPTS="-i";
 
+SUDO=$(which sudo);
+SUDOOPTS="-u root";
+
+CP=$(which cp);
+MV=$(which mv);
 
 # Directories
 
@@ -70,3 +75,5 @@ PANFILES_REPO="${GITHUB_SSH}:${NAME}/panfiles.git";
 PUB_KEY_FILE="id_rsa.pub";
 
 GIT_CONFIG_FILE="${HOMEDIR}/.gitconfig";
+
+SSHD_CONFIG_FILE="/etc/ssh/sshd_config";
