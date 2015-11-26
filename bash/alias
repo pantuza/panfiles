@@ -9,3 +9,4 @@ alias egrep='egrep --color=auto'
 
 # Defines the list directories full content
 alias ll='ls -ilha --color'
+alias ls='ls --color'
