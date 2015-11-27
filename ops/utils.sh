@@ -51,6 +51,9 @@ SUDOOPTS="-u root";
 CP=$(which cp);
 MV=$(which mv);
 
+TEE=$(which tee);
+TEEOPTS="-a";
+
 # Directories
 
 HOMEDIR="/home/${NAME}";
