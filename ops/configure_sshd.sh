@@ -8,33 +8,30 @@
 # to append values to this file. For that, we modify the copied file and then
 # move the copy onto the original.
 #
-SSHD_COPY="/tmp/sshd_config";
-${SUDO} ${SUDOOPTS} ${CP} ${SSHD_CONFIG_FILE} ${SSHD_COPY};
 
 
 # configure sshd file
 ${ECHO} ${ECHOOPTS} "Appending my configuration:\n";
-${SUDO} ${SUDOOPTS} ${ECHO} ${ECHOOPTS} "\n# MY PERSONAL CONFIGURATION" >> \
-    ${SSHD_COPY};
+${ECHO} ${ECHOOPTS} "\n# MY PERSONAL CONFIGURATION\n" | \
+    ${SUDO} ${SUDOOPTS} ${TEE} ${TEEOPTS} ${SSHD_CONFIG_FILE};
 
 # Adding Allowed users
-${SUDO} ${SUDOOPTS} ${ECHO} ${ECHOOPTS} "AllowUsers ${NAME}" >> ${SSHD_COPY};
+${ECHO} ${ECHOOPTS} "AllowUsers ${NAME}\n" | \
+    ${SUDO} ${SUDOOPTS} ${TEE} ${TEEOPTS} ${SSHD_CONFIG_FILE};
 
 # Delete AuthMaxTries line and insert our
-${SUDO} ${SUDOOPTS} ${SED} ${SEDOPTS} "/MaxAuthTries/d" ${SSHD_COPY};
-${SUDO} ${SUDOOPTS} ${ECHO} ${ECHOOPTS} "MaxAuthTries 10" >> ${SSHD_COPY};
+${SUDO} ${SUDOOPTS} ${SED} ${SEDOPTS} "/MaxAuthTries/d" ${SSHD_CONFIG_FILE};
+${ECHO} ${ECHOOPTS} "MaxAuthTries 10\n" | \
+    ${SUDO} ${SUDOOPTS} ${TEE} ${TEEOPTS} ${SSHD_CONFIG_FILE};
 
 # Delete PermitRootLogin line and insert our
-${SUDO} ${SUDOOPTS} ${SED} ${SEDOPTS} "/PermitRootLogin/d" ${SSHD_COPY};
-${SUDO} ${SUDOOPTS} ${ECHO} ${ECHOOPTS} "PermitRootLogin no" >> ${SSHD_COPY};
+${SUDO} ${SUDOOPTS} ${SED} ${SEDOPTS} "/PermitRootLogin/d" ${SSHD_CONFIG_FILE};
+${ECHO} ${ECHOOPTS} "PermitRootLogin no\n" | \
+    ${SUDO} ${SUDOOPTS} ${TEE} ${TEEOPTS} ${SSHD_CONFIG_FILE};
 
 # Delete Protocol line and insert our
-${SUDO} ${SUDOOPTS} ${SED} ${SEDOPTS} "/Protocol/d" ${SSHD_COPY};
-${SUDO} ${SUDOOPTS} ${ECHO} ${ECHOOPTS} "Protocol 2" >> ${SSHD_COPY};
-
-
-# After all modifications we move our copy to original file
-${SUDO} ${SUDOOPTS} ${MV} ${SSHD_COPY} ${SSHD_CONFIG_FILE};
-
+${SUDO} ${SUDOOPTS} ${SED} ${SEDOPTS} "/Protocol/d" ${SSHD_CONFIG_FILE};
+${ECHO} ${ECHOOPTS} "Protocol 2\n" | \
+    ${SUDO} ${SUDOOPTS} ${TEE} ${TEEOPTS} ${SSHD_CONFIG_FILE};
 
 ${ECHO} ${ECHOOPTS} "${SSHD_CONFIG_FILE} configured\n";
