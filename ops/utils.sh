@@ -54,6 +54,8 @@ MV=$(which mv);
 TEE=$(which tee);
 TEEOPTS="-a";
 
+SYSTEMCTL=$(which systemctl);
+
 # Directories
 
 HOMEDIR="/home/${NAME}";
@@ -80,3 +82,7 @@ PUB_KEY_FILE="id_rsa.pub";
 GIT_CONFIG_FILE="${HOMEDIR}/.gitconfig";
 
 SSHD_CONFIG_FILE="/etc/ssh/sshd_config";
+
+
+# Services
+SSHD="sshd.service";
