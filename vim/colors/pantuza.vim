@@ -30,32 +30,32 @@ highlight CursorLine cterm=None term=None ctermbg=236
 highlight ColorColumn ctermbg=236
 
 " Parentesis matching
-hi MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Red ctermbg=NONE cterm=bold
+highlight MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Red ctermbg=NONE cterm=bold
 
 
 
 " C Code
 
 " Primitive types
-hi Type guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
+highlight Type guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
 
 " Structures (struct)
-hi Structure guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
+highlight Structure guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
 
 " Statements like while, for, etc..
-hi Statement guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Brown ctermbg=NONE cterm=bold
+highlight Statement guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Brown ctermbg=NONE cterm=bold
 
 " Conditionals like if
-hi Conditional guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Brown ctermbg=NONE cterm=bold
+highlight Conditional guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Brown ctermbg=NONE cterm=bold
 
 " Comments color
-hi Comment guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=DarkGray ctermbg=NONE cterm=NONE
+highlight Comment guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=DarkGray ctermbg=NONE cterm=NONE
 
 " Function names
-hi Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
+highlight Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
 
 " Identifiers
-hi Identifier guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
+highlight Identifier guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
 
 " String colors
 highlight String ctermfg=DarkRed
@@ -64,13 +64,13 @@ highlight String ctermfg=DarkRed
 highlight Keyword ctermfg=DarkYellow
 
 " Completion menu colors
-hi PMenu ctermfg=Black ctermbg=LightYellow
-hi PMenuSel ctermbg=DarkYellow ctermfg=Black
-hi PMenuThumb ctermbg=White
-hi PMenuSBar ctermbg=DarkGray
+highlight PMenu ctermfg=Black ctermbg=LightYellow
+highlight PMenuSel ctermbg=DarkYellow ctermfg=Black
+highlight PMenuThumb ctermbg=White
+highlight PMenuSBar ctermbg=DarkGray
 
 " Search colors
-hi Search ctermfg=Black ctermbg=Gray
+highlight Search ctermfg=Black ctermbg=Gray
 
 " Visual selection color
 highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
@@ -80,4 +80,4 @@ highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
 " Filesystem
 
 " Directories colors
-hi Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
+highlight Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
