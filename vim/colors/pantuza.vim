@@ -60,7 +60,8 @@ hi Identifier guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NO
 " String colors
 highlight String ctermfg=DarkRed
 
-
+" Keywords colors
+highlight Keyword ctermfg=DarkYellow
 
 " Completion menu colors
 hi PMenu ctermfg=Black ctermbg=LightYellow
