@@ -59,3 +59,10 @@ hi Search ctermfg=Black ctermbg=Gray
 
 " Visual selection color
 highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
+
+
+
+" Filesystem
+
+" Directories colors
+hi Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
