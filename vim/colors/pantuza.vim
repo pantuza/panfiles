@@ -55,7 +55,7 @@ highlight Comment guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=DarkGra
 highlight Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
 
 " Identifiers
-highlight Identifier guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
+highlight Identifier guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkCyan ctermbg=NONE cterm=NONE
 
 " String colors
 highlight String ctermfg=DarkRed
