@@ -66,6 +66,10 @@ highlight Keyword ctermfg=DarkYellow
 " Boolean values
 highlight Boolean ctermfg=Yellow
 
+" Operators like 'new'
+highlight Operator ctermfg=DarkCyan cterm=NONE
+
+
 " Completion menu colors
 highlight PMenu ctermfg=Black ctermbg=LightYellow
 highlight PMenuSel ctermbg=DarkYellow ctermfg=Black
