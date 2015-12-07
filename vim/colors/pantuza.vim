@@ -63,6 +63,9 @@ highlight String ctermfg=DarkRed
 " Keywords colors
 highlight Keyword ctermfg=DarkYellow
 
+" Boolean values
+highlight Boolean ctermfg=Yellow
+
 " Completion menu colors
 highlight PMenu ctermfg=Black ctermbg=LightYellow
 highlight PMenuSel ctermbg=DarkYellow ctermfg=Black
