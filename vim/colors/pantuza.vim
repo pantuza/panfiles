@@ -69,8 +69,14 @@ highlight Boolean ctermfg=Yellow
 " Operators like 'new'
 highlight Operator ctermfg=DarkCyan cterm=NONE
 
-" Constants like numbers, file descriptors, etc
+" Constants like file descriptors, etc
 highlight Constant ctermfg=red cterm=bold
+
+" Numbers like integers
+highlight Number ctermfg=green cterm=bold
+
+" Float numbers like double C numbers
+highlight Float ctermfg=green cterm=bold
 
 
 " Completion menu colors
