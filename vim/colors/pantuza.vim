@@ -69,6 +69,9 @@ highlight Boolean ctermfg=Yellow
 " Operators like 'new'
 highlight Operator ctermfg=DarkCyan cterm=NONE
 
+" Constants like numbers, file descriptors, etc
+highlight Constant ctermfg=red cterm=bold
+
 
 " Completion menu colors
 highlight PMenu ctermfg=Black ctermbg=LightYellow
