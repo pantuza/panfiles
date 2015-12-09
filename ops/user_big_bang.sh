@@ -24,15 +24,17 @@ done;
 
 # Clones the panfiles project
 if [ ! -d "${PANFILES_DIR}" ]; then
-    
+
     pushd ${HOME_DEV};
     ${GIT} clone ${PANFILES_REPO};
     popd;
 fi;
 
+
 # Update the repository
 pushd ${PANFILES_DIR};
 ${GIT} pull origin master;
+
 
 # install bashrc
 [ -z "${MAKE}" ] && {
@@ -44,5 +46,11 @@ ${MAKE} server;
 popd;
 
 
+
 # Change gitconfig variables
 . ./configure_git.sh
+
+
+
+# Configure sshd
+. ./configure_sshd.sh
