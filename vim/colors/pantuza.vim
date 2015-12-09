@@ -78,6 +78,9 @@ highlight Number ctermfg=green cterm=bold
 " Float numbers like double C numbers
 highlight Float ctermfg=green cterm=bold
 
+" Color for whitespaces listchars
+highlight SpecialKey ctermfg=white cterm=bold
+
 
 " Completion menu colors
 highlight PMenu ctermfg=Black ctermbg=LightYellow
