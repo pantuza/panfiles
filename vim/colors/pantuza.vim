@@ -81,6 +81,9 @@ highlight Float ctermfg=green cterm=bold
 " Color for whitespaces listchars
 highlight SpecialKey ctermfg=white cterm=bold
 
+" Colors for import reserved keys
+highlight Include ctermfg=DarkMagenta cterm=NONE
+
 
 " Completion menu colors
 highlight PMenu ctermfg=Black ctermbg=LightYellow
