@@ -12,7 +12,7 @@ all: install
 
 
 install: repos cdev network rubydev pythondev browsing osmgr videos docs \
-	development audio irccli jdk
+	development audio irccli jdk godev
 
 repos:
 	sudo zypper addrepo --refresh \
@@ -55,4 +55,7 @@ irccli: irc
 	sudo $(PKGMGR) install $(shell cat $+)
 
 jdk: java
+	sudo $(PKGMGR) install $(shell cat $+)
+
+godev: go
 	sudo $(PKGMGR) install $(shell cat $+)
