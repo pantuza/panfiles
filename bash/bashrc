@@ -30,6 +30,32 @@ function parse_git() {
   echo "($(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* //')$DIRTY)"
 }
 
+
+#
+# Function that creates a screencast using ffmpeg
+#
+# usage: screencast MY_SCREENCAST_NAME
+# Where MY_SCREENCAST_NAME is the video name.
+# Output video is encodded as MKV format.
+#
+function screencast ()
+{
+   ffmpeg -f alsa \
+           -ac 2 \
+           -i default \
+           -f x11grab \
+           -r 30 \
+           -s 1600x90 \
+           -i :0.0 \
+           -acodec pcm_s16le \
+           -vcodec libx264 \
+           -preset ultrafast \
+           -crf 0 \
+           -threads 0 \
+           $1.mkv
+}
+
+
 # Resets standard input parameters to reasonable values
 stty sane
 
