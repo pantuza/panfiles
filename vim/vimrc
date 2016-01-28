@@ -62,7 +62,7 @@ set undolevels=1000
 set ruler
 
 " Tells vim that whitespaces are represented as dots
-set listchars=trail:.
+set listchars=trail:.,tab:\ \ 
 
 " Tells vim to show whitespaces as dots
 set list
