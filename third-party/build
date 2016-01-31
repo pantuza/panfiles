@@ -1,0 +1,5 @@
+dpkg
+binutils
+devscripts
+rpm-build
+rpmlint
