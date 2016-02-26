@@ -1,6 +1,7 @@
 gcc
 gcc-c++
 make
+cmake
 man-pages-posix
 autoconf
 automake
