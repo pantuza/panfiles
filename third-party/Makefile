@@ -59,3 +59,6 @@ jdk: java
 
 godev: go
 	sudo $(PKGMGR) install $(shell cat $+)
+
+builds: build
+	sudo $(PKGMGR) install $(shell cat $+)
