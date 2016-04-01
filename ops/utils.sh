@@ -63,11 +63,12 @@ HOMEDIR="/home/${NAME}";
 HOME_DEV="${HOMEDIR}/dev";
 HOME_OPS="${HOMEDIR}/ops";
 HOME_BKP="${HOMEDIR}/bkp";
+HOME_TMP="${HOMEDIR}/tmp";
 
 HOME_SSH_DIR="${HOMEDIR}/.ssh";
 
 
-BASE_DIRS="${HOME_DEV} ${HOME_OPS} ${HOME_BKP}";
+BASE_DIRS="${HOME_DEV} ${HOME_OPS} ${HOME_BKP} ${HOME_TMP}";
 
 PANFILES_DIR="${HOME_DEV}/panfiles";
 
