@@ -30,7 +30,7 @@ BLUE=\e[1;34m
 END_COLOR=\e[0m
 
 
-.PHONY := install server nginx uwsgi
+.PHONY: install server nginx uwsgi
 
 
 # make variables public to other make files
