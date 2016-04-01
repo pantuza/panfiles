@@ -104,3 +104,18 @@ highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
 
 " Directories colors
 highlight Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
+
+
+
+"
+" Python code highlights
+"
+
+" try except statements
+highlight pythonException ctermfg=DarkYellow
+
+" Escape character
+highlight pythonEscape ctermfg=DarkMagenta
+
+" Boolean values (True, False)
+highlight pythonBoolean ctermfg=Yellow cterm=bold

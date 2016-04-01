@@ -267,7 +267,7 @@ nnoremap <C-l> <C-w>l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" MACROS 
+" MACROS
 "
 
 " run pep8 tool for the current python file
@@ -304,6 +304,13 @@ autocmd filetype tex map <C-F8> <ESC>:w\|!aspell --lang=en --mode=tex check %<CR
 autocmd filetype python :abbreviate ipdb import ipdb; ipdb.set_trace();
 autocmd filetype javascript :abbreviate deb debugger;
 
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CUSTOM SYMBOLS
+"
+syn keyword pythonBoolean True False
 
 
 
