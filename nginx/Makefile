@@ -11,6 +11,7 @@ NGINX := nginx
 NGINX_DIR := /etc/$(NGINX)
 NGINX_CONF_FILE := nginx.conf
 
+SYSTEMCTL := $(shell which systemctl)
 
 .PHONY := install
 
@@ -23,5 +24,10 @@ install:
 	@sudo install -v -m 0644 $(NGINX_CONF_FILE) $(NGINX_DIR)/$(NGINX_CONF_FILE)
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
 
+born:
+	sudo $(SYSTEMCTL) enable $(NGINX).service
+	sudo $(SYSTEMCTL) start $(NGINX).service
+
 uninstall:
+	sudo $(SYSTEMCTL) stop $(NGINX).service
 	sudo zypper --non-interactive remove $(NGINX)
