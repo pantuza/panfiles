@@ -17,11 +17,11 @@ NGINX_CONF_FILE := nginx.conf
 
 install:
 	@echo -e "\n$(BROWN)# NGINX WEBSERVER INSTALL$(END_COLOR)"
-	sudo zypper install $(NGINX) --non-interactive
+	sudo zypper --non-interactive install $(NGINX)
 	@sudo mkdir -vp $(NGINX_CONF_DIR)/rewrites
 	@sudo mkdir -vp $(NGINX_CONF_DIR)/conf.d
 	@install -m 0644 $(NGINX_CONF_FILE) $(NGINX_CONF_DIR)/$(NGINX_CONF_FILE)
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
 
 uninstall:
-	sudo zypper remove $(NGINX)
+	sudo zypper --non-interactive remove $(NGINX)
