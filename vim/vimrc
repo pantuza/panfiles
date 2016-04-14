@@ -52,7 +52,7 @@ set laststatus=2
 set statusline='%{EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
 
 " Mark the column 80 with blue color
-set colorcolumn=80
+let &colorcolumn=join(range(80,999),",")
 
 " Set history and undo size
 set history=1000
