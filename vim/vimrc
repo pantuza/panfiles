@@ -32,6 +32,9 @@ let g:tex_flavor='latex'
 " EDITOR PREFERENCES
 "
 
+" Shell must be bash because of the plugins
+set shell=/bin/bash
+
 " Enable mouse
 set mouse=a
 
