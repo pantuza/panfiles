@@ -24,10 +24,10 @@ highlight LineNr ctermfg=Gray ctermbg=233
 highlight VertSplit ctermbg=black ctermfg=black cterm=bold
 
 " Highlights the cursor line
-highlight CursorLine cterm=None term=None ctermbg=236
+highlight CursorLine cterm=None term=None ctermbg=233
 
 " Highlights the 80th column
-highlight ColorColumn ctermbg=236
+highlight ColorColumn ctermbg=233
 
 " Parentesis matching
 highlight MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Red ctermbg=NONE cterm=bold
