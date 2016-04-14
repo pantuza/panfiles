@@ -19,6 +19,7 @@ GIT_DIR := git
 VIM_DIR := vim
 SSH_DIR := ssh
 MYSQL_DIR := mysql
+NGINX_DIR := nginx
 UWSGI_DIR := uwsgi
 MUTT_DIR := mutt
 
@@ -29,7 +30,7 @@ BLUE=\e[1;34m
 END_COLOR=\e[0m
 
 
-.PHONY := install server
+.PHONY: install server nginx uwsgi
 
 
 # make variables public to other make files
@@ -71,6 +72,9 @@ mysqldb: ${MYSQL_DIR}/Makefile
 uwsgi: ${UWSGI_DIR}/Makefile
 	make install -C ${UWSGI_DIR}
 
+nginx: ${NGINX_DIR}/Makefile
+	make install -C ${NGINX_DIR}
+
 
 mail: ${MUTT_DIR}/muttrc
 	make install -C ${MUTT_DIR}
@@ -83,7 +87,7 @@ bye:
 server: greetings shell versioning editor bye
 
 
-services: greetings mysqldb uwsgi bye
+services: greetings mysqldb nginx uwsgi bye
 
 clear:
 	clear
