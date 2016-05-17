@@ -297,6 +297,9 @@ autocmd filetype tex map <C-F5> <ESC>:w\|!clear; make latex<CR>
 autocmd filetype tex map <C-F8> <ESC>:w\|!aspell --lang=en --mode=tex check %<CR>
 
 
+" Sets spaces when editing ruby files
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
