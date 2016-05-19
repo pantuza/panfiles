@@ -70,6 +70,9 @@ set listchars=trail:.,tab:\ \
 " Tells vim to show whitespaces as dots
 set list
 
+" Enables auto save
+autocmd InsertLeave,CursorHold,CursorHoldI,FileWritePost,FileChangedShell * :wa
+
 
 
 
