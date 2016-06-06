@@ -270,6 +270,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Find/Replace from word selection
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
