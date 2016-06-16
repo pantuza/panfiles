@@ -1,6 +1,6 @@
-" 
+"
 " MY PERSONAL VIM DEFINITIONS
-" 
+"
 " Author: Gustavo Pantuza
 " Since: 14.08.2012
 
@@ -25,6 +25,8 @@ filetype indent on
 " VIM7 fix for identify latex files
 let g:tex_flavor='latex'
 
+" Load syntax for go files
+autocmd BufRead,BufNewFile *.go set filetype=go
 
 
 
@@ -231,7 +233,7 @@ imap <C-f> <Esc><CR>/
 " Select all the content file
 map <C-a> ggVG
 
-" Maps undo operation to ctrl+z 
+" Maps undo operation to ctrl+z
 imap <C-z> <Esc><CR>ui
 
 " Maps save operation to ctrl+s (do not work on gonome-terminal)
