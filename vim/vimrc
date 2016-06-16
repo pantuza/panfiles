@@ -307,6 +307,8 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 " Sets spaces when editing ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
+" Sets spaces when editing jsx files
+autocmd BufRead,BufNewFile jsx setlocal ts=2 sts=2 sw=2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
