@@ -6,12 +6,13 @@ SHELL := /bin/bash
 # bashrc file name
 VIMRC := vimrc
 
-# VIM plugins urls 
+# VIM plugins urls
 SRC_URL := http://www.vim.org/scripts/download_script.php?src_id=
 NERDTREE := 17123
 TAGLIST := 19574
 CVIM := 21803
 CLANG_COMPLETE := 19588
+GO_VIM := 11735
 
 .PHONY := install
 
@@ -22,7 +23,7 @@ install: ${VIMRC}
 	install ${VIMRC} $(USER_HOME)/.$(VIMRC) -m 0644
 	# Download and install plugins
 	@echo -e "${BLUE}creating VIM directories:${END_COLOR}"
-	mkdir -pv $(USER_HOME)/.vim/{plugin,doc,spell}
+	mkdir -pv $(USER_HOME)/.vim/{plugin,doc,spell,syntax}
 	@echo -e "\n${BLUE}Downloading NERD tree plugin${END_COLOR}"
 	wget -O $(USER_HOME)/.vim/nerdtree.zip ${SRC_URL}${NERDTREE}
 	unzip $(USER_HOME)/.vim/nerdtree.zip -d $(USER_HOME)/.vim/
@@ -35,6 +36,8 @@ install: ${VIMRC}
 	@echo -e "\n${BLUE}Downloading clang_complete plugin${END_COLOR}"
 	wget -O $(USER_HOME)/.vim/clang_complete.vmb ${SRC_URL}${CLANG_COMPLETE}
 	vim $(USER_HOME)/.vim/clang_complete.vmb -c 'so %' -c 'q'
+	@echo -e "\n${BLUE}Downloading go.vim plugin${END_COLOR}"
+	wget -O $(USER_HOME)/.vim/syntax/go.vim ${SRC_URL}${GO_VIM}
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
 	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in clang --non-interactive
 	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in ctags --non-interactive
