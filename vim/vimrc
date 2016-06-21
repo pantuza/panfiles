@@ -149,6 +149,10 @@ set showmatch
 " Delayed time to show matches
 set matchtime=2
 
+" Remove search results highlights
+map <C-C> :nohlsearch<CR>
+
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
