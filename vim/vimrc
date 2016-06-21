@@ -52,9 +52,12 @@ autocmd InsertLeave * set nocursorline
 set laststatus=2
 
 " Customized statusline. The function EditorModeParser changes the statusline
-" color depending on the editor mode. The rest of the statusline string is 
+" color depending on the editor mode. The rest of the statusline string is
 " the default statusline of VIM.
 set statusline='%{EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
+
+" Text at tab label
+set guitablabel='%t\ %M'
 
 " Mark the column 80 with blue color
 let &colorcolumn=join(range(80,999),",")
