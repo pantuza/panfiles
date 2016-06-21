@@ -32,6 +32,19 @@ highlight ColorColumn ctermbg=233
 " Parentesis matching
 highlight MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=Red ctermbg=NONE cterm=bold
 
+" Tab line colors
+highlight TabLineFill ctermfg=33
+
+" Tabs of opened files
+highlight TabLine ctermbg=33 ctermfg=black
+
+" Selected tab color
+highlight TabLineSel ctermfg=232 ctermbg=227
+
+" Tab label colors
+highlight Title ctermfg=232 ctermbg=232
+
+
 
 
 " C Code
