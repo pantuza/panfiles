@@ -225,10 +225,8 @@ noremap <Right> <NOP>
 
 
 " Tabs navigation
-map <C-left> :tabprevious<CR>
-map <C-right> :tabnext<CR>
-imap <C-left> <Esc>:tabprevious<CR>i
-imap <C-right> <Esc>:tabnext<CR>i
+nnoremap <silent> <C-b> :tabprevious<CR>
+nnoremap <silent> <C-n> :tabnext<CR>
 
 " Enter search mode
 map <C-f> <CR>/
