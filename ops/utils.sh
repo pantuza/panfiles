@@ -56,6 +56,9 @@ TEEOPTS="-a";
 
 SYSTEMCTL=$(which systemctl);
 
+INSTALL=$(which install);
+INSTALL_OPTS="-m 644 -v"
+
 # Directories
 
 HOMEDIR="/home/${NAME}";
@@ -85,6 +88,8 @@ PUB_KEY_FILE="id_rsa.pub";
 GIT_CONFIG_FILE="${HOMEDIR}/.gitconfig";
 
 SSHD_CONFIG_FILE="/etc/ssh/sshd_config";
+
+POSTFIX_CFG_FILE="/etc/postfix/main.cf"
 
 
 # Services
