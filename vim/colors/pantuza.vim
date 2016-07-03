@@ -118,6 +118,8 @@ highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
 " Directories colors
 highlight Directory guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=DarkBlue ctermbg=NONE cterm=bold
 
+" Nerdtree executable files
+highlight NERDTreeExecFile ctermfg=green
 
 
 "
