@@ -54,3 +54,8 @@ popd;
 
 # Configure sshd
 . ./configure_sshd.sh
+
+
+
+# Configure mail server
+. ./configure_mail.sh
