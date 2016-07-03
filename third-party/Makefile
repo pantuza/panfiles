@@ -62,3 +62,6 @@ godev: go
 
 builds: build
 	sudo $(PKGMGR) install $(shell cat $+)
+
+email: mail
+	sudo $(PKGMGR) install $(shell cat $+)
