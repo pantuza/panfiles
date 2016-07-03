@@ -72,6 +72,8 @@ BASE_DIRS="${HOME_DEV} ${HOME_OPS} ${HOME_BKP} ${HOME_TMP}";
 
 PANFILES_DIR="${HOME_DEV}/panfiles";
 
+THIRDPARTY_DIR="${PANFILES_DIR}/third-party"
+
 # Projects
 GITHUB_SSH="git@github.com";
 PANFILES_REPO="${GITHUB_SSH}:${NAME}/panfiles.git";
@@ -87,3 +89,5 @@ SSHD_CONFIG_FILE="/etc/ssh/sshd_config";
 
 # Services
 SSHD="sshd.service";
+
+POSTFIXD="postfix.service"
