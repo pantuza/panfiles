@@ -65,3 +65,6 @@ builds: build
 
 email: mail
 	sudo $(PKGMGR) install $(shell cat $+)
+
+db: database
+	sudo $(PKGMGR) install $(shell cat $+)
