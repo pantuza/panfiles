@@ -134,3 +134,12 @@ highlight pythonEscape ctermfg=DarkMagenta
 
 " Boolean values (True, False)
 highlight pythonBoolean ctermfg=Yellow cterm=bold
+
+
+"
+" Html colors
+"
+highlight htmlH1 ctermfg=white
+
+highlight htmlTag ctermfg=60 cterm=bold
+highlight htmlEndTag ctermfg=60 cterm=bold
