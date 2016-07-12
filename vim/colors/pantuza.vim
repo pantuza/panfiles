@@ -143,3 +143,15 @@ highlight htmlH1 ctermfg=white
 
 highlight htmlTag ctermfg=60 cterm=bold
 highlight htmlEndTag ctermfg=60 cterm=bold
+
+
+
+"
+" Markdown colors
+"
+highlight markdownH1 ctermfg=white cterm=bold
+highlight markdownH2 ctermfg=white cterm=bold
+highlight markdownH3 ctermfg=white cterm=bold
+highlight markdownH4 ctermfg=white cterm=bold
+highlight markdownH5 ctermfg=white cterm=bold
+highlight markdownH6 ctermfg=white cterm=bold
