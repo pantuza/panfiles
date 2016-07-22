@@ -86,6 +86,24 @@ function videocast ()
 }
 
 
+#
+# Function to put a video on right top of another using ffmpeg overlay
+#
+# Usage: overlay_video background.mkv overlay.mkv
+# Creates overlayed.mkv file with merged videos
+#
+function overlay_video()
+{
+    if [ -z "$1" || -z "$2" ]; then
+        echo "Usage: overlay_video background.mkv overlay.mkv"
+    fi;
+
+    ffmpeg -i $1 \
+           -i $2 \
+           -filter_complex "[0] overlay=1220:25" \
+           overlayed.mkv
+}
+
 # Resets standard input parameters to reasonable values
 stty sane
 
