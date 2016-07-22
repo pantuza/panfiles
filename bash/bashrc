@@ -1,6 +1,6 @@
 #
 # MY PERSONAL BASHRC FILE
-# 
+#
 # .bashrc file used on openSUSE
 #
 # AUTHOR: Gustavo Pantuza
@@ -34,25 +34,59 @@ function parse_git() {
 #
 # Function that creates a screencast using ffmpeg
 #
-# usage: screencast MY_SCREENCAST_NAME
-# Where MY_SCREENCAST_NAME is the video name.
+# usage: screencast VIDEO_NAME
+# Where VIDEO_NAME is the video name.
 # Output video is encodded as MKV format.
 #
 function screencast ()
 {
-   ffmpeg -f alsa \
+    VIDEO_NAME="screencast";
+    if [ ! -z "$1" ]; then
+        VIDEO_NAME=$1;
+    fi;
+
+    ffmpeg -f alsa \
            -ac 2 \
            -i default \
            -f x11grab \
            -r 30 \
-           -s 1600x90 \
+           -s 1600x900 \
            -i :0.0 \
            -acodec pcm_s16le \
            -vcodec libx264 \
            -preset ultrafast \
            -crf 0 \
            -threads 0 \
-           $1.mkv
+           ${VIDEO_NAME}.mkv
+}
+
+#
+# Function that captures a video from webcam using ffmpeg
+#
+# Usage: videocast VIDEO_NAME
+# Where VIDEO_NAME is the video name
+# Output video is encodded as MKV format
+#
+function videocast ()
+{
+    VIDEO_NAME="videocast";
+    if [ ! -z "$1" ]; then
+        VIDEO_NAME=$1;
+    fi;
+
+    ffmpeg -video_size 300x300 \
+           -framerate 30 \
+           -f video4linux2 \
+           -i /dev/video0 \
+           -f alsa \
+           -ac 2 \
+           -i hw:0 \
+           -acodec pcm_s16le \
+           -vcodec libx264 \
+           -preset ultrafast \
+           -crf 0 \
+           -threads 0 \
+           ${VIDEO_NAME}.mkv
 }
 
 
