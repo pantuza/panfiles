@@ -45,14 +45,10 @@ function screencast ()
         VIDEO_NAME=$1;
     fi;
 
-    ffmpeg -f alsa \
-           -ac 2 \
-           -i default \
-           -f x11grab \
+    ffmpeg -f x11grab \
            -r 30 \
            -s 1600x900 \
            -i :0.0 \
-           -acodec pcm_s16le \
            -vcodec libx264 \
            -preset ultrafast \
            -crf 0 \
