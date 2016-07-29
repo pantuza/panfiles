@@ -3,6 +3,7 @@
 # SMTP Server and user account
 set imap_user = "{email}@gmail.com"
 set smtp_url = "smtp://{email}@smtp.gmail.com:587/"
+set smtp_authenticators = 'gssapi:login'
 set from = "{email}@gmail.com"
 set realname = "{full name}"
 
