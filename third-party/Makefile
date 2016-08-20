@@ -22,49 +22,49 @@ repos:
 		"ftp.gwdg.de-suse"
 
 cdev: c
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 network: net
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 rubydev: ruby
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 pythondev: python
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 browsing: browser
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 osmgr: os
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 videos: video
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 docs: doc
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 development: dev
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 audios: audio
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 irccli: irc
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 jdk: java
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 godev: go
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 builds: build
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 email: mail
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
 
 db: database
-	sudo $(PKGMGR) install $(shell cat $+)
+	sudo $(PKGMGR) install -y $(shell cat $+)
