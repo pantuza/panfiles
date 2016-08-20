@@ -23,7 +23,8 @@ install: ${VIMRC}
 	install ${VIMRC} $(USER_HOME)/.$(VIMRC) -m 0644
 	# Download and install plugins
 	@echo -e "${BLUE}creating VIM directories:${END_COLOR}"
-	mkdir -pv $(USER_HOME)/.vim/{plugin,doc,spell,syntax}
+	mkdir -pv $(USER_HOME)/.vim/{plugin,doc,spell,syntax,colors}
+	install colors/pantuza.vim $(USER_HOME)/.vim/colors -m 0644
 	@echo -e "\n${BLUE}Downloading NERD tree plugin${END_COLOR}"
 	wget -O $(USER_HOME)/.vim/nerdtree.zip ${SRC_URL}${NERDTREE}
 	unzip $(USER_HOME)/.vim/nerdtree.zip -d $(USER_HOME)/.vim/
