@@ -39,9 +39,9 @@ install: ${VIMRC}
 	@echo -e "\n${BLUE}Downloading go.vim plugin${END_COLOR}"
 	wget -O $(USER_HOME)/.vim/syntax/go.vim ${SRC_URL}${GO_VIM}
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
-	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in clang --non-interactive
-	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in ctags --non-interactive
-	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in aspell aspell-pt_BR --non-interactive
+	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in -y llvm-clang
+	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in -y ctags
+	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in -y aspell aspell-pt_BR
 	@echo -e "\n${BLUE}Generating pt-BR dictionary to spell check${END_COLOR}"
 	/usr/bin/aspell -l pt_BR dump master > pt-br-word-list
 	vim -c "mkspell pt pt-br-word-list | q"
