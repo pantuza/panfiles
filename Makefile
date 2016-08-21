@@ -22,6 +22,8 @@ MYSQL_DIR := mysql
 NGINX_DIR := nginx
 UWSGI_DIR := uwsgi
 MUTT_DIR := mutt
+FISH_DIR := fish
+THIRD_PARTY := third-party
 
 
 # Colors to messages during execution
@@ -52,6 +54,8 @@ greetings: clear
 shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
 
+fish: ${FISH_DIR}/Makefile
+	make install -C ${FISH_DIR}
 
 versioning: ${GIT_DIR}/Makefile
 	make install -C ${GIT_DIR}
@@ -79,13 +83,16 @@ nginx: ${NGINX_DIR}/Makefile
 mail: ${MUTT_DIR}/muttrc
 	make install -C ${MUTT_DIR}
 
+deps: $(THIRD_PARTY)/Makefile
+	make install -C ${THIRD_PARTY}
+
 
 bye:
 	@echo -e "\n$(BROWN)open your mind, happy coding :D$(END_COLOR)\n"
 
+desktop: greetings fish versioning editor deps bye
 
 server: greetings shell versioning editor bye
-
 
 services: greetings mysqldb nginx uwsgi bye
 
