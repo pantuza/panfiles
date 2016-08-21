@@ -30,6 +30,7 @@ THIRD_PARTY := third-party
 BROWN=\e[0;33m
 BLUE=\e[1;34m
 END_COLOR=\e[0m
+RUBY_DIR := ruby
 
 
 .PHONY: install server nginx uwsgi
@@ -86,6 +87,8 @@ mail: ${MUTT_DIR}/muttrc
 deps: $(THIRD_PARTY)/Makefile
 	make install -C ${THIRD_PARTY}
 
+dev:
+	make install -C ${RUBY_DIR}
 
 bye:
 	@echo -e "\n$(BROWN)open your mind, happy coding :D$(END_COLOR)\n"
