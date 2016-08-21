@@ -68,3 +68,6 @@ email: mail
 
 db: database
 	sudo $(PKGMGR) install -y $(shell cat $+)
+
+osshell: shell
+	sudo $(PKGMGR) install -y $(shell cat $+)
