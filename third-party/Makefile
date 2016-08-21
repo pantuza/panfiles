@@ -27,6 +27,9 @@ cdev: c
 network: net
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
+cloud: virt
+	sudo $(PKGMGR) install -y $(shell cat $+)
+
 rubydev: ruby
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
