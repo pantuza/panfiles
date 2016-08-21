@@ -4,3 +4,4 @@ vm-install
 clusterssh
 docker
 docker-bash-completion
+docker-compose
