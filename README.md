@@ -9,14 +9,14 @@ Panfiles
 
 This project is basically my 'dotfiles'. The difference from others, I guess, is that it is entirely ruled by makefiles and shell scripts. So, when I install a new Linux machine it is just necessary to run ```make install``` and all of my environment is ready, configured, up and running. When the machine is a server I run ```make server```. It is all about automation!
 
-### What is included
+### What is included?
 
 The project has scripts to install and configure the following tools/services:
 
 - bash -------- bashrc, alias and bash helpers 
 - cuda -------- Makefile to install cuda development environment
 - git ----------- Installation and gitconfig template 
-- irc ----------- Install configuration files for irrsi irc client
+- irc ----------- Install configuration files for irssi irc client
 - js ------------ Javascript packages dependencies
 - make ------- Generic Makefile for C development 
 - mutt -------- Mutt mail client configuration files and signature
@@ -31,7 +31,8 @@ The project has scripts to install and configure the following tools/services:
 - third-party -- Lots of third part softwares to install separated by type (Ex: dev, os, net, virt)
 - uwsgi ------- Template files for uWSGI and installation script
 - vim ---------- Vim configuration files like vimrc, colors plugins and Makefile for installation
-- virt ---------- Scripts to install OpenVSwitch and bridge configuration
+- virt ---------- Scripts to install docker, OpenVSwitch and bridge configuration
+- fish ---------- Installs fish shell and Oh my fish script manager
 
 Almost all directories has its Makefile to control installation and configuration.
 
