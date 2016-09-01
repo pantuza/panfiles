@@ -175,6 +175,27 @@ cab wqA wqa
 
 
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS INSTALLATION
+"
+" Installed using vim-plug:
+" https://github.com/junegunn/vim-plug
+"
+
+call plug#begin()
+
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/c.vim'
+Plug 'Rip-Rip/clang_complete'
+Plug 'fatih/vim-go'
+
+call plug#end()
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS DEFINITIONS
 "
