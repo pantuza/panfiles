@@ -15,6 +15,8 @@ install: ${VIMRC}
 	install ${VIMRC} $(USER_HOME)/.$(VIMRC) -m 0644
 	@echo -e "${BLUE}creating VIM directories:${END_COLOR}"
 	mkdir -pv $(USER_HOME)/.vim/{plugin,doc,spell,syntax,colors}
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	install colors/pantuza.vim $(USER_HOME)/.vim/colors -m 0644
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
 	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in -y llvm-clang
