@@ -132,7 +132,7 @@ set pastetoggle=<F2>
 " Show when paste is on or off
 set showmode
 " Ever copy and paste from clipboard register
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 
 
