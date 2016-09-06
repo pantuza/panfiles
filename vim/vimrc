@@ -28,6 +28,10 @@ let g:tex_flavor='latex'
 " Load syntax for go files
 autocmd BufRead,BufNewFile *.go set filetype=go
 
+" Enable updating project tags after file writes
+autocmd BufWritePost * call tags#UpdateTags()
+
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
