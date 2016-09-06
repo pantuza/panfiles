@@ -54,7 +54,7 @@ set laststatus=2
 " Customized statusline. The function EditorModeParser changes the statusline
 " color depending on the editor mode. The rest of the statusline string is
 " the default statusline of VIM.
-set statusline='%{EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
+set statusline='%{statusline#EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P'
 
 " Text at tab label
 set guitablabel='%t\ %M'
@@ -340,7 +340,6 @@ autocmd BufRead,BufNewFile jsx setlocal ts=2 sts=2 sw=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS
 "
-
 "
 autocmd filetype python :abbreviate ipdb import ipdb; ipdb.set_trace(
 autocmd filetype javascript :abbreviate deb debugger;
@@ -352,22 +351,3 @@ autocmd filetype javascript :abbreviate deb debugger;
 " CUSTOM SYMBOLS
 "
 syn keyword pythonBoolean True False
-
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FUNCTIONS
-"
-
-" Function to parse the VIM modes. If in InsertMode the statusline color is
-" green. If in VisualMode the statusline color is red. Else, generally in 
-" NormalMode, the statusline color is blue
-function! EditorModeParser()
-    if mode() == 'i'
-        highlight StatusLine ctermfg=darkgreen ctermbg=black
-    elseif mode() == 'v'
-        highlight StatusLine ctermfg=red ctermbg=black
-    else
-        highlight StatusLine ctermfg=blue ctermbg=white
-    endif
-endfunction
