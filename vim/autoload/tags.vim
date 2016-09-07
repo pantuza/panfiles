@@ -17,7 +17,7 @@ function! tags#CreateTags()
        " TODO: Create function to check language specific path to compute tags
        let python_library_path = $VIRTUAL_ENV
 
-       let cmd = "ctags -R -f " . tagsfile . " " . cwd . " " . python_library_path
+       let cmd = "ctags -R -f " . tagsfile . " " . cwd . " " . python_library_path . " &"
        let result = system(cmd)
    endif
 endfunction
@@ -31,9 +31,8 @@ function! tags#DeleteTags(tagsfile, editedfile)
     let tagsfile = a:tagsfile
     let editedfile = a:editedfile
 
-    let cmd = "sed -i '/" . escape(editedfile, "/") . "/d' " . tagsfile
-    echom cmd
-    "let result = system(cmd)
+    let cmd = "sed -i '' '/" . escape(editedfile, "/") . "/d' " . tagsfile
+    let result = system(cmd)
 endfunction
 
 
@@ -48,6 +47,6 @@ function! tags#UpdateTags()
    let tagsfile = cwd . "/tags"
    call tags#DeleteTags(tagsfile, editedfile)
 
-   let cmd = "ctags " . editedfile . " --append " . tagsfile
+   let cmd = "ctags " . "--append " . tagsfile . " " . editedfile . " &"
    let result = system(cmd)
 endfunction
