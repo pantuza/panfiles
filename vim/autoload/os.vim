@@ -6,7 +6,12 @@
 "
 function! os#GetOS()
 
+    if has("win64") || has("win32")
+        return "Windows"
+    endif
+
     return system("uname")
+
 endfunction
 
 
@@ -27,4 +32,14 @@ endfunction
 function! os#IsLinux()
 
     return os#GetOS() == "Linux"
+endfunction
+
+
+
+"""
+" Checks if OS is Windows
+"
+function! os#IsWindows()
+
+    return os#GetOS() == "Windows"
 endfunction
