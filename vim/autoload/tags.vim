@@ -31,7 +31,12 @@ function! tags#DeleteTags(tagsfile, editedfile)
     let tagsfile = a:tagsfile
     let editedfile = a:editedfile
 
-    let cmd = "sed -i '' '/" . escape(editedfile, "/") . "/d' " . tagsfile
+    let sedParamCompatibility = ""
+    if os#IsOSX()
+        let sedParamCompatibility = "''"
+    endif
+
+    let cmd = "sed -i " . sedParamCompatibility . " '/" . escape(editedfile, "/") . "/d' " . tagsfile
     let result = system(cmd)
 endfunction
 
