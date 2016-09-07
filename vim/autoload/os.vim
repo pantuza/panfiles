@@ -10,7 +10,7 @@ function! os#GetOS()
         return "Windows"
     endif
 
-    return system("uname")
+    return substitute(system("uname"), "\n", "", "")
 
 endfunction
 
