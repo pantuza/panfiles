@@ -1,8 +1,24 @@
 
 """
-" This function is responsible of creating and updating tags files
+" This functions are responsible of creating and updating tags files
 " using ctags.
 "
+
+
+"
+" Set ctags variables for languages
+"
+function! tags#SetVariables()
+
+    if &filetype == "python"
+        echo "python"
+        let s:ctagsparams = "--python-kinds=-iv --exclude=build --exclude=dist"
+        let s:useTags = 1
+    else
+        echo "Not python boy"
+        let s:useTags = 0
+    endif
+endfunction
 
 
 "
@@ -10,16 +26,21 @@
 "
 function! tags#CreateTags()
 
-   let cwd = getcwd()
-   let tagsfile = cwd . "/tags"
+    call tags#SetVariables()
+    if !s:useTags
+        return
+    endif
 
-   if !filereadable(tagsfile)
+    let cwd = getcwd()
+    let tagsfile = cwd . "/tags"
+
+    if !filereadable(tagsfile)
        " TODO: Create function to check language specific path to compute tags
        let python_library_path = $VIRTUAL_ENV
 
-       let cmd = "ctags -R -f " . tagsfile . " " . cwd . " " . python_library_path . " &"
+       let cmd = "ctags -R " . s:ctagsparams . " -f " . tagsfile . " " . cwd . " " . python_library_path . " &"
        let result = system(cmd)
-   endif
+    endif
 endfunction
 
 
@@ -46,12 +67,17 @@ endfunction
 "
 function! tags#UpdateTags()
 
-   let editedfile = expand('%:p')
-   let cwd = getcwd()
+    call tags#SetVariables()
+    if !s:useTags
+        return
+    endif
 
-   let tagsfile = cwd . "/tags"
-   call tags#DeleteTags(tagsfile, editedfile)
+    let editedfile = expand('%:p')
+    let cwd = getcwd()
 
-   let cmd = "ctags " . "--append " . tagsfile . " " . editedfile . " &"
-   let result = system(cmd)
+    let tagsfile = cwd . "/tags"
+    call tags#DeleteTags(tagsfile, editedfile)
+
+    let cmd = "ctags " . "--append " . tagsfile . " " . editedfile . " &"
+    let result = system(cmd)
 endfunction
