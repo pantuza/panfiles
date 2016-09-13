@@ -15,9 +15,13 @@ let g:tagboy_is_in_da_house = 1
 " }}}
 
 
-function! TagBoyLoad()
 
-    echom "Hey baddy"
-endfunction
+" {{{ Configure the tagboy plugin
 
-autocmd FileType * call TagBoyLoad()
+" Create tags for project if it does not exists during start up
+autocmd VimEnter * call tags#CreateTags()
+
+" Enable updating project tags after file writes
+autocmd BufWritePost * call tags#UpdateTags()
+
+" }}}
