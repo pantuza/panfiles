@@ -11,11 +11,9 @@
 function! tags#SetVariables()
 
     if &filetype == "python"
-        echo "python"
         let s:ctagsparams = "--python-kinds=-iv --exclude=build --exclude=dist"
         let s:useTags = 1
     else
-        echo "Not python boy"
         let s:useTags = 0
     endif
 endfunction
