@@ -106,7 +106,7 @@ highlight PMenuSBar ctermbg=DarkGray
 
 " Search colors
 highlight Search ctermfg=Black ctermbg=Gray
-highlight IncSearch ctermfg=Black ctermbg=Gray
+highlight IncSearch ctermfg=Black ctermbg=Yellow term=NONE cterm=NONE gui=NONE
 
 " Visual selection color
 highlight Visual ctermbg=236 ctermfg=NONE cterm=NONE
