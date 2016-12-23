@@ -16,5 +16,6 @@ install: config.fish
 	@chsh --shell $(shell which fish)
 	@curl -L --create-dirs -o ~/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
 	@echo "rvm default" >> ~/.config/fish/config.fish
+	@install functions/*.fish ~/.config/fish/functions/
 	@curl -L http://get.oh-my.fish | fish
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
