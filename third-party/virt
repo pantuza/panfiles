@@ -5,3 +5,4 @@ clusterssh
 docker
 docker-bash-completion
 docker-compose
+docker-swarm
