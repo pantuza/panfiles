@@ -74,3 +74,6 @@ db: database
 
 osshell: shell
 	sudo $(PKGMGR) install -y $(shell cat $+)
+
+images: image
+	sudo $(PKGMGR) install -y $(shell cat $+)
