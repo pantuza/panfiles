@@ -342,6 +342,7 @@ autocmd BufRead,BufNewFile jsx setlocal ts=2 sts=2 sw=2
 "
 autocmd filetype python :abbreviate ipdb import ipdb; ipdb.set_trace(
 autocmd filetype javascript :abbreviate deb debugger;
+autocmd filetype c :abbreviate pri <F2>printf("\n");<F2>
 
 
 
