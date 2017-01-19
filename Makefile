@@ -10,10 +10,10 @@ USER_NAME := $(shell whoami)
 
 
 # get the user home directory
-#USER_HOME := $(shell getent passwd ${USER_NAME} | cut -d: -f6)
 USER_HOME := $(shell echo ${HOME})
 
 
+# Directories
 BASH_DIR := bash
 GIT_DIR := git
 VIM_DIR := vim
@@ -52,11 +52,21 @@ greetings: clear
 	@echo -e "Setting up the development environment$(END_COLOR)\n"
 
 
+clear:
+	clear
+
+
+bye:
+	@echo -e "\n$(BROWN)open your mind, happy coding :D$(END_COLOR)\n"
+
+
 shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
 
+
 fish: ${FISH_DIR}/Makefile
 	make install -C ${FISH_DIR}
+
 
 versioning: ${GIT_DIR}/Makefile
 	make install -C ${GIT_DIR}
@@ -77,6 +87,7 @@ mysqldb: ${MYSQL_DIR}/Makefile
 uwsgi: ${UWSGI_DIR}/Makefile
 	make install -C ${UWSGI_DIR}
 
+
 nginx: ${NGINX_DIR}/Makefile
 	make install -C ${NGINX_DIR}
 
@@ -84,20 +95,21 @@ nginx: ${NGINX_DIR}/Makefile
 mail: ${MUTT_DIR}/muttrc
 	make install -C ${MUTT_DIR}
 
+
 deps: $(THIRD_PARTY)/Makefile
 	make install -C ${THIRD_PARTY}
 
 dev:
 	make install -C ${RUBY_DIR}
 
-bye:
-	@echo -e "\n$(BROWN)open your mind, happy coding :D$(END_COLOR)\n"
 
+# Install and configure a desktop machine
 desktop: greetings fish versioning editor deps bye
 
+
+# Install and configure a server machine
 server: greetings shell versioning editor bye
 
-services: greetings mysqldb nginx uwsgi bye
 
-clear:
-	clear
+# Install basic services on a machine
+services: greetings mysqldb nginx uwsgi bye
