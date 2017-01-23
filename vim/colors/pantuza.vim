@@ -97,6 +97,10 @@ highlight SpecialKey ctermfg=white cterm=bold
 " Colors for import reserved keys
 highlight Include ctermfg=DarkMagenta cterm=NONE
 
+" Storage classes like static, const, volatile, register
+highlight StorageClass ctermfg=blue ctermbg=NONE cterm=NONE
+
+
 
 " Completion menu colors
 highlight PMenu ctermfg=Black ctermbg=LightYellow
