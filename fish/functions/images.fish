@@ -3,7 +3,7 @@ function convert2gif --description "Convert images to a gif using ImageMagic"
 
     set --local args_length (count $argv)
 
-    switch (count $argv)
+    switch ($args_length)
     case 1
         set --local output_file $argv[1]
 
