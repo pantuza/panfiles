@@ -62,3 +62,16 @@ function net-ipv4-sniff --description "Sniffs IPv4 traffic using tcpdump"
         echo "Usage: net-ipv4-sniff iface"
     end
 end
+
+
+function net-ipv6-sniff --description "Sniffs IPv6 traffic using tcpdump"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 1
+
+        sudo tcpdump -tn -XA -i $argv[1] ip6
+    else
+        echo "Usage: net-ipv6-sniff iface"
+    end
+end
