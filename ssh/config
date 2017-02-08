@@ -5,3 +5,6 @@ Host {SERVER_NAME}
     LocalForward {LOCAL_PORT_NUMBER} 127.0.0.1:{REMOTE_PORT_NUMBER}
     IdentitiesOnly yes
     IdentityFile ~/.ssh/{PUBLIC_KEY_FILE}.pub
+
+Host *
+    ServerAliveInterval 60
