@@ -87,3 +87,9 @@ function net-host-scan --description "Scan a host using nmap"
         echo "Usage: net-host-scan hostname_or_address"
     end
 end
+
+
+function net-tcp-listening --description "List all ports on listening state"
+
+    netstat -antl -p tcp
+end
