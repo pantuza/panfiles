@@ -75,3 +75,15 @@ function net-ipv6-sniff --description "Sniffs IPv6 traffic using tcpdump"
         echo "Usage: net-ipv6-sniff iface"
     end
 end
+
+
+function net-host-scan --description "Scan a host using nmap"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 1
+        sudo nmap -PN $argv[1]
+    else
+        echo "Usage: net-host-scan hostname_or_address"
+    end
+end
