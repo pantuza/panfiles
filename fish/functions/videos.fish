@@ -10,3 +10,30 @@ function video-webcam --description "Open Webcam using MPlayer"
         echo "Example: video-webcam /dev/video0"
     end
 end
+
+
+function video-cameracast --description "Record webcam cast using ffmpeg"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 1
+        ffmpeg \
+            -video_size 800x600 \
+            -framerate 30 \
+            -f video4linux2 \
+            -i /dev/video0 \
+            -f alsa \
+            -ac 2 \
+            -i hw:0 \
+            -acodec pcm_s16le \
+            -vcodec libx264 \
+            -qp 0 \
+            -preset ultrafast \
+            -crf 0 \
+            -threads 2 \
+            $argv[1]
+    else
+        echo "Usage: video-cameracast output_file"
+        echo "Example: video-cameracast videocast.mkv"
+    end
+end
