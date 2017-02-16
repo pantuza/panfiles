@@ -12,7 +12,7 @@ function video-webcam --description "Open Webcam using MPlayer"
 end
 
 
-function video-cameracast --description "Record webcam cast using ffmpeg"
+function video-cameracast --description "Record videocast using ffmpeg"
 
     set --local argc (count $argv)
 
@@ -30,7 +30,7 @@ function video-cameracast --description "Record webcam cast using ffmpeg"
             -qp 0 \
             -preset ultrafast \
             -crf 0 \
-            -threads 2 \
+            -threads 0 \
             $argv[1]
     else
         echo "Usage: video-cameracast output_file"
