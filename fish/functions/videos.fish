@@ -37,3 +37,25 @@ function video-cameracast --description "Record webcam cast using ffmpeg"
         echo "Example: video-cameracast videocast.mkv"
     end
 end
+
+
+function video-screencast --description "Record screencast using ffmpeg"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 1
+        ffmpeg \
+            -f x11grab \
+            -r 30 \
+            -s 1600x900 \
+            -i :0.0 \
+            -vcodec libx264 \
+            -preset ultrafast \
+            -crf 0 \
+            -threads 0 \
+            $argv[1]
+    else
+        echo "Usage: video-screencast output_file"
+        echo "Example: video-screencast screencast.mkv"
+    end
+end
