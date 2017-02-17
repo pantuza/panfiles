@@ -59,3 +59,23 @@ function video-screencast --description "Record screencast using ffmpeg"
         echo "Example: video-screencast screencast.mkv"
     end
 end
+
+
+function video-bind --description "Binds a video with a audio using ffmpeg"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 3
+        ffmpeg \
+            -i $argv[1] \
+            -i $argv[2] \
+            -map 0:0 \
+            -map 1:0 \
+            -acodec copy \
+            -vcodec copy \
+            $argv[3]
+    else
+        echo "Usage: video-bind video_file audio_file resulted_file"
+        echo "Example: video-bind video.mkv audio.flac edited.mkv"
+    end
+end
