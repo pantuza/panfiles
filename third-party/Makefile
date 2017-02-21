@@ -12,7 +12,7 @@ all: install
 
 
 install: repos cdev network rubydev pythondev browsing osmgr videos docs \
-	development audio irccli jdk godev
+	development audio irccli jdk godev images filesystem
 
 repos:
 	sudo zypper addrepo --refresh \
@@ -76,4 +76,7 @@ osshell: shell
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
 images: image
+	sudo $(PKGMGR) install -y $(shell cat $+)
+
+filesystem: fs
 	sudo $(PKGMGR) install -y $(shell cat $+)
