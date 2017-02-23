@@ -5,7 +5,7 @@
 # Package Manager
 PKGMGR := zypper
 
-PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_13.2/"
+PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Tumbleweed/"
 
 
 all: install
