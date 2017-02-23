@@ -15,11 +15,8 @@ install: repos cdev network rubydev pythondev browsing osmgr videos docs \
 	development audio irccli jdk godev images filesystem
 
 repos:
-	sudo zypper addrepo --refresh \
-		--check \
-		--name "Packman Repository" \
-		$(PACKMAN_REPO) \
-		"ftp.gwdg.de-suse"
+	sudo zypper addrepo --refresh --check --name "Packman" $(PACKMAN_REPO)
+	sudo zypper refresh --gpg-auto-import-keys
 
 cdev: c
 	sudo $(PKGMGR) install -y $(shell cat $+)
