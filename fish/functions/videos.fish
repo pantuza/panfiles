@@ -21,9 +21,11 @@ function video-cameracast --description "Record videocast using ffmpeg"
             -video_size 800x600 \
             -framerate 30 \
             -f video4linux2 \
+            -thread_queue_size 512 \
             -i /dev/video0 \
             -f alsa \
             -ac 2 \
+            -thread_queue_size 512 \
             -i hw:0 \
             -acodec pcm_s16le \
             -vcodec libx264 \
