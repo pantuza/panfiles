@@ -12,3 +12,5 @@ reaver
 msmtp
 arping2
 mtr
+netperf
+bmon
