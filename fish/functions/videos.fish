@@ -18,6 +18,7 @@ function video-cameracast --description "Record videocast using ffmpeg"
 
     if test $argc -eq 1
         ffmpeg \
+            -y \
             -video_size 800x600 \
             -framerate 30 \
             -f video4linux2 \
