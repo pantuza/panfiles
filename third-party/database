@@ -1,4 +1,5 @@
 postgresql
 postgresql-server
+postgresql-devel
 mariadb
 redis
