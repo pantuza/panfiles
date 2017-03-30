@@ -189,6 +189,7 @@ Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/c.vim'
 Plug 'Rip-Rip/clang_complete'
 Plug 'fatih/vim-go'
+Plug 'w0rp/ale'
 
 call plug#end()
 
