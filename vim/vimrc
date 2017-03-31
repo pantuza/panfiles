@@ -236,6 +236,10 @@ let g:clang_close_preview = 1
 " Instead of use the clang tool, uses clang library (faster)
 let g:clang_use_library = 1
 
+" Disable verbose highlights on code from ale plugin
+let g:ale_set_highlights = 0
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " KEY MAPPING
