@@ -10,7 +10,7 @@ PKG_MANAGER := $(shell which zypper)
 
 install: configure
 	@echo "Installing tmux"
-	@sudo $(PKG_MANAGER) -y install tmux
+	@sudo $(PKG_MANAGER) install -y tmux
 
 configure:
 	@echo "Configuring tmux"
