@@ -1,0 +1,6 @@
+#
+# My personal configurations
+#
+
+# execute network manager applet during login
+exec --no-startup-id nm-applet
