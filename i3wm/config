@@ -4,3 +4,6 @@
 
 # execute network manager applet during login
 exec --no-startup-id nm-applet
+
+# Sets keyboard layout
+exec --no-startup-id setxkbmap -model abnt2 -layout br
