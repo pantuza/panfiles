@@ -9,3 +9,4 @@ libtool
 gdb
 strace
 splint
+gengetopt
