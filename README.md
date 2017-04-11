@@ -33,6 +33,7 @@ The project has scripts to install and configure the following tools/services:
 - vim ---------- Vim configuration files like vimrc, colors plugins and Makefile for installation
 - virt ---------- Scripts to install docker, OpenVSwitch and bridge configuration
 - fish ---------- Installs fish shell and Oh my fish script manager
+- i3wm ---------- Configures i3 window manager
 
 Almost all directories has its Makefile to control installation and configuration.
 
