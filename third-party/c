@@ -10,3 +10,4 @@ gdb
 strace
 splint
 gengetopt
+cppcheck
