@@ -17,5 +17,6 @@ IRC_CFG := config
 install: $(IRC_CFG)
 	@echo -e "\n${BROWN}# IRC INSTALL${END_COLOR}"
 	@mkdir -pv $(HOME)/$(IRC_DIR)
+	@mkdir -pv $(HOME)/$(IRC_DIR)/scripts/autorun/
 	install -m 0644 $(IRC_CFG) $(HOME)/$(IRC_DIR)/$(IRC_CFG)
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
