@@ -16,6 +16,6 @@ IRC_CFG := config
 
 install: $(IRC_CFG)
 	@echo -e "\n${BROWN}# IRC INSTALL${END_COLOR}"
-	@mkdir -pv $(USER_HOME)/$(IRC_DIR)
-	install $(IRC_CFG) $(USER_HOME)/$(IRC_DIR)/$(IRC_CFG) -m 0644
+	@mkdir -pv $(HOME)/$(IRC_DIR)
+	install -m 0644 $(IRC_CFG) $(HOME)/$(IRC_DIR)/$(IRC_CFG)
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
