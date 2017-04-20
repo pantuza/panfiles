@@ -25,4 +25,5 @@ install: $(IRC_CFG)
 	wget $(SCRIPTS_REPO)/nickcolor.pl -P $(IRC_DIR)/scripts/autorun/
 	wget $(SCRIPTS_REPO)/screen_away.pl -P $(IRC_DIR)/scripts/autorun/
 	wget $(SCRIPTS_REPO)/highlite.pl -P $(IRC_DIR)/scripts/autorun/
+	wget $(SCRIPTS_REPO)/nm2.pl -P $(IRC_DIR)/scripts/autorun/
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
