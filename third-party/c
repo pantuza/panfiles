@@ -9,3 +9,5 @@ libtool
 gdb
 strace
 splint
+gengetopt
+cppcheck
