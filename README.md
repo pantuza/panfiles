@@ -14,7 +14,6 @@ This project is basically my 'dotfiles'. The difference from others, I guess, is
 The project has scripts to install and configure the following tools/services:
 
 - bash -------- bashrc, alias and bash helpers 
-- cuda -------- Makefile to install cuda development environment
 - git ----------- Installation and gitconfig template 
 - irc ----------- Install configuration files for irssi irc client
 - js ------------ Javascript packages dependencies
