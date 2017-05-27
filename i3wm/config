@@ -10,3 +10,15 @@ exec --no-startup-id setxkbmap -model abnt2 -layout br
 
 # Set keystroke speed and rate
 exec --no-startup-id xset r rate 200 30
+
+
+#
+# Pulse Audio controls for volume key bindings
+#
+
+# Increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+# Decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+# Mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
