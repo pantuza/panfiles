@@ -8,7 +8,7 @@ SHELL := /bin/bash
 .PHONY := install
 
 
-install: muttrc signature password
+install: muttrc signature passwords
 	@echo -e "\n${BROWN}# MUTT INSTALL${END_COLOR}"
 	@echo -e "${BLUE}placing $< file at '$(USER_HOME)/.$<'${END_COLOR}"
 	install $< $(USER_HOME)/.$<
