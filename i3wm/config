@@ -2,6 +2,9 @@
 # My personal configurations
 #
 
+# Set workspaces background
+exec --no-startup-id feh --bg-scale /home/pantuza/dev/panfiles/i3wm/i3_bg.jpg
+
 # execute network manager applet during login
 exec --no-startup-id nm-applet
 
