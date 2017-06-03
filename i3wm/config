@@ -2,6 +2,9 @@
 # My personal configurations
 #
 
+# Set workspaces background
+exec --no-startup-id feh --bg-scale /home/pantuza/dev/panfiles/i3wm/i3_bg.jpg
+
 # execute network manager applet during login
 exec --no-startup-id nm-applet
 
@@ -10,3 +13,25 @@ exec --no-startup-id setxkbmap -model abnt2 -layout br
 
 # Set keystroke speed and rate
 exec --no-startup-id xset r rate 200 30
+
+
+#
+# Pulse Audio controls for volume key bindings
+#
+
+# Increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+# Decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+# Mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+
+#
+# Sreen brightness controls with xbacklight
+#
+
+# Increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 50
+# Decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 50
