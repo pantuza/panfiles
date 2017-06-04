@@ -77,3 +77,6 @@ images: image
 
 filesystem: fs
 	sudo $(PKGMGR) install -y $(shell cat $+)
+
+mathematics: math
+	sudo $(PKGMGR) install -y $(shell cat $+)
