@@ -8,3 +8,6 @@ eval (python -m virtualfish compat_aliases auto_activation)
 
 # Inicialize Pyenv
 pyenv-init
+
+# Exports tty to GPG
+set --export GPG_TTY (tty)
