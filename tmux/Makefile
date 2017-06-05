@@ -13,5 +13,7 @@ install: configure
 	@sudo $(PKG_MANAGER) install -y tmux
 
 configure:
-	@echo "Configuring tmux"
+	@echo "Installing Tmux plugin manager TPM.."
+	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	@echo "Configuring tmux.."
 	@install -m 0644 $(CONF_FILE) $(HOME)/.$(CONF_FILE)
