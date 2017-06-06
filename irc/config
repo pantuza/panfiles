@@ -16,7 +16,7 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
     nick = "pantuza";
-    autosendcmd = "/msg nickserv identify {PASSWORD} ;wait 2000";
+    autosendcmd = "/msg nickserv identify pantuza {PASSWORD} ;wait 5000";
   };
 };
 
