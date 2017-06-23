@@ -77,6 +77,8 @@ PANFILES_DIR="${HOME_DEV}/panfiles";
 
 THIRDPARTY_DIR="${PANFILES_DIR}/third-party"
 
+PROFILES_DIR="/etc/profile.d/"
+
 # Projects
 GITHUB_SSH="git@github.com";
 PANFILES_REPO="${GITHUB_SSH}:${NAME}/panfiles.git";
