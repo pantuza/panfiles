@@ -45,4 +45,4 @@ echo "inside git home directory. Set your remote git server at"
 echo "client machine using the ssh protocol format:"
 echo "       git@domain-name.com:/home/git/repo-name.git"
 echo
-echo "Push thing to it and happy hacking :)"
+echo "Push things to it and happy hacking :)"
