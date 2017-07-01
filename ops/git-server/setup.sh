@@ -20,6 +20,9 @@ sudo passwd git
 # Add git user to AllowUsers in sshd_config
 sudo sed -i '/AllowUsers/ s/$/ git/' /etc/ssh/sshd_config
 
+# Restart sshd server
+sudo systemctl restart sshd.service
+
 # Creates ssh directory for user git
 sudo mkdir -p /home/git/.ssh/
 
