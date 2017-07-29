@@ -1,6 +1,8 @@
 [user]
     name = {NAME}
     email = {EMAIL}
+[branch]
+    autosetuprebase = always
 [color]
     branch = auto
     diff = auto
