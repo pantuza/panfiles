@@ -28,3 +28,5 @@
     df = diff
     lg = log -p
     who = shortlog -s --
+[core]
+	editor = /usr/bin/vim
