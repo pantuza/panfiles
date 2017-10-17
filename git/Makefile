@@ -12,5 +12,5 @@ GIT_CFG := .gitconfig
 install: gitconfig
 	@echo -e "\n${BROWN}# GIT INSTALL${END_COLOR}"
 	@echo -e "${BLUE}placing gitconfig file at '$(USER_HOME)/$(GIT_CFG)'${END_COLOR}"
-	install gitconfig $(USER_HOME)/$(GIT_CFG) -m 0644
+	install -m 0644 gitconfig $(USER_HOME)/$(GIT_CFG)
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
