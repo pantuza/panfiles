@@ -42,7 +42,7 @@ highlight TabLine ctermbg=33 ctermfg=black
 highlight TabLineSel ctermfg=232 ctermbg=227
 
 " Tab label colors
-highlight Title ctermfg=232 ctermbg=232
+highlight Title ctermfg=Yellow ctermbg=232 gui=bold
 
 
 
