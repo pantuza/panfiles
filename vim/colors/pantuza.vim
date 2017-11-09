@@ -47,6 +47,13 @@ highlight Title ctermfg=Yellow ctermbg=232 gui=bold
 
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CUSTOM SYMBOLS
+"
+syn keyword pythonBoolean True False
+
+
+
 " C Code
 
 " Primitive types
@@ -99,6 +106,9 @@ highlight Include ctermfg=DarkMagenta cterm=NONE
 
 " Storage classes like static, const, volatile, register
 highlight StorageClass ctermfg=blue ctermbg=NONE cterm=NONE
+
+" Macro definitions like define
+highlight Macro ctermfg=DarkMagenta ctermbg=black
 
 
 
