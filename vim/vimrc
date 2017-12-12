@@ -190,6 +190,7 @@ Plug 'vim-scripts/c.vim'
 Plug 'Rip-Rip/clang_complete'
 Plug 'fatih/vim-go'
 Plug 'w0rp/ale'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
