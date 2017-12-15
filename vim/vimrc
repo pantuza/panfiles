@@ -118,6 +118,8 @@ set encoding=utf8
 
 " Sets auto indentation (disable when copying from clipboard)
 set autoindent
+" Respects code syntax style (specially C code)
+set smartindent
 
 
 
