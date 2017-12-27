@@ -205,6 +205,8 @@ call plug#end()
 
 " Maps the nerdtree plugin toggle
 map <F4> :NERDTreeToggle<cr>
+let NERDTreeMinimalUI=1
+
 
 " make NERDTree synced in all tabs
 autocmd VimEnter * NERDTree
