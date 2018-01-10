@@ -17,6 +17,8 @@ exec --no-startup-id xset r rate 200 30
 # Sets scroll behavior
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 HorizTwoFingerScroll=1 VertTwoFingerScroll=1 VertScrollDelta=-112
 
+# Loads the ssh keys on the user session
+exec --no-startup-id ssh-add
 
 #
 # Pulse Audio controls for volume key bindings
