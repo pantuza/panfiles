@@ -40,3 +40,15 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 50
 # Decrease screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 50
+
+
+#
+# Auto load softwares
+#
+# Auto open konsole at workspace 2
+assign [class="^konsole$"] 2
+exec --no-startup-id konsole
+
+# Auto open chrome at workspace 3
+assign [class="^Google-chrome$"] 3
+exec --no-startup-id google-chrome
