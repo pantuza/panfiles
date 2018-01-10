@@ -11,8 +11,11 @@ exec --no-startup-id nm-applet
 # Sets keyboard layout
 exec --no-startup-id setxkbmap -model abnt2 -layout br
 
-# Set keystroke speed and rate
+# Sets keystroke speed and rate
 exec --no-startup-id xset r rate 200 30
+
+# Sets scroll behavior
+exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 HorizTwoFingerScroll=1 VertTwoFingerScroll=1 VertScrollDelta=-112
 
 
 #
