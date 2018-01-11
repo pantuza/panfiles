@@ -12,7 +12,7 @@ all: install
 
 
 install: repos cdev network rubydev pythondev browsing osmgr videos docs \
-	development audio irccli jdk godev images filesystem
+	development audio irccli jdk godev images filesystem security
 
 repos:
 	sudo zypper addrepo --refresh --check --name "Packman" $(PACKMAN_REPO)
@@ -79,4 +79,7 @@ filesystem: fs
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
 mathematics: math
+	sudo $(PKGMGR) install -y $(shell cat $+)
+
+security: sec
 	sudo $(PKGMGR) install -y $(shell cat $+)
