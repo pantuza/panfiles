@@ -193,6 +193,7 @@ Plug 'Rip-Rip/clang_complete'
 Plug 'fatih/vim-go'
 Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'dag/vim-fish'
 
 call plug#end()
 
