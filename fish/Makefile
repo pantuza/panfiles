@@ -18,4 +18,9 @@ install: config.fish
 	@echo "rvm default" >> ~/.config/fish/config.fish
 	@install functions/*.fish ~/.config/fish/functions/
 	@curl -L http://get.oh-my.fish | fish
+	@omf install fishbone
+	@omf install battery
+	@omf install await
+	@omf install rvm
+	@omf install weather
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
