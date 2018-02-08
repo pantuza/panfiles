@@ -23,4 +23,10 @@ install: config.fish
 	@omf install await
 	@omf install rvm
 	@omf install weather
+	@omf install grc
+ifeq ($(uname),Darwin)
+	$(shell which fish) --command "set --universal grcplugin_ls -ilhaG"
+else
+	$(shell which fish) --command "set --universal grcplugin_ls -ilha --color"
+endif
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
