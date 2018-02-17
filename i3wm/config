@@ -210,3 +210,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 50
 
 # Change the exit behavior
 bindsym $mod+Shift+e exec i3session save && exit
+
+
+# move current workspace between monitors
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+l move workspace to output right
