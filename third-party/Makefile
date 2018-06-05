@@ -27,6 +27,8 @@ network: net
 cloud: virt
 	sudo $(PKGMGR) install -y $(shell cat $+)
 	sudo pip install docker-compose
+	sudo systemctl enable docker.service
+	sudo systemctl start docker.service
 
 rubydev: ruby
 	sudo $(PKGMGR) install -y $(shell cat $+)
