@@ -12,7 +12,7 @@ all: install
 
 
 install: repos cdev network rubydev pythondev browsing osmgr videos docs \
-	development audio irccli jdk godev images filesystem security
+	development audio irccli jdk godev images filesystem security cloud
 
 repos:
 	sudo zypper addrepo --refresh --check --name "Packman" $(PACKMAN_REPO)
