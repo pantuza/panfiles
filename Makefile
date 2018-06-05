@@ -23,6 +23,7 @@ NGINX_DIR := nginx
 UWSGI_DIR := uwsgi
 MUTT_DIR := mutt
 FISH_DIR := fish
+TMUX_DIR := tmux
 THIRD_PARTY := third-party
 
 
@@ -33,7 +34,7 @@ END_COLOR=\e[0m
 RUBY_DIR := ruby
 
 
-.PHONY: install server nginx uwsgi
+.PHONY: install server nginx uwsgi fish
 
 
 # make variables public to other make files
@@ -66,6 +67,10 @@ shell: ${BASH_DIR}/Makefile
 
 fish: ${FISH_DIR}/Makefile
 	make install -C ${FISH_DIR}
+
+
+terminal: ${TMUX_DIR}/Makefile
+	make install -C ${TMUX_DIR}
 
 
 versioning: ${GIT_DIR}/Makefile
@@ -104,7 +109,7 @@ dev:
 
 
 # Install and configure a desktop machine
-desktop: greetings fish versioning editor deps bye
+desktop: greetings fish terminal versioning editor deps bye
 
 
 # Install and configure a server machine
