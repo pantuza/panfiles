@@ -9,3 +9,6 @@ node_modules
 
 # cuda rpm file
 *.rpm
+
+# aspell files
+*word-list
