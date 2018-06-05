@@ -1,6 +1,4 @@
 ffmpeg
-mplayer
+MPlayer
 vlc
-cinelerra
-openshot
-pitivi
+openshot-qt
