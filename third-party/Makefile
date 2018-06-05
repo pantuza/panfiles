@@ -5,7 +5,7 @@
 # Package Manager
 PKGMGR := zypper
 
-PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Tumbleweed/"
+PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Tumbleweed/packman.repo"
 
 
 all: install
@@ -16,7 +16,7 @@ install: repos cdev network rubydev pythondev browsing osmgr videos docs \
 
 repos:
 	sudo zypper addrepo --refresh --check --name "Packman" $(PACKMAN_REPO)
-	sudo zypper refresh --gpg-auto-import-keys
+	sudo zypper --gpg-auto-import-keys refresh
 
 cdev: c
 	sudo $(PKGMGR) install -y $(shell cat $+)
