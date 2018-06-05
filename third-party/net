@@ -4,7 +4,6 @@ iptraf
 nmap
 ncat
 nping
-zenmap
 whois
 lynx
 iperf
@@ -16,4 +15,3 @@ mtr
 netperf
 bmon
 wrk
-gns3
