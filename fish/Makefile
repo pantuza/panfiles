@@ -3,6 +3,8 @@
 # defines the shell to the make application
 SHELL := /bin/bash
 
+CHSH := $(shell which chsh)
+
 .PHONY := install
 
 
@@ -12,18 +14,18 @@ install: config.fish
 	@mkdir -vp ${HOME}/.config/fish
 	@install config.fish ${HOME}/.config/fish/ -m 0644
 	@make -C ../third-party/ python
-	@sudo pip install virtualfish
-	@chsh --shell "$(shell which fish)"
+	@${CHSH} --shell "$(shell which fish)"
+	@make -C ../ruby install
 	@curl -L --create-dirs -o ~/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
 	@echo "rvm default" >> ~/.config/fish/config.fish
 	@install functions/*.fish ~/.config/fish/functions/
-	@curl -L http://get.oh-my.fish | fish
-	@omf install fishbone
-	@omf install battery
-	@omf install await
-	@omf install rvm
-	@omf install weather
-	@omf install grc
+	@curl -L http://get.oh-my.fish | fish || true
+	@fish --command "omf install fishbone"
+	@fish --command "omf install battery"
+	@fish --command "omf install await"
+	@fish --command "omf install rvm"
+	@fish --command "omf install weather"
+	@fish --command "omf install grc"
 ifeq ($(uname),Darwin)
 	$(shell which fish) --command "set --universal grcplugin_ls -ilhaG"
 else
