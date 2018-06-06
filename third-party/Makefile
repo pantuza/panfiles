@@ -27,6 +27,7 @@ network: net
 cloud: virt
 	sudo $(PKGMGR) install -y $(shell cat $+)
 	sudo pip install docker-compose
+	sudo usermod --append --groups docker ${USER}
 	sudo systemctl enable docker.service
 	sudo systemctl start docker.service
 
