@@ -18,6 +18,7 @@ install: ${VIMRC}
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	install colors/pantuza.vim $(HOME)/.vim/colors -m 0644
+	cp -rvf autoload/* $(HOME)/.vim/autoload/
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
 	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in -y llvm-clang
 	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in -y ctags
