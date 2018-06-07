@@ -78,6 +78,9 @@ set list
 autocmd InsertLeave,CursorHold,CursorHoldI,FileWritePost,FileChangedShell * :wa
 
 
+" Ignored files
+set wildignore+=*.pyc,*.pyo
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -207,7 +210,7 @@ call plug#end()
 " Maps the nerdtree plugin toggle
 map <F4> :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
-
+let NERDTreeRespectWildIgnore=1
 
 " make NERDTree synced in all tabs
 autocmd VimEnter * NERDTree
