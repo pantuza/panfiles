@@ -332,6 +332,9 @@ autocmd filetype c map <C-F5> <ESC>:w\|!clear; make<CR>
 " run make for c++ files
 autocmd filetype cpp map <C-F5> <ESC>:w\|!clear; make<CR>
 
+" Adding two spaces when editing CPP files
+autocmd Filetype cpp setlocal ts=2 sts=2 sw=2
+
 " run make for Makefiles files
 autocmd filetype make map <C-F5> <ESC>:w\|!clear; make<CR>
 
