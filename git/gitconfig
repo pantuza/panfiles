@@ -30,3 +30,5 @@
     who = shortlog -s --
 [core]
 	editor = /usr/bin/vim
+[pull]
+    rebase = true
