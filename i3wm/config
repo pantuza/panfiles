@@ -217,3 +217,14 @@ bindsym $mod+Control+h move workspace to output left
 bindsym $mod+Control+j move workspace to output down
 bindsym $mod+Control+k move workspace to output up
 bindsym $mod+Control+l move workspace to output right
+
+
+# Scren lock options
+exec --no-startup-id xset dpms 60 300 600
+
+# Use i3lock
+set $locker "i3lock --show-failed-attempts --image=/home/pantuza/dev/panfiles/i3wm/locked-doors.png"
+exec --no-startup-id xautolock -time 1 -locker $locker
+
+# Binds Ctrl + Alt + l to lock screen
+bindsym Control+Mod1+l exec xautolock -locknow
