@@ -220,7 +220,7 @@ bindsym $mod+Control+l move workspace to output right
 
 
 # Scren lock options
-exec --no-startup-id xset dpms 60 300 600
+exec --no-startup-id xset dpms 180 300 600
 
 # Use i3lock
 set $locker "i3lock --show-failed-attempts --image=/home/pantuza/dev/panfiles/i3wm/locked-doors.png"
