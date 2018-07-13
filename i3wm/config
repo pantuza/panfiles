@@ -228,3 +228,6 @@ exec --no-startup-id xautolock -time 1 -locker $locker
 
 # Binds Ctrl + Alt + l to lock screen
 bindsym Control+Mod1+l exec xautolock -locknow
+
+# Disable X beep
+exec --no-startup-id xset b off
