@@ -1,7 +1,21 @@
-#
-# My personal X resources
-#
+! Set Xterm colors
 xterm*background: black
 xterm*foreground: white
 xterm*selectToClipboard: true
 xterm*disallowedWindowOps: 20,21,SetXProp
+
+! Sets Xterm font variables
+xterm*renderFont: true
+xtern*faceName: 'mononoki-Regular,mononoki'
+xterm*faceSize: 10
+
+! Number of history lines to scroll
+xterm*saveLines: 10000
+
+! Copy and paste behavior and dynamic font resizing
+xterm*VT100.Translations: #override \
+  Ctrl <key> minus: smaller-vt-font() \n\
+  Ctrl <key> plus: larger-vt-font() \n\
+  Ctrl <key> 0: set-vt-font(d) \n\
+  Ctrl Shift <key> C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <key> V: insert-selection(CLIPBOARD)
