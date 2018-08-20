@@ -1,0 +1,7 @@
+#
+# My personal X resources
+#
+xterm*background: black
+xterm*foreground: white
+xterm*selectToClipboard: true
+xterm*disallowedWindowOps: 20,21,SetXProp
