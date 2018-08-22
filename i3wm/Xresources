@@ -1,3 +1,7 @@
+
+! Xterm name
+xterm.termname: xterm-256color
+
 ! Set Xterm colors
 xterm*background: black
 xterm*foreground: white
@@ -6,16 +10,16 @@ xterm*disallowedWindowOps: 20,21,SetXProp
 
 ! Sets Xterm font variables
 xterm*renderFont: true
-xtern*faceName: 'mononoki-Regular,mononoki'
+xterm*faceName: 'mononoki Bold'
 xterm*faceSize: 10
-
-! Number of history lines to scroll
-xterm*saveLines: 10000
 
 ! Copy and paste behavior and dynamic font resizing
 xterm*VT100.Translations: #override \
-  Ctrl <key> minus: smaller-vt-font() \n\
-  Ctrl <key> plus: larger-vt-font() \n\
-  Ctrl <key> 0: set-vt-font(d) \n\
-  Ctrl Shift <key> C: copy-selection(CLIPBOARD) \n\
-  Ctrl Shift <key> V: insert-selection(CLIPBOARD)
+	Ctrl Shift <Key>V:    insert-selection(SELECT) \n\
+	Ctrl Shift <Key>C:    copy-selection(SELECT) \n\
+	Ctrl <Key> minus: smaller-vt-font() \n\
+	Ctrl <Key> plus: larger-vt-font() \n\
+	Ctrl <Key> 0: set-vt-font(d) \n\
+
+! Number of history lines to scroll
+xterm*saveLines: 10000
