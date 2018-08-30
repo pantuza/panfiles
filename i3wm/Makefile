@@ -11,10 +11,20 @@ I3_CFG := config
 
 I3_SESSION_PLUGIN := "https://raw.githubusercontent.com/joepestro/i3session/master/i3session"
 
+
+# Typeface Hack
+HACK_FONT_URL := "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip"
+
+
+# System fonts directory
+SYS_FONTS_PATH := "/usr/share/fonts"
+
+
 .PHONY := install
 
 
-install: $(I3_CFG)
+
+install: font $(I3_CFG)
 	@echo -e "\n# i3 Window Manager Install"
 	@sudo zypper install -y i3
 	@echo -e "\n# Installing dependency i3-py"
@@ -28,3 +38,14 @@ install: $(I3_CFG)
 	@echo -e "\n# Copying X server init file"
 	@cp -vf xinitrc ${HOME}/.xinitrc
 	@echo -e "# Done!\n**\n"
+
+
+font:
+	@echo "Hack font installation"
+	@wget $(HACK_FONT_URL)
+	@unzip "Hack*ttf.zip"
+	@sudo mkdir -vp $(SYS_FONTS_PATH)/Hack
+	@sudo mv -vf ttf/* $(SYS_FONTS_PATH)/Hack/
+	@fc-cache -vf
+	@fc-list | grep "Hack" --color
+	@rm -rvf ttf "Hack*ttf.zip"
