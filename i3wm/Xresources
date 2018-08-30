@@ -10,7 +10,7 @@ xterm*disallowedWindowOps: 20,21,SetXProp
 
 ! Sets Xterm font variables
 xterm*renderFont: true
-xterm*faceName: 'mononoki Bold'
+xterm*faceName: 'Hack:style=Regular'
 xterm*faceSize: 10
 
 ! Copy and paste behavior and dynamic font resizing
