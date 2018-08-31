@@ -236,10 +236,6 @@ autocmd BufWritePost * :TlistUpdate
 " - clang_complete plugin
 " automatic select entries in the popup menu
 let g:clang_auto_select = 2
-" open quickfix window on error
-let g:clang_complete_copen = 1
-" periodically update the quickfix window
-let g:clang_periodic_quickfix = 1
 " after completion, close the popup window
 let g:clang_close_preview = 1
 " Instead of use the clang tool, uses clang library (faster)
