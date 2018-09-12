@@ -50,7 +50,7 @@ function video-screencast --description "Record screencast using ffmpeg"
         ffmpeg \
             -f x11grab \
             -r 30 \
-            -s 1600x900 \
+            -s (sys-screen-size) \
             -i :0.0 \
             -vcodec libx264 \
             -preset ultrafast \
