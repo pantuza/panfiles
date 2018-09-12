@@ -172,9 +172,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # assign [class="^konsole$"] 1
 # exec --no-startup-id konsole
 
-# execute network manager applet during login
-exec --no-startup-id nm-applet
-
 # Sets keyboard layouts
 exec --no-startup-id setxkbmap -model abnt2 -layout br,us
 
