@@ -1,0 +1,20 @@
+#
+#
+# Personal MPlayer configuration
+#
+#
+
+
+
+# Default video driver
+vo=x11
+
+
+
+# Subtitles
+unicode=yes
+utf-8=yes
+
+
+# Disables screensaver
+stop-xscreensaver=yes
