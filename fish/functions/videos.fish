@@ -82,3 +82,20 @@ function video-bind --description "Binds a video with a audio using ffmpeg"
         echo "Example: video-bind video.mkv audio.flac edited.mkv"
     end
 end
+
+
+function video-overlay --description "Sets one video as overlay of another"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 3
+        ffmpeg \
+            -i $argv[1] \
+            -i $argv[2] \
+            -filter_complex "[0] overlay=1510:25" \
+            $argv[3]
+    else
+        echo "Usage: video-overlay bg_video fg_video overlayed_video"
+        echo "Example: video-overlay screen.mkv webcan.mkv edited.mkv"
+    end
+end
