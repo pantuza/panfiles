@@ -27,7 +27,7 @@ function video-cameracast --description "Record videocast using ffmpeg"
             -f alsa \
             -ac 2 \
             -thread_queue_size 512 \
-            -i hw:0 \
+            -i default \
             -acodec pcm_s16le \
             -vcodec libx264 \
             -qp 0 \
