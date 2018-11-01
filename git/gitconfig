@@ -23,10 +23,11 @@
 [alias]
     ci = commit
     st = status
+    ap = add --patch
     br = branch
     co = checkout
     df = diff
-    lg = log -p
+    lg = log --patch
     who = shortlog -s --
 [core]
 	editor = /usr/bin/vim
