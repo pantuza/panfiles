@@ -210,6 +210,15 @@ call plug#end()
 " PLUGINS DEFINITIONS
 "
 
+" Disable ALE to conflict with Syntastic
+let g:ale_emit_conflict_warnings = 0
+
+" " Terraform customization
+let g:terraform_fmt_on_save=1
+let g:terraform_fold_sections=1
+let g:terraform_remap_spacebar=1
+
+
 " Maps the nerdtree plugin toggle
 map <F4> :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
