@@ -12,9 +12,9 @@ install: config.fish
 	@echo -e "\n${BROWN}# FISH SHELL INSTALL${END_COLOR}"
 	@make -C ../third-party/ osshell
 	@mkdir -vp ${HOME}/.config/fish
-	@install config.fish ${HOME}/.config/fish/ -m 0644
+	@install -m 0644 config.fish ${HOME}/.config/fish/
 	@make -C ../third-party/ python
-	@${CHSH} --shell "$(shell which fish)"
+	@${CHSH} -s "$(shell which fish)"
 	@make -C ../ruby install
 	@curl -L --create-dirs -o ~/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
 	@echo "rvm default" >> ~/.config/fish/config.fish
@@ -26,7 +26,7 @@ install: config.fish
 	@fish --command "omf install rvm"
 	@fish --command "omf install weather"
 	@fish --command "omf install grc"
-ifeq ($(uname),Darwin)
+ifeq ($(shell uname -s),Darwin)
 	$(shell which fish) --command "set --universal grcplugin_ls -ilhaG"
 else
 	$(shell which fish) --command "set --universal grcplugin_ls -ilha --color"
