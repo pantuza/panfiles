@@ -360,6 +360,11 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 " Sets spaces when editing jsx files
 autocmd BufRead,BufNewFile jsx setlocal ts=2 sts=2 sw=2
 
+" Creates yaml file type and sets spaces when editing it
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS
