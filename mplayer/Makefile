@@ -6,5 +6,5 @@
 
 
 install:
-	@make install -C ../third-party/video
+	@make -C ../third-party/ videos
 	@install --verbose config /home/$(USER)/.mplayer/
