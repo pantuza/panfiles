@@ -29,7 +29,7 @@ install: ${VIMRC}
 	@mv -vf pt.utf-8.spl $(HOME)/.vim/spell/
 	@echo -e "\n${BLUE}Generating en.utf-8 dictionary to spell check${END_COLOR}"
 	/usr/bin/aspell dump master > en-word-list
-	vim -c "mkspell en em-word-list | q"
+	vim -c "mkspell en en-word-list | q"
 	@mv -vf en.utf-8.spl $(HOME)/.vim/spell/
 	@echo -e "${BLUE}Installing plugins using Plug Vim:${END_COLOR}"
 	vim +PlugInstall +qall
