@@ -34,6 +34,8 @@ install: font $(I3_CFG)
 	@chmod +x ${HOME}/bin/i3session
 	@sudo ln -sf ${HOME}/bin/i3session /usr/bin/i3session
 	@echo -e "\n# Copying personal configuration file"
+	@mkdir -pv ${I3_DIR}
+	@echo -e "\n# Copying personal configuration file"
 	@cp -vf ${I3_CFG} ${I3_DIR}/config
 	@echo -e "\n# Copying X server init file"
 	@cp -vf xinitrc ${HOME}/.xinitrc
