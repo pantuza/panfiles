@@ -9,6 +9,9 @@ I3_DIR := ${HOME}/.config/i3
 # i3wm configuration file
 I3_CFG := config
 
+# X resources file
+XRESOURCE := Xresources
+
 I3_SESSION_PLUGIN := "https://raw.githubusercontent.com/joepestro/i3session/master/i3session"
 
 
@@ -39,6 +42,8 @@ install: font $(I3_CFG)
 	@cp -vf ${I3_CFG} ${I3_DIR}/config
 	@echo -e "\n# Copying X server init file"
 	@cp -vf xinitrc ${HOME}/.xinitrc
+	@echo -e "\n# Copying X resource configuration file"
+	@cp -vf ${XRESOURCE} ${HOME}/.Xresources
 	@echo -e "# Done!\n**\n"
 
 
