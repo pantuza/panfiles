@@ -24,6 +24,8 @@ UWSGI_DIR := uwsgi
 MUTT_DIR := mutt
 FISH_DIR := fish
 TMUX_DIR := tmux
+I3WM_DIR := i3wm
+MPLAYER_DIR := mplayer
 THIRD_PARTY := third-party
 
 
@@ -107,9 +109,18 @@ deps: $(THIRD_PARTY)/Makefile
 dev:
 	make install -C ${RUBY_DIR}
 
+i3: ${I3WM_DIR}/config
+	make install -C ${I3WM_DIR}
+
+videoplayer: ${MPLAYER_DIR}/config
+	make install -C ${MPLAYER_DIR}
+
 
 # Install and configure a desktop machine
-desktop: greetings deps fish terminal versioning editor bye
+desktop: greetings deps fish terminal versioning editor sshconfig bye
+
+# Install dependencies for a tiling window manager
+tiled: greetings i3 mutt videoplayer bye
 
 
 # Install and configure a server machine
