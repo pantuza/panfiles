@@ -14,7 +14,7 @@ install: config.fish
 	@mkdir -vp ${HOME}/.config/fish
 	@install -m 0644 config.fish ${HOME}/.config/fish/
 	@make -C ../third-party/ python
-	@${CHSH} -s "$(shell which fish)"
+	@${CHSH} -s "$(shell which fish)" ${USER}
 	@make -C ../ruby install
 	@curl -L --create-dirs -o ~/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
 	@echo "rvm default" >> ~/.config/fish/config.fish
