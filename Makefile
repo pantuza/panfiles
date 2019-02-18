@@ -109,7 +109,7 @@ dev:
 
 
 # Install and configure a desktop machine
-desktop: greetings fish terminal versioning editor deps bye
+desktop: greetings deps fish terminal versioning editor bye
 
 
 # Install and configure a server machine
