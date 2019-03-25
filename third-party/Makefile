@@ -21,9 +21,11 @@ all: install
 
 install: repos cdev network rubydev pythondev browsing osmgr videos docs \
 	development audio irccli jdk godev images filesystem security cloud
+	@echo "--"
+	@echo "All dependencies installed!"
 
 repos:
-	sudo zypper addrepo --refresh --check --name "Packman" $(PACKMAN_REPO)
+	sudo zypper addrepo --refresh --check --name "Packman" $(PACKMAN_REPO) || true
 	sudo zypper --gpg-auto-import-keys refresh
 
 cdev: c
