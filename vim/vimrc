@@ -200,6 +200,7 @@ Plug 'dag/vim-fish'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
