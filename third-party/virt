@@ -1,5 +1,5 @@
 containerd
-kvm
+qemu-kvm
 libvirt
 vm-install
 docker
