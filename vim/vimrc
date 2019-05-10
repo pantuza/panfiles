@@ -58,8 +58,8 @@ set statusline='%{statusline#EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\
 " Text at tab label
 set guitablabel='%t\ %M'
 
-" Mark the column 80 with blue color
-let &colorcolumn=join(range(80,999),",")
+" Mark the column 120 with blue color
+let &colorcolumn=join(range(120,999),",")
 
 " Set history and undo size
 set history=1000
@@ -113,8 +113,8 @@ set expandtab
 set shiftwidth=4
 retab
 
-" Set the text width to 79
-set textwidth=79
+" Set the text width to 119
+set textwidth=119
 
 " Encoding
 set encoding=utf8
@@ -364,6 +364,10 @@ autocmd BufRead,BufNewFile jsx setlocal ts=2 sts=2 sw=2
 " Creates yaml file type and sets spaces when editing it
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Sets textwidth to 80 columns for python files
+autocmd filetype python set textwidth=79
+
 
 
 
