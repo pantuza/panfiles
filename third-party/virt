@@ -1,6 +1,7 @@
 containerd
-kvm
+qemu-kvm
 libvirt
 vm-install
 docker
 docker-bash-completion
+minikube
