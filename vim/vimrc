@@ -380,3 +380,4 @@ autocmd filetype javascript :abbreviate deb debugger;
 autocmd filetype c :abbreviate pri <F2>printf("\n");<F2>
 autocmd filetype cpp :abbreviate cout <F2>cout << "" << endl;<F2>
 autocmd filetype go :abbreviate pri <F2>fmt.Printf("\n")<F2>
+autocmd filetype go :abbreviate err if err != nil {<CR>log.Fatal("Error: %v", err)<CR>}<Del><Del><Del><Del>
