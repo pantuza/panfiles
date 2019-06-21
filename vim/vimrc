@@ -25,6 +25,9 @@ filetype indent on
 " VIM7 fix for identify latex files
 let g:tex_flavor='latex'
 
+" Enables modelines. Used for comments on files to instruct vim
+set modelines=1
+
 " Load syntax for go files
 autocmd BufRead,BufNewFile *.go set filetype=go
 
