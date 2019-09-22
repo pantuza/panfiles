@@ -80,9 +80,12 @@ set list
 " Enables auto save
 autocmd InsertLeave,CursorHold,CursorHoldI,FileWritePost,FileChangedShell * :wa
 
-
 " Ignored files
 set wildignore+=*.pyc,*.pyo
+
+" Makes Enter key to choose selection on auto completion pane
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 
 
