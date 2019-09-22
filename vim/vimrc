@@ -86,6 +86,8 @@ set wildignore+=*.pyc,*.pyo
 " Makes Enter key to choose selection on auto completion pane
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Makes the auto complete searches even when you keep typing
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 
 
