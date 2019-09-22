@@ -89,6 +89,10 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Makes the auto complete searches even when you keep typing
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" Uses tab and shift tab to navigate inside completion menu
+inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
