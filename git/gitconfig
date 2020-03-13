@@ -3,6 +3,8 @@
 [user]
     name = Gustavo Pantuza
     email = gustavopantuza@gmail.com
+    # Export it with gpg: gpg --list-secret-keys --keyid-format LONG
+    signingkey = {YOUR_KEY_ID}
 [branch]
     autosetuprebase = always
 [color]
