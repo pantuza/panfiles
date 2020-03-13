@@ -37,6 +37,7 @@
 	editor = /usr/bin/vim
 [commit]
     verbose = true
+    gpgsign = true
 
 # Used for Golang mod to always switch from https to git/ssh protocol
 [url "git@gitlab.com:"]
