@@ -1,6 +1,6 @@
 [user]
-    name = {NAME}
-    email = {EMAIL}
+    name = Gustavo Pantuza
+    email = gustavopantuza@gmail.com
 [branch]
     autosetuprebase = always
 [color]
@@ -33,3 +33,7 @@
 	editor = /usr/bin/vim
 [commit]
     verbose = true
+
+# Used for Golang mod to always switch from https to git/ssh protocol
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com

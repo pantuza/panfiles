@@ -3,7 +3,7 @@ rudolf2==0.3
 ipdb==0.7
 pylint==0.25.2
 pep8==1.3.3
-django==1.4.1
+django>=2.2.9
 psycopg2==2.4.5
 south==0.7.6
 pydot==1.0.28

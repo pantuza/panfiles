@@ -25,6 +25,9 @@ filetype indent on
 " VIM7 fix for identify latex files
 let g:tex_flavor='latex'
 
+" Enables modelines. Used for comments on files to instruct vim
+set modelines=1
+
 " Load syntax for go files
 autocmd BufRead,BufNewFile *.go set filetype=go
 
@@ -58,8 +61,8 @@ set statusline='%{statusline#EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\
 " Text at tab label
 set guitablabel='%t\ %M'
 
-" Mark the column 80 with blue color
-let &colorcolumn=join(range(80,999),",")
+" Mark the column 120 with blue color
+let &colorcolumn=join(range(120,999),",")
 
 " Set history and undo size
 set history=1000
@@ -77,9 +80,18 @@ set list
 " Enables auto save
 autocmd InsertLeave,CursorHold,CursorHoldI,FileWritePost,FileChangedShell * :wa
 
-
 " Ignored files
 set wildignore+=*.pyc,*.pyo
+
+" Makes Enter key to choose selection on auto completion pane
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Makes the auto complete searches even when you keep typing
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" Uses tab and shift tab to navigate inside completion menu
+inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 
@@ -113,8 +125,8 @@ set expandtab
 set shiftwidth=4
 retab
 
-" Set the text width to 79
-set textwidth=79
+" Set the text width to 119
+set textwidth=119
 
 " Encoding
 set encoding=utf8
@@ -200,6 +212,7 @@ Plug 'dag/vim-fish'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -364,6 +377,10 @@ autocmd BufRead,BufNewFile jsx setlocal ts=2 sts=2 sw=2
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" Sets textwidth to 80 columns for python files
+autocmd filetype python set textwidth=79
+
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -374,4 +391,5 @@ autocmd filetype python :abbreviate ipdb <F2>import ipdb; ipdb.set_trace()<F2>
 autocmd filetype javascript :abbreviate deb debugger;
 autocmd filetype c :abbreviate pri <F2>printf("\n");<F2>
 autocmd filetype cpp :abbreviate cout <F2>cout << "" << endl;<F2>
-autocmd filetype go :abbreviate pri <F2>fmt.Printf("\n")<F2>
+autocmd filetype go :abbreviate pri <F2>log.Printf("\n")<F2>
+autocmd filetype go :abbreviate err if err != nil {<CR>log.Printf("Error: %s\n", err)<CR>}<Del><Del><Del><Del>
