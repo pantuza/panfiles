@@ -9,6 +9,12 @@ I3_DIR := ${HOME}/.config/i3
 # i3wm configuration file
 I3_CFG := config
 
+# i3status directory
+I3_STATUS_DIR := ${HOME}/.config/i3status
+
+# i3wm status bar configuration file
+I3_STATUS_CFG := i3status.conf
+
 # X resources file
 XRESOURCE := Xresources
 
@@ -36,10 +42,12 @@ install: font $(I3_CFG)
 	@wget ${I3_SESSION_PLUGIN} -P ${HOME}/bin/
 	@chmod +x ${HOME}/bin/i3session
 	@sudo ln -sf ${HOME}/bin/i3session /usr/bin/i3session
-	@echo -e "\n# Copying personal configuration file"
+	@echo -e "\n# Creating i3wm user directories"
 	@mkdir -pv ${I3_DIR}
+	@mkdir -pv ${I3_STATUS_DIR}
 	@echo -e "\n# Copying personal configuration file"
 	@cp -vf ${I3_CFG} ${I3_DIR}/config
+	@cp -vf ${I3_STATUS_CFG} ${I3_STATUS_DIR}/config
 	@echo -e "\n# Copying X server init file"
 	@cp -vf xinitrc ${HOME}/.xinitrc
 	@echo -e "\n# Copying X resource configuration file"
