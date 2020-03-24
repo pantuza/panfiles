@@ -46,6 +46,16 @@ export USER_NAME USER_HOME BROWN BLUE END_COLOR
 
 ############# ### ## #
 # TARGETS
+help:
+	@echo
+	@echo "Panfiles available target rules"
+	@echo
+	@echo "desktop                 Installs all dependencies for a desktop machine"
+	@echo "server                  Installs all dependencies for a server machine"
+	@echo "tiled                   Install packages for a tiled desktop using i3wm"
+	@echo "services                Install third part services on any machine"
+	@echo
+
 
 install: greetings shell versioning editor mail sshconfig mysqldb uwsgi bye
 
@@ -60,7 +70,7 @@ clear:
 
 
 bye:
-	@echo -e "\n$(BROWN)open your mind, happy coding :D$(END_COLOR)\n"
+	@echo -e "\n$(BROWN)open your mind, happy hacking :D$(END_COLOR)\n"
 
 
 shell: ${BASH_DIR}/Makefile
