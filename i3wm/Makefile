@@ -37,7 +37,7 @@ install: font $(I3_CFG)
 	@echo -e "\n# i3 Window Manager Install"
 	@sudo zypper install -y i3
 	@echo -e "\n# Installing dependency i3-py"
-	@sudo pip2.7 install i3-py --upgrade
+	@sudo pip install i3-py --upgrade
 	@echo -e "\n# Downloading Session plugin"
 	@wget ${I3_SESSION_PLUGIN} -P ${HOME}/bin/
 	@chmod +x ${HOME}/bin/i3session
