@@ -1,0 +1,5 @@
+Fix fish installation
+Create a docker based test for panfiles
+Enable libvirtd using systemctl
+Enable docker using systemctl and add user to docker group
+Improve messaging
