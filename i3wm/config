@@ -148,7 +148,7 @@ bar {
         status_command i3status
 }
 
-exec --no-startup-id feh --bg-scale /home/pantuza/dev/panfiles/i3wm/i3_bg.jpg
+exec --no-startup-id feh --bg-scale /home/pantuza/dev/panfiles/i3wm/desktop-bg.jpg
 
 # Sets scroll behavior
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 HorizTwoFingerScroll=1 VertTwoFingerScroll=1 VertScrollDelta=-112
@@ -222,7 +222,7 @@ bindsym $mod+Control+l move workspace to output right
 exec --no-startup-id xset dpms 180 300 600
 
 # Use i3lock
-set $locker "i3lock --show-failed-attempts --image=/home/pantuza/dev/panfiles/i3wm/locked-doors.png"
+set $locker "i3lock --show-failed-attempts --image=/home/pantuza/dev/panfiles/i3wm/locker-bg.png"
 exec --no-startup-id xautolock -time 3 -corners ---- -locker $locker
 
 # Binds Ctrl + Alt + l to lock screen
