@@ -50,10 +50,15 @@ help:
 	@echo
 	@echo "Panfiles available target rules"
 	@echo
-	@echo "desktop                 Installs all dependencies for a desktop machine"
-	@echo "server                  Installs all dependencies for a server machine"
-	@echo "tiled                   Install packages for a tiled desktop using i3wm"
-	@echo "services                Install third part services on any machine"
+	@echo " desktop                 Installs all dependencies for a desktop machine"
+	@echo " server                  Installs all dependencies for a server machine"
+	@echo " tiled                   Install packages for a tiled desktop using i3wm"
+	@echo " services                Install third part services on any machine"
+	@echo
+	@echo "CI target rules"
+	@echo
+	@echo " build_img               Builds locally a docker image for test installation"
+	@echo " test_server             Tests fully installing a server machine"
 	@echo
 
 
@@ -139,3 +144,12 @@ server: greetings shell versioning editor bye
 
 # Install basic services on a machine
 services: greetings mysqldb nginx uwsgi bye
+
+
+# Builds locally a docker image for testing purpose
+build_img: Dockerfile
+	docker build --tag panfiles:local . --no-cache
+
+# Tests installing a server machine
+test_server:
+	docker run -it --name $@ --rm panfiles:local make server
