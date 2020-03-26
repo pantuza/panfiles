@@ -60,6 +60,7 @@ help:
 	@echo " build_img               Builds locally a docker image for test installation"
 	@echo " test_server             Tests fully installing a server machine"
 	@echo " test_tilled             Tests fully installing a tilled system"
+	@echo " test_desktop            Tests fully installing a desktop machine"
 	@echo
 
 
@@ -158,3 +159,8 @@ test_server:
 # Tests installing a tiled system
 test_tiled:
 	docker run -it --name $@ --rm panfiles:local make tiled
+
+
+# Tests installing a tiled system
+test_desktop:
+	docker run -it --name $@ --rm panfiles:local make desktop
