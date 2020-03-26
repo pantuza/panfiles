@@ -22,7 +22,7 @@ install: ${VIMRC}
 	@echo -e "\n${BLUE}Installing dependencies${END_COLOR}"
 	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in -y llvm-clang
 	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in -y ctags
-	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in -y aspell aspell-pt_BR
+	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in -y aspell aspell-pt_BR aspell-en
 	@echo -e "\n${BLUE}Generating pt-BR dictionary to spell check${END_COLOR}"
 	/usr/bin/aspell -l pt_BR dump master > pt-br-word-list
 	vim -c "mkspell pt pt-br-word-list | q"
