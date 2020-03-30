@@ -5,3 +5,5 @@ vm-install
 docker
 docker-bash-completion
 minikube
+k9s
+kubernetes-client

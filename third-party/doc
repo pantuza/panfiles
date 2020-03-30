@@ -1,9 +1,10 @@
-texlive
-texlive-algorithm2e
-texlive-outlines
-texlive-collection-publishers
-texlive-pbox
 gnuplot
 graphviz
 aspell
+aspell-en
 aspell-pt_BR
+#texlive
+#texlive-algorithm2e
+#texlive-outlines
+#texlive-collection-publishers
+#texlive-pbox
