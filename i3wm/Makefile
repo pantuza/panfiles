@@ -46,7 +46,7 @@ install: font $(I3_CFG)
 	@sudo ln -sf ${HOME}/bin/i3session /usr/bin/i3session
 	@echo -e "\n# Creating Rofi configuration directory"
 	@mkdir -pv ${ROFI_DIR}
-	@cp -vf rofi-config ${ROFI_DIR}/config
+	@cp -vf rofi-config ${ROFI_DIR}/config.rasi
 	@echo -e "\n# Creating i3wm user directories"
 	@mkdir -pv ${I3_DIR}
 	@mkdir -pv ${I3_STATUS_DIR}
