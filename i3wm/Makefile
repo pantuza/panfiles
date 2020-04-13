@@ -24,6 +24,8 @@ I3_SESSION_PLUGIN := "https://raw.githubusercontent.com/joepestro/i3session/mast
 # Typeface Hack
 HACK_FONT_URL := "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip"
 
+# Rofi configuration directory
+ROFI_DIR := ${HOME}/.config/rofi
 
 # System fonts directory
 SYS_FONTS_PATH := "/usr/share/fonts"
@@ -42,6 +44,9 @@ install: font $(I3_CFG)
 	@wget ${I3_SESSION_PLUGIN} -P ${HOME}/bin/
 	@chmod +x ${HOME}/bin/i3session
 	@sudo ln -sf ${HOME}/bin/i3session /usr/bin/i3session
+	@echo -e "\n# Creating Rofi configuration directory"
+	@mkdir -pv ${ROFI_DIR}
+	@cp -vf rofi-config ${ROFI_DIR}/config
 	@echo -e "\n# Creating i3wm user directories"
 	@mkdir -pv ${I3_DIR}
 	@mkdir -pv ${I3_STATUS_DIR}
