@@ -80,6 +80,11 @@ bye:
 	@echo -e "\n$(BROWN)open your mind, happy hacking :D$(END_COLOR)\n"
 
 
+base_dirs:
+	@mkdir -pv $(HOME)/dev/{playground,tmp}  # Base development directories
+	@mkdir -pv $(HOME)/.local/panfiles/      # Base Panfiles directory
+
+
 shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
 
@@ -134,7 +139,7 @@ videoplayer: ${MPLAYER_DIR}/config
 
 
 # Install and configure a desktop machine
-desktop: greetings deps fish terminal versioning editor sshconfig bye
+desktop: greetings base_dirs deps fish terminal versioning editor sshconfig bye
 
 # Install dependencies for a tiling window manager
 tiled: greetings i3 mutt videoplayer bye
