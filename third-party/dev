@@ -3,3 +3,6 @@ vim-data
 git
 git-core
 ctags
+ripgrep
+ripgrep-fish-completion
+bat
