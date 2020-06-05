@@ -17,3 +17,6 @@ bmon
 wrk
 rtorrent
 NetworkManager-applet
+ethtool
+hping
+iproute2

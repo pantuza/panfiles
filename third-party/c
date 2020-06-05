@@ -11,3 +11,5 @@ strace
 splint
 gengetopt
 cppcheck
+llvm
+llvm-clang
