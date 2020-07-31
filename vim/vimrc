@@ -218,8 +218,7 @@ Plug 'pearofducks/ansible-vim'
 " Vertical identation marks for blocks. Useful for Yaml files
 Plug 'Yggdroot/indentLine'
 " Autocomplete plugin based on Language Server Protocol (LSP)
-Plug 'neoclide/coc.nvim'
-
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
