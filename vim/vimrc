@@ -213,6 +213,9 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'ctrlpvim/ctrlp.vim'
+" Vertical identation marks for blocks. Useful for Yaml files
+Plug 'Yggdroot/indentLine'
+
 
 call plug#end()
 
@@ -269,6 +272,8 @@ let g:clang_use_library = 1
 " Disable verbose highlights on code from ale plugin
 let g:ale_set_highlights = 0
 
+" Use a soft gray color for vertical identation lines
+let g:indentLine_color_term = 239
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
