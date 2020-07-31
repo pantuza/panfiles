@@ -32,4 +32,5 @@ install: ${VIMRC}
 	vim +PlugInstall +qall
 	@echo -e "${BLUE}Installing Golang tools binaries:${END_COLOR}"
 	vim +GoInstallBinaries +qall
+	go get golang.org/x/tools/gopls@latest
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
