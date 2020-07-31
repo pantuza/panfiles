@@ -73,8 +73,8 @@ set statusline='%{statusline#EditorModeParser()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\
 " Text at tab label
 set guitablabel='%t\ %M'
 
-" Mark the column 120 with blue color
-let &colorcolumn=join(range(120,999),",")
+" Mark the column 80 with a vertical color
+let &colorcolumn=join(range(80,999),",")
 
 " Set history and undo size
 set history=1000
@@ -433,8 +433,9 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Sets textwidth to 80 columns for python files
 autocmd filetype python set textwidth=79
 
-
-
+" Sets textwidth to 120 columns for Golang files
+autocmd FileType go set textwidth=119
+autocmd FileType go let &colorcolumn=join(range(120,999),",")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " ABBREVIATIONS
