@@ -213,6 +213,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'ctrlpvim/ctrlp.vim'
+" Syntax plugin for Ansible. It supports playbooks, Jinja2 and hosts files
+Plug 'pearofducks/ansible-vim'
 " Vertical identation marks for blocks. Useful for Yaml files
 Plug 'Yggdroot/indentLine'
 
