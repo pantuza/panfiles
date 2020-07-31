@@ -50,6 +50,18 @@ set numberwidth=1
 autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline
 
+" Allow buffer to be hidden
+set hidden
+
+" Once we do not use backup files we can update faster
+set updatetime=300
+
+" Reduce amount of messages in the menu
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
 " always show the last status bar
 set laststatus=2
 
