@@ -27,4 +27,6 @@ install: ${VIMRC}
 	@mv -vf spell/*.spl $(HOME)/.vim/spell/
 	@echo -e "${BLUE}Installing plugins using Plug Vim:${END_COLOR}"
 	vim +PlugInstall +qall
+	@echo -e "${BLUE}Installing Golang tools binaries:${END_COLOR}"
+	vim +GoInstallBinaries +qall
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
