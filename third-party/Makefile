@@ -62,8 +62,9 @@ docs: doc
 development: dev
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
-audios: audio
-	sudo $(PKGMGR) install -y $(shell cat $+)
+.PHONY: audio
+audio:
+	sudo $(PKGMGR) install -y $(shell cat $@)
 
 irccli: irc
 	sudo $(PKGMGR) install -y $(shell cat $+)
