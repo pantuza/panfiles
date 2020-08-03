@@ -31,10 +31,11 @@ install: ${VIMRC}
 	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in -y ctags
 	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in -y aspell aspell-pt_BR aspell-en
 	@echo -e "\n${BLUE}Copying pt-BR and en_US dictionary for spell checks${END_COLOR}"
-	@mv -vf spell/*.spl $(HOME)/.vim/spell/
+	@cp -vf spell/*.spl $(HOME)/.vim/spell/
 	@echo -e "${BLUE}Installing plugins using Plug Vim:${END_COLOR}"
 	vim +PlugInstall +qall
 	@echo -e "${BLUE}Installing Golang tools binaries:${END_COLOR}"
+	$(MAKE) godev -C ../third-party/
 	vim +GoInstallBinaries +qall
-	go get golang.org/x/tools/gopls@latest
+	GO111MODULE=on go get golang.org/x/tools/gopls@latest
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
