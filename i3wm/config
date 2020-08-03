@@ -167,12 +167,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
-# # Auto open konsole at workspace 1
-# assign [class="^konsole$"] 1
-# exec --no-startup-id konsole
 
 # Sets keyboard layouts
-exec --no-startup-id setxkbmap -model abnt2 -layout br,us
+exec --no-startup-id setxkbmap -model abnt2 -layout us,br
 
 # Add toggle shortcut with both Shifts pressed
 exec --no-startup-id setxkbmap -option 'grp:shifts_toggle'
@@ -183,6 +180,7 @@ exec --no-startup-id xset r rate 200 30
 #
 # Pulse Audio controls for volume key bindings
 #
+exec --no-startup-id systemctl --user start pulseaudio.service
 
 # Increase, Decrease and Mute sound volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
