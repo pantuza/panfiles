@@ -1,12 +1,28 @@
 
-SLACK_RPM_URL := "https://downloads.slack-edge.com/linux_releases/slack-4.8.0-0.1.fc21.x86_64.rpm"
+# Place where we download RPM files
+DOWNLOADS_DIR := $(HOME)/Downloads
 
+# Slack variables
+SLACK_RPM_URL := "https://downloads.slack-edge.com/linux_releases/slack-4.8.0-0.1.fc21.x86_64.rpm"
 SLACK_RPM_NAME := slack.rpm
 
-install: slack
+# Zoom variables
+ZOOM_RPM_URL := "https://www.zoom.us/client/latest/zoom_openSUSE_x86_64.rpm"
+ZOOM_RPM_NAME := zoom.rpm
+
+# Spotify variables
+
+
+install: slack zoom
 
 
 slack:
 	@echo "Installing Slack from RPM"
-	wget $(SLACK_RPM_URL) -O $(SLACK_RPM_NAME)
-	sudo rpm --install --nodeps $(SLACK_RPM_NAME)
+	wget -q $(SLACK_RPM_URL) -O $(DOWNLOADS_DIR)/$(SLACK_RPM_NAME)
+	sudo rpm --install --force --nodeps $(DOWNLOADS_DIR)/$(SLACK_RPM_NAME)
+
+
+zoom:
+	@echo "Installing Zoom from RPM"
+	wget -q $(ZOOM_RPM_URL) -O $(DOWNLOADS_DIR)/$(ZOOM_RPM_NAME)
+	sudo zypper --no-gpg-checks install -y $(DOWNLOADS_DIR)/$(ZOOM_RPM_NAME)
