@@ -27,6 +27,7 @@ TMUX_DIR := tmux
 I3WM_DIR := i3wm
 MPLAYER_DIR := mplayer
 THIRD_PARTY := third-party
+PYTHON_DIR := python
 
 
 # Colors to messages during execution
@@ -36,7 +37,7 @@ END_COLOR=\e[0m
 RUBY_DIR := ruby
 
 
-.PHONY: install server nginx uwsgi fish
+.PHONY: install server nginx uwsgi fish python
 
 
 # make variables public to other make files
@@ -131,6 +132,9 @@ deps: $(THIRD_PARTY)/Makefile
 dev:
 	make install -C ${RUBY_DIR}
 
+python: ${PYTHON_DIR}
+	make install -C ${PYTHON_DIR}
+
 i3: ${I3WM_DIR}/config
 	make install -C ${I3WM_DIR}
 
@@ -139,10 +143,10 @@ videoplayer: ${MPLAYER_DIR}/config
 
 
 # Install and configure a desktop machine
-desktop: greetings base_dirs deps fish terminal versioning editor sshconfig bye
+desktop: greetings base_dirs editor fish terminal versioning sshconfig deps bye
 
 # Install dependencies for a tiling window manager
-tiled: greetings i3 mutt videoplayer bye
+tiled: greetings python i3 mutt videoplayer bye
 
 
 # Install and configure a server machine
