@@ -1,6 +1,6 @@
 sipcalc
 tcpdump
-iptraf
+iptraf-ng
 nmap
 ncat
 nping
@@ -18,5 +18,4 @@ wrk
 rtorrent
 NetworkManager-applet
 ethtool
-hping
 iproute2
