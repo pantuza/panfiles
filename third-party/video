@@ -3,5 +3,8 @@ vlc
 mpv
 playerctl
 guvcview
-#ffmpeg-4
+gstreamer-plugins-bad
+gstreamer-plugins-ugly
+gstreamer-plugins-ugly-orig-addon
+gstreamer-plugins-libav
 #openshot-qt
