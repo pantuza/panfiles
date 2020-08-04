@@ -54,7 +54,7 @@ osmgr: os
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
 videos: video
-	sudo $(PKGMGR) install -y $(shell cat $+)
+	sudo $(PKGMGR) install -y --allow-vendor-change $(shell cat $+)
 
 docs: doc
 	sudo $(PKGMGR) install -y $(shell cat $+)
