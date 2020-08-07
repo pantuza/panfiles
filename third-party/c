@@ -13,3 +13,4 @@ gengetopt
 cppcheck
 llvm
 llvm-clang
+ninja
