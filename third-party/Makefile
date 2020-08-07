@@ -19,7 +19,7 @@ PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Tumbleweed/p
 all: install
 
 
-install: repos cdev network rubydev pythondev browsing osmgr videos docs \
+install: repos cdev network ebpf rubydev pythondev browsing osmgr videos docs \
 	development audio irccli jdk godev images filesystem security cloud
 	@echo "--"
 	@echo "All dependencies installed!"
@@ -32,6 +32,10 @@ cdev: c
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
 network: net
+	sudo $(PKGMGR) install -y $(shell cat $+)
+
+.PHONY: ebpf
+ebpf: ebpf
 	sudo $(PKGMGR) install -y $(shell cat $+)
 
 cloud: virt
