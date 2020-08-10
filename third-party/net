@@ -20,3 +20,4 @@ NetworkManager-applet
 ethtool
 iproute2
 wireshark
+tcpreplay
