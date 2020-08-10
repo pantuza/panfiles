@@ -246,6 +246,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'Yggdroot/indentLine'
 " Autocomplete plugin based on Language Server Protocol (LSP)
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
