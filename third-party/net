@@ -19,3 +19,4 @@ rtorrent
 NetworkManager-applet
 ethtool
 iproute2
+wireshark
