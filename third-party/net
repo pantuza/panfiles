@@ -21,3 +21,4 @@ ethtool
 iproute2
 wireshark
 tcpreplay
+socat
