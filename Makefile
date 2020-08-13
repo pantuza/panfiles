@@ -52,21 +52,22 @@ export USER_NAME USER_HOME BROWN BLUE END_COLOR
 
 ############# ### ## #
 # TARGETS
-help:
+help: greetings
 	@echo
 	@echo "Panfiles available target rules"
 	@echo
-	@echo " desktop                 Installs all dependencies for a desktop machine"
-	@echo " server                  Installs all dependencies for a server machine"
-	@echo " tiled                   Install packages for a tiled desktop using i3wm"
-	@echo " services                Install third part services on any machine"
+	@echo -e " $(BLUE)desktop$(END_COLOR)                 Installs all dependencies for a desktop machine"
+	@echo -e " $(BLUE)server$(END_COLOR)                  Installs all dependencies for a server machine"
+	@echo -e " $(BLUE)tiled$(END_COLOR)                   Install packages for a tiled desktop using i3wm"
+	@echo -e " $(BLUE)services$(END_COLOR)                Install third part services on any machine"
+	@echo -e " $(BLUE)darwin$(END_COLOR)                  Install and configures a Mac OS X"
 	@echo
 	@echo "CI target rules"
 	@echo
-	@echo " build_img               Builds locally a docker image for test installation"
-	@echo " test_server             Tests fully installing a server machine"
-	@echo " test_tilled             Tests fully installing a tilled system"
-	@echo " test_desktop            Tests fully installing a desktop machine"
+	@echo -e " $(BLUE)build_img$(END_COLOR)               Builds locally a docker image for test installation"
+	@echo -e " $(BLUE)test_server$(END_COLOR)             Tests fully installing a server machine"
+	@echo -e " $(BLUE)test_tilled$(END_COLOR)             Tests fully installing a tilled system"
+	@echo -e " $(BLUE)test_desktop$(END_COLOR)            Tests fully installing a desktop machine"
 	@echo
 
 
@@ -81,7 +82,7 @@ greetings: clear
 ██      ██   ██ ██  ██ ██ ██      ██ ██      ██           ██ \n \
 ██      ██   ██ ██   ████ ██      ██ ███████ ███████ ███████ \n \
                                                              \n \
-Setting up the development environment$(END_COLOR)"
+Setting up personal environments$(END_COLOR)"
 
 clear:
 	clear
