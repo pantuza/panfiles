@@ -168,9 +168,12 @@ brew:
 	./$@-tmp.sh
 	rm $@-tmp.sh
 
+
 # Install and configure a Mac OS X
 .PHONY: darwin
-darwin: greetings brew base_dirs versioning sshconfig fish terminal editor bye
+darwin: greetings brew base_dirs versioning sshconfig fish terminal editor
+	brew install $(shell cat $(THIRD_PARTY)/brew)
+	$(MAKE) bye
 
 
 # Builds locally a docker image for testing purpose
