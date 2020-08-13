@@ -10,7 +10,11 @@ PKG_MANAGER := $(shell which zypper)
 
 install: configure
 	@echo "Installing tmux"
+ifeq ($(shell uname -s),Darwin)
+	@brew install tmux
+else
 	@sudo $(PKG_MANAGER) install -y tmux
+endif
 
 configure:
 	@echo "Installing Tmux plugin manager TPM.."
