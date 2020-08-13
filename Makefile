@@ -74,9 +74,14 @@ install: greetings shell versioning editor mail sshconfig mysqldb uwsgi bye
 
 
 greetings: clear
-	@echo -e "\n\n${BROWN}-- PANFILES --"
-	@echo -e "Setting up the development environment$(END_COLOR)\n"
-
+	@echo -e "${BROWN} \
+██████   █████  ███    ██ ███████ ██ ██      ███████ ███████ \n \
+██   ██ ██   ██ ████   ██ ██      ██ ██      ██      ██      \n \
+██████  ███████ ██ ██  ██ █████   ██ ██      █████   ███████ \n \
+██      ██   ██ ██  ██ ██ ██      ██ ██      ██           ██ \n \
+██      ██   ██ ██   ████ ██      ██ ███████ ███████ ███████ \n \
+                                                             \n \
+Setting up the development environment$(END_COLOR)"
 
 clear:
 	clear
