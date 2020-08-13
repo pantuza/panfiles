@@ -28,13 +28,18 @@ I3WM_DIR := i3wm
 MPLAYER_DIR := mplayer
 THIRD_PARTY := third-party
 PYTHON_DIR := python
+RUBY_DIR := ruby
 
+# Control colors by OS type
+COLOR_PREFIX := e
+ifeq ($(shell uname -s),Darwin)
+	COLOR_PREFIX := 033
+endif
 
 # Colors to messages during execution
-BROWN=\e[0;33m
-BLUE=\e[1;34m
-END_COLOR=\e[0m
-RUBY_DIR := ruby
+BROWN=\$(COLOR_PREFIX)[0;33m
+BLUE=\$(COLOR_PREFIX)[1;34m
+END_COLOR=\$(COLOR_PREFIX)[0m
 
 
 .PHONY: install server nginx uwsgi fish python
