@@ -88,7 +88,7 @@ bye:
 
 base_dirs:
 	@mkdir -pv $(HOME)/dev/{playground,tmp}  # Base development directories
-	@mkdir -pv $(HOME)/.local/panfiles/      # Base Panfiles directory
+	@mkdir -pv $(HOME)/.config/panfiles/      # Base Panfiles directory
 
 
 shell: ${BASH_DIR}/Makefile
@@ -160,6 +160,17 @@ server: greetings shell versioning editor bye
 
 # Install basic services on a machine
 services: greetings mysqldb nginx uwsgi bye
+
+
+brew:
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh > $@-tmp.sh
+	chmod +x $@-tmp.sh 
+	./$@-tmp.sh
+	rm $@-tmp.sh
+
+# Install and configure a Mac OS X
+.PHONY: darwin
+darwin: greetings brew base_dirs versioning sshconfig fish terminal editor bye
 
 
 # Builds locally a docker image for testing purpose
