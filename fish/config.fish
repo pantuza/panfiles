@@ -28,4 +28,7 @@ switch (uname)
         # Configure grc plugin
         alias ls="grc --pty ls -G"
         alias ll="grc --pty ls -ilhaG"
+
+        # Creates alias to always use GNU Make instead of BSDs
+        alias make gmake
 end
