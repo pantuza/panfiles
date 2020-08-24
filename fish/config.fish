@@ -16,3 +16,16 @@ set --export TERM xterm-256color
 
 # Sets the daily update file path
 # set --export DAILY_UPDATE_FILE {PATH_TO_DAILY_UPDATE_FILE}
+
+
+# Set OS specific configurations
+switch (uname)
+    case Linux
+        # Create aliases for ls and ll commands
+        alias ls="ls --color"
+        alias ll="ls -ilha --color"
+    case Darwin
+        # Configure grc plugin
+        alias ls="grc --pty ls -G"
+        alias ll="grc --pty ls -ilhaG"
+end
