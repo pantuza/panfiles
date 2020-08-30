@@ -9,3 +9,5 @@ htop
 grc
 make
 cmake
+kubectl
+k9s
