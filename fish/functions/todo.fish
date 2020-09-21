@@ -1,7 +1,7 @@
 function todo --description "Controls my persnal TODO list"
 
     # Default path of TODO file
-    set --local DEFAULT_TODO_FILE "$HOME/.local/panfiles/todo"
+    set --local DEFAULT_TODO_FILE "$HOME/.config/panfiles/todo"
 
     if not set --query TODO_FILE
         # Default path of TODO file
