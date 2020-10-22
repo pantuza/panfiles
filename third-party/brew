@@ -12,3 +12,4 @@ cmake
 kubectl
 k9s
 imagemagick
+pssh
