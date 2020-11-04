@@ -322,6 +322,9 @@ nmap <silent> gr <Plug>(coc-references)
 " [CoC] Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
+" Change Coc Floating text color
+highlight CocFloating ctermbg=red ctermfg=black
+highlight CocErrorFloat ctermbg=red ctermfg=black
 
 
 
