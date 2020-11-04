@@ -169,3 +169,10 @@ highlight markdownH3 ctermfg=white cterm=bold
 highlight markdownH4 ctermfg=white cterm=bold
 highlight markdownH5 ctermfg=white cterm=bold
 highlight markdownH6 ctermfg=white cterm=bold
+
+
+"
+" Colors for error/warning/info messages
+"
+highlight SpellBad ctermbg=red ctermfg=black
+highlight SpellCap ctermbg=red ctermfg=black
