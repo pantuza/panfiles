@@ -326,6 +326,9 @@ nmap <leader>rn <Plug>(coc-rename)
 highlight CocFloating ctermbg=red ctermfg=black
 highlight CocErrorFloat ctermbg=red ctermfg=black
 
+" Maps Leader key + j or k to navigate between errors
+nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
+nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
