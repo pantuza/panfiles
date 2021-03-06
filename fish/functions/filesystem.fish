@@ -22,3 +22,15 @@ function fs-dir-size --description "Displays the directory size with depth 1"
         echo "Example: fs-dir-size /home/pantuza"
     end
 end
+
+function fs-copy --description "Copies a source directory into target directory using rsync"
+
+    set --local argc (count $argv)
+
+    if test $argc -eq 2
+        rsync --verbose --archive --human-readable --progress $argv[1] $argv[2]
+    else
+        echo "Usage: fs-copy <source> <target>"
+        echo "Example: fs-copy /mnt/backup/something /home/pantuza"
+    end
+end
