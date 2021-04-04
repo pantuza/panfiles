@@ -5,11 +5,9 @@
 
 # Package Manager binary based on operating system
 ifeq ($(shell uname -s),Darwin)
-$(info Using brew as package manager. Darwin OS)
 PKGMGR := brew
 else
-$(info Using zypper as package manager. Considering OpenSUSE as the OS)
-PKGMGR := zypper
+PKGMGR := $(shell which zypper || which yum)
 endif
 
 
