@@ -41,6 +41,12 @@ BROWN=\$(COLOR_PREFIX)[0;33m
 BLUE=\$(COLOR_PREFIX)[1;34m
 END_COLOR=\$(COLOR_PREFIX)[0m
 
+# Package Manager binary based on operating system
+ifeq ($(shell uname -s),Darwin)
+PKGMGR := brew
+else
+PKGMGR := $(shell which zypper || which yum)
+endif
 
 .PHONY: install server nginx uwsgi fish python
 
@@ -100,6 +106,11 @@ base_dirs:
 shell: ${BASH_DIR}/Makefile
 	make install -C ${BASH_DIR}
 
+enable_repos:
+	$(info Enable community repositories on the target OS)
+ifeq ($(USER_NAME),ec2-user)
+	sudo amazon-linux-extras install epel -y
+endif
 
 fish: ${FISH_DIR}/Makefile
 	make install -C ${FISH_DIR}
@@ -161,7 +172,7 @@ tiled: greetings python i3 mutt videoplayer bye
 
 
 # Install and configure a server machine
-server: greetings shell versioning editor bye
+server: greetings enable_repos shell versioning editor bye
 
 
 # Install basic services on a machine
