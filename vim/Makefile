@@ -11,6 +11,14 @@ COC_CFG := coc-settings.json
 
 OS_NAME := $(shell uname -s)
 
+
+PKG_MGR := zypper
+ifeq ($(OS_NAME),Linux)
+    PKG_MGR := $(shell which zypper || which yum)
+endif
+
+
+
 .PHONY := install
 install: ${VIMRC}
 	@echo -e "\n${BROWN}# VIM INSTALL${END_COLOR}"
@@ -26,15 +34,15 @@ install: ${VIMRC}
 ifeq ($(OS_NAME),Darwin)
 	brew install yarn aspell golang
 else
-	[ -x /usr/bin/yarn ] && echo "yarn OK" || sudo zypper in -y yarn
+	[ -x /usr/bin/yarn ] && echo "yarn OK" || sudo $(PKG_MGR) install -y nodejs && sudo npm install yarn -g
 endif
 	@sudo yarn global add typescript --prefix /usr/local/
 	install -m 0644 $(COC_CFG) $(HOME)/.vim/
 	@echo -e "\n${BLUE}Installing aspell dependencies${END_COLOR}"
 ifneq ($(OS_NAME),Darwin)
-	[ -x /usr/bin/clang ] && echo "clang OK" || sudo zypper in -y llvm-clang
-	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo zypper in -y ctags
-	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo zypper in -y aspell aspell-pt_BR aspell-en
+	[ -x /usr/bin/clang ] && echo "clang OK" || sudo $(PKG_MGR) install -y llvm-clang || sudo $(PKG_MGR) install -y clang
+	[ -x /usr/bin/ctags ] && echo "ctags OK" || sudo $(PKG_MGR) install -y ctags
+	[ -x /usr/bin/aspell ] && echo "aspell OK" || sudo $(PKG_MGR) install -y aspell aspell-pt_BR aspell-en
 endif
 	@echo -e "\n${BLUE}Copying pt-BR and en_US dictionary for spell checks${END_COLOR}"
 	@cp -vf spell/*.spl $(HOME)/.vim/spell/
