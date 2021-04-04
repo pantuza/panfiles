@@ -4,6 +4,12 @@
 # defines the shell to the make application
 SHELL := /bin/bash
 
+# Package Manager binary based on operating system
+ifeq ($(shell uname -s),Darwin)
+PKGMGR := brew
+else
+PKGMGR := $(shell which zypper || which yum)
+endif
 
 # Nginx project name o package manager
 NGINX := nginx
@@ -19,7 +25,7 @@ SYSTEMCTL := $(shell which systemctl)
 
 install:
 	@echo -e "\n$(BROWN)# NGINX WEBSERVER INSTALL$(END_COLOR)"
-	sudo zypper --non-interactive install $(NGINX)
+	sudo $(PKGMGR) -y install $(NGINX)
 	@sudo mkdir -vp $(NGINX_DIR)/rewrites
 	@sudo mkdir -vp $(NGINX_DIR)/conf.d
 	@sudo install -v -m 0644 $(NGINX_CONF_FILE) $(NGINX_DIR)/$(NGINX_CONF_FILE)
@@ -33,4 +39,4 @@ born:
 uninstall:
 	sudo $(SYSTEMCTL) disable $(NGINX).service
 	sudo $(SYSTEMCTL) stop $(NGINX).service
-	sudo zypper --non-interactive remove $(NGINX)
+	sudo $(PKGMGR) -y remove $(NGINX)
