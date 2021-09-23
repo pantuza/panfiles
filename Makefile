@@ -190,6 +190,7 @@ brew:
 .PHONY: darwin
 darwin: greetings brew base_dirs versioning sshconfig fish terminal editor
 	brew install $(shell cat $(THIRD_PARTY)/brew)
+	brew install --cask $(shell cat $(THIRD_PARTY)/cask)
 	$(MAKE) bye
 
 
