@@ -1,6 +1,5 @@
 gpg2
 docker
-docker-compose
 ctop
 bat
 ripgrep
@@ -13,3 +12,5 @@ kubectl
 k9s
 imagemagick
 pssh
+gh
+git-secret
