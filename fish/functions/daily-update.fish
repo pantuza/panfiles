@@ -12,7 +12,12 @@ function daily-update --description "Edit or print Scrum daily update file"
 
     case -s --show
         cat $DAILY_UPDATE_FILE
-        cat $DAILY_UPDATE_FILE | xclip -selection clipboard
+
+        if test (uname -s) = "Darwin"
+            cat $DAILY_UPDATE_FILE | pbcopy
+        else
+            cat $DAILY_UPDATE_FILE | xclip -selection clipboard
+        end
 
     case '*'
         echo "Invalid option: $argv"

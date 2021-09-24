@@ -15,7 +15,12 @@ function todo --description "Controls my persnal TODO list"
 
     case -s --show
         cat $TODO_FILE
-        cat $TODO_FILE | xclip -selection clipboard
+
+        if test (uname -s) = "Darwin"
+            cat $TODO_FILE | pbcopy
+        else
+            cat $TODO_FILE | xclip -selection clipboard
+        end
 
     case '*'
         echo "Invalid option: $argv"

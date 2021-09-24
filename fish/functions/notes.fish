@@ -15,7 +15,12 @@ function notes --description "Controls my persnal Notes file"
 
     case -s --show
         cat $NOTES_FILE
-        cat $NOTES_FILE | xclip -selection clipboard
+
+        if test (uname -s) = "Darwin"
+            cat $NOTES_FILE | pbcopy
+        else
+            cat $NOTES_FILE | xclip -selection clipboard
+        end
 
     case '*'
         echo "Invalid option: $argv"
