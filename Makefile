@@ -192,6 +192,7 @@ darwin: greetings brew base_dirs versioning sshconfig fish terminal editor
 	brew install $(shell cat $(THIRD_PARTY)/brew)
 	brew install --cask $(shell cat $(THIRD_PARTY)/cask)
 	$(MAKE) bye
+	# Download and install docker dmg from https://desktop.docker.com/mac/main/amd64/Docker.dmg
 
 
 # Builds locally a docker image for testing purpose
