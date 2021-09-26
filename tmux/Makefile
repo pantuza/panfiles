@@ -25,3 +25,7 @@ configure:
 	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
 	@echo "Configuring tmux.."
 	@install -m 0644 $(CONF_FILE) $(HOME)/.$(CONF_FILE)
+ifeq ($(OS_NAME),Darwin)
+	@mkdir -pv $(HOME)/.config/alacritty
+	@install -m 0644 $(ALACRITTY_CFG) $(HOME)/.config/alacritty/$(ALACRITTY_CFG)
+endif
