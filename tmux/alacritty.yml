@@ -1,0 +1,6 @@
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux new-session -A -s Root"
