@@ -5,12 +5,16 @@
 
 CONF_FILE := tmux.conf
 
+ALACRITTY_CFG := alacritty.yml
+
 PKG_MANAGER := $(shell which zypper)
+
+OS_NAME := $(shell uname -s)
 
 
 install: configure
 	@echo "Installing tmux"
-ifeq ($(shell uname -s),Darwin)
+ifeq ($(OS_NAME),Darwin)
 	@brew install tmux
 else
 	@sudo $(PKG_MANAGER) install -y tmux
