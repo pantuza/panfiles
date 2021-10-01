@@ -17,6 +17,7 @@ ifeq ($(OS_NAME),Darwin)
 	@brew install fish
 	echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 	$(eval FISH_CMD = "/usr/local/bin/fish")
+	fish_add_path --append /opt/homebrew/bin
 else
 	@make -C ../third-party/ osshell
 	@make -C ../third-party/ python
