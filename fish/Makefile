@@ -15,8 +15,8 @@ install: config.fish
 	@echo -e "\n${BROWN}# FISH SHELL INSTALL${END_COLOR}"
 ifeq ($(OS_NAME),Darwin)
 	@brew install fish
-	echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-	$(eval FISH_CMD = "/usr/local/bin/fish")
+	echo "$(shell which fish)" | sudo tee -a /etc/shells
+	$(eval FISH_CMD = "$(shell which fish)")
 	fish_add_path --append /opt/homebrew/bin
 else
 	@make -C ../third-party/ osshell
