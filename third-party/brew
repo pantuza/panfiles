@@ -14,3 +14,7 @@ imagemagick
 pssh
 gh
 git-secret
+parallel
+pv
+fzf
+zstd
