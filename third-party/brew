@@ -18,3 +18,5 @@ parallel
 pv
 fzf
 zstd
+ddosify/tap/ddosify
+wrk
