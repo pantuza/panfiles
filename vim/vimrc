@@ -293,6 +293,8 @@ let g:ale_set_highlights = 0
 
 " Use a soft gray color for vertical identation lines
 let g:indentLine_color_term = 239
+" Disable indent Line by default
+let g:indentLine_enabled = 0
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
