@@ -38,6 +38,7 @@ endif
 	@$(FISH_CMD) --command "omf install await"
 	@$(FISH_CMD) --command "omf install weather"
 	@$(FISH_CMD) --command "omf install grc"
+	@$(FISH_CMD) --command "omf install fzf"
 ifeq ($(OS_NAME),Darwin)
 	$(FISH_CMD) --command "set --universal grcplugin_ls -ilhaG"
 else
