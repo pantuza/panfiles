@@ -5,26 +5,41 @@
     email = gustavopantuza@gmail.com
     # Export it with gpg: gpg --list-secret-keys --keyid-format LONG
     signingkey = {YOUR_KEY_ID}
+
 [branch]
     autosetuprebase = always
+
 [color]
     branch = auto
     diff = auto
     status = auto
     ui = true
+
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
+    func = 146 bold
+    commit = yellow bold
+    whitespace = red reverse
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
+
 [alias]
     ci = commit
     st = status
@@ -34,8 +49,11 @@
     df = diff
     lg = log --patch
     who = shortlog -s --
+
 [core]
-	editor = /usr/bin/vim
+    editor = /usr/bin/vim
+    pager = "diff-so-fancy | less --tabs=4 -RFX"
+
 [commit]
     verbose = true
     gpgsign = true
@@ -45,3 +63,6 @@
 
 [pull]
     rebase = false
+
+[interactive]
+    diffFilter = "diff-so-fancy --patch"
