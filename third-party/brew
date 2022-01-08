@@ -22,3 +22,5 @@ ddosify/tap/ddosify
 wrk
 cf-tool
 diff-so-fancy
+fx
+duf
