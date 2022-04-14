@@ -32,3 +32,6 @@ switch (uname)
         # Creates alias to always use GNU Make instead of BSDs
         alias make gmake
 end
+
+# Loads all custom functions
+source ~/.config/fish/functions/*.fish
