@@ -31,6 +31,9 @@ switch (uname)
 
         # Creates alias to always use GNU Make instead of BSDs
         alias make gmake
+
+        # Always open Neo Vim when calling vim from command line
+        alias vim nvim
 end
 
 # Loads all custom functions
