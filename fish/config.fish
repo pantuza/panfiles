@@ -3,7 +3,7 @@
 # Setting golang variables
 set --global --export GOPATH $HOME/go
 set --global --export GOBIN $GOPATH/bin
-set --global --export PATH $PATH $GOBIN
+fish_add_path --global $GOBIN
 set --global --export GO111MODULE on
 
 # Exports tty to GPG
