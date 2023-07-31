@@ -15,7 +15,7 @@ OS_NAME := $(shell uname -s)
 install: configure
 	@echo "Installing tmux"
 ifeq ($(OS_NAME),Darwin)
-	@brew install tmux
+	@/opt/homebrew/bin/brew install tmux
 else
 	@sudo $(PKG_MANAGER) install -y tmux
 endif
