@@ -8,17 +8,19 @@ NEOVIM_PATH := ${HOME}/.config/nvim
 OS_NAME := $(shell uname -s)
 
 # Package Manager binary based on operating system
-PKG_MGR := brew
+ifndef PKGMGR
+PKGMGR=/opt/homebrew/bin/brew
+endif
 ifeq ($(OS_NAME),Linux)
-    PKG_MGR := $(shell which zypper || which yum)
+    PKGMGR := $(shell which zypper || which yum)
 endif
 
-
+NVIM_CMD := /opt/homebrew/bin/nvim
 
 .PHONY := install
 install:
 	@echo -e "\n${BROWN}# NEOVIM INSTALL${END_COLOR}"
-	${PKG_MGR} install neovim
+	${PKGMGR} install neovim
 	@test -d ${NEOVIM_PATH} && echo "LazyVim found. Skip cloning." || git clone ${LAZYVIM_URL} ${NEOVIM_PATH}
-	@nvim --headless "+Lazy! sync" +qa
+	@$(NVIM_CMD) --headless "+Lazy! sync" +qa
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
