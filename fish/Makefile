@@ -9,30 +9,44 @@ OS_NAME := $(shell uname -s)
 
 USER := $(shell whoami)
 
+FISH_CMD := /opt/homebrew/bin/fish
+
+# Current shell
+CURRENT_SHELL := $(shell sudo plutil -p /var/db/dslocal/nodes/Default/users/pantuza.plist | grep -A1 shell | tail -1 | cut -d \" -f2)
+
+ifndef PKGMGR
+PKGMGR=/opt/homebrew/bin/brew
+endif
 
 .PHONY := install
 install: config.fish
 	@echo -e "\n${BROWN}# FISH SHELL INSTALL${END_COLOR}"
+	@if [ ! -x $(FISH_CMD) ]; then \
+		echo "$(FISH_CMD)" | sudo tee -a /etc/shells; \
+	fi;
 ifeq ($(OS_NAME),Darwin)
-	@brew install fish
-	echo "$(shell which fish)" | sudo tee -a /etc/shells
-	$(eval FISH_CMD = "$(shell which fish)")
-	fish_add_path --append /opt/homebrew/bin
+	$(PKGMGR) install fish
+	$(FISH_CMD) --command "fish_add_path --append /opt/homebrew/bin" || true
+ifneq ($(CURRENT_SHELL),$(FISH_CMD))
+@${CHSH} -s $(FISH_CMD) ${USER}
+endif
 else
 	@make -C ../third-party/ osshell
 	@make -C ../third-party/ python
 	$(eval FISH_CMD = $(shell which fish))
+	@${CHSH} -s $(FISH_CMD) ${USER}
 endif
 	@mkdir -vp ${HOME}/.config/fish
 	@install -m 0644 config.fish $(HOME)/.config/fish/
-	@${CHSH} -s $(FISH_CMD) ${USER}
 ifeq ($(OS_NAME),Darwin)
 	@cp -rv functions/ $(HOME)/.config/fish/functions/
 else
 	@install -m 0644 functions/*.fish $(HOME)/.config/fish/functions/
 endif
 	@echo -e "\n${BROWN}# OH MY FISH INSTALL${END_COLOR}"
-	@curl -4 -L https://get.oh-my.fish | $(FISH_CMD) || true
+	@$(FISH_CMD) --command "omf version > /dev/null" || { \
+		curl -4 -L https://get.oh-my.fish | $(FISH_CMD) || true; \
+	};
 	@$(FISH_CMD) --command "omf install fishbone"
 	@$(FISH_CMD) --command "omf install battery"
 	@$(FISH_CMD) --command "omf install await"
