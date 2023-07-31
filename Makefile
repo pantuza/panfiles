@@ -43,17 +43,17 @@ END_COLOR=\$(COLOR_PREFIX)[0m
 
 # Package Manager binary based on operating system
 ifeq ($(shell uname -s),Darwin)
-PKGMGR := brew
+PKGMGR := /opt/homebrew/bin/brew
 else
 PKGMGR := $(shell which zypper || which yum)
 endif
+
 
 .PHONY: install server nginx uwsgi fish python
 
 
 # make variables public to other make files
-export USER_NAME USER_HOME BROWN BLUE END_COLOR
-
+export USER_NAME USER_HOME BROWN BLUE END_COLOR PKGMGR
 
 
 ############# ### ## #
@@ -178,19 +178,20 @@ server: greetings enable_repos shell versioning editor bye
 # Install basic services on a machine
 services: greetings mysqldb nginx uwsgi bye
 
-
+.PHONY: brew
 brew:
+	$(info Installing Homebrew package manager...)
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh > $@-tmp.sh
 	chmod +x $@-tmp.sh 
 	./$@-tmp.sh
-	rm $@-tmp.sh
+	@rm -v $@-tmp.sh
 
 
 # Install and configure a Mac OS X
 .PHONY: darwin
 darwin: greetings brew base_dirs versioning sshconfig fish terminal editor
-	brew install $(shell cat $(THIRD_PARTY)/brew)
-	brew install --cask $(shell cat $(THIRD_PARTY)/cask)
+	$(PKGMGR) install $(shell cat $(THIRD_PARTY)/brew)
+	$(PKGMGR) install --cask $(shell cat $(THIRD_PARTY)/cask)
 	$(MAKE) bye
 	# Download and install docker dmg from https://desktop.docker.com/mac/main/amd64/Docker.dmg
 
