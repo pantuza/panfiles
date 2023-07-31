@@ -1,5 +1,4 @@
 gpg2
-docker
 ctop
 bat
 ripgrep
@@ -19,13 +18,10 @@ pv
 fzf
 zstd
 ddosify/tap/ddosify
-wrk
-cf-tool
 diff-so-fancy
 fx
 duf
 hexyl
 tldr
-lens
 turbot/tap/steampipe
 fig
