@@ -16,7 +16,7 @@ USER_HOME := $(shell echo ${HOME})
 # Directories
 BASH_DIR := bash
 GIT_DIR := git
-VIM_DIR := vim
+NVIM_DIR := neovim
 SSH_DIR := ssh
 MYSQL_DIR := mysql
 NGINX_DIR := nginx
@@ -124,8 +124,8 @@ versioning: ${GIT_DIR}/Makefile
 	make install -C ${GIT_DIR}
 
 
-editor:	${VIM_DIR}/Makefile
-	make install -C ${VIM_DIR}
+editor:	${NVIM_DIR}/Makefile
+	make install -C ${NVIM_DIR}
 
 
 sshconfig: ${SSH_DIR}/Makefile
