@@ -22,5 +22,6 @@ install:
 	@echo -e "\n${BROWN}# NEOVIM INSTALL${END_COLOR}"
 	${PKGMGR} install neovim
 	@test -d ${NEOVIM_PATH} && echo "LazyVim found. Skip cloning." || git clone ${LAZYVIM_URL} ${NEOVIM_PATH}
+	@cp -rv lua/* ${NEOVIM_PATH}/lua/
 	@$(NVIM_CMD) --headless "+Lazy! sync" +qa
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
