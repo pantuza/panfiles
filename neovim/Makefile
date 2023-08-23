@@ -20,8 +20,14 @@ NVIM_CMD := /opt/homebrew/bin/nvim
 .PHONY := install
 install:
 	@echo -e "\n${BROWN}# NEOVIM INSTALL${END_COLOR}"
-	${PKGMGR} install neovim
+	${PKGMGR} install neovim 
+	@echo "${BROWN}Intalling fonts..${END_COLOR}"
+	@$(PKGMGR) tap homebrew/cask-fonts
+	@$(PKGMGR) install font-hack-nerd-font
+	@echo "${BROWN}Intalling LazyVim..${END_COLOR}"
 	@test -d ${NEOVIM_PATH} && echo "LazyVim found. Skip cloning." || git clone ${LAZYVIM_URL} ${NEOVIM_PATH}
+	@echo "${BROWN}Configuring LazyVim..${END_COLOR}"
 	@cp -rv lua/* ${NEOVIM_PATH}/lua/
+	@echo "${BROWN}Intalling plugins..${END_COLOR}"
 	@$(NVIM_CMD) --headless "+Lazy! sync" +qa
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
