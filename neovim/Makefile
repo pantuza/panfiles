@@ -11,15 +11,16 @@ OS_NAME := $(shell uname -s)
 ifndef PKGMGR
 ifeq ($(shell test -e /usr/local/bin/brew && echo "exist"),exist)
 	PKGMGR=/usr/local/bin/brew
+	NVIM_CMD := /usr/local/bin/nvim
 else
 	PKGMGR=/opt/homebrew/bin/brew
+	NVIM_CMD := /opt/homebrew/bin/nvim
 endif
 endif
 ifeq ($(OS_NAME),Linux)
     PKGMGR := $(shell which zypper || which yum)
 endif
 
-NVIM_CMD := /opt/homebrew/bin/nvim
 
 .PHONY := install
 install:
