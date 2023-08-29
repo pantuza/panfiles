@@ -9,14 +9,19 @@ OS_NAME := $(shell uname -s)
 
 USER := $(shell whoami)
 
-FISH_CMD := /opt/homebrew/bin/fish
+ifndef PKGMGR
+ifeq ($(shell test -e /usr/local/bin/fish && echo "exist"),exist)
+	PKGMGR=/usr/local/bin/brew
+	FISH_CMD := /usr/local/bin/fish
+else
+	PKGMGR=/opt/homebrew/bin/brew
+	FISH_CMD := /opt/homebrew/bin/fish
+endif
+endif
 
 # Current shell
 CURRENT_SHELL := $(shell sudo plutil -p /var/db/dslocal/nodes/Default/users/pantuza.plist | grep -A1 shell | tail -1 | cut -d \" -f2)
 
-ifndef PKGMGR
-PKGMGR=/opt/homebrew/bin/brew
-endif
 
 .PHONY := install
 install: config.fish
@@ -28,7 +33,7 @@ ifeq ($(OS_NAME),Darwin)
 	$(PKGMGR) install fish
 	$(FISH_CMD) --command "fish_add_path --append /opt/homebrew/bin" || true
 ifneq ($(CURRENT_SHELL),$(FISH_CMD))
-@${CHSH} -s $(FISH_CMD) ${USER}
+	@${CHSH} -s $(FISH_CMD) ${USER}
 endif
 else
 	@make -C ../third-party/ osshell
