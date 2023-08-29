@@ -9,7 +9,11 @@ OS_NAME := $(shell uname -s)
 
 # Package Manager binary based on operating system
 ifndef PKGMGR
-PKGMGR=/opt/homebrew/bin/brew
+ifeq ($(shell test -e /usr/local/bin/brew && echo "exist"),exist)
+	PKGMGR=/usr/local/bin/brew
+else
+	PKGMGR=/opt/homebrew/bin/brew
+endif
 endif
 ifeq ($(OS_NAME),Linux)
     PKGMGR := $(shell which zypper || which yum)
