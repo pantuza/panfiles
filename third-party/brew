@@ -26,3 +26,4 @@ tldr
 turbot/tap/steampipe
 fig
 cloudquery/tap/cloudquery
+node
