@@ -22,12 +22,12 @@ set --export TERM xterm-256color
 switch (uname)
     case Linux
         # Create aliases for ls and ll commands
-        alias ls="ls --color"
-        alias ll="ls -ilha --color"
+        alias ls="exa"
+        alias ll="exa -abghHliS"
     case Darwin
         # Configure grc plugin
-        alias ls="grc --pty ls -G"
-        alias ll="grc --pty ls -ilhaG"
+        alias ls="grc --pty exa"
+        alias ll="grc --pty exa -abghHliS"
 
         # Creates alias to always use GNU Make instead of BSDs
         alias make gmake
