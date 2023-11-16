@@ -5,3 +5,5 @@
 local opt = vim.opt
 
 opt.relativenumber = false -- Disable relative line numbers
+
+opt.swapfile = false
