@@ -28,3 +28,4 @@ fig
 cloudquery/tap/cloudquery
 node
 exa
+httpie
