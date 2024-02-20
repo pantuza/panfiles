@@ -30,9 +30,11 @@ THIRD_PARTY := third-party
 PYTHON_DIR := python
 RUBY_DIR := ruby
 
+OS_NAME := $(shell uname -s)
+
 # Control colors by OS type
 COLOR_PREFIX := e
-ifeq ($(shell uname -s),Darwin)
+ifeq ($(OS_NAME),Darwin)
 	COLOR_PREFIX := 033
 endif
 
@@ -42,11 +44,17 @@ BLUE=\$(COLOR_PREFIX)[1;34m
 END_COLOR=\$(COLOR_PREFIX)[0m
 
 # Package Manager binary based on operating system
-ifeq ($(shell uname -s),Darwin)
-PKGMGR := /opt/homebrew/bin/brew
+ifeq ($(OS_NAME),Darwin)
+ifeq ($(shell test -e /usr/local/bin/brew && echo "exist"),exist)
+	PKGMGR=/usr/local/bin/brew
 else
-PKGMGR := $(shell which zypper || which yum)
+	PKGMGR=/opt/homebrew/bin/brew
 endif
+endif
+ifeq ($(OS_NAME),Linux)
+    PKGMGR := $(shell which zypper || which yum)
+endif
+
 
 
 .PHONY: install server nginx uwsgi fish python
