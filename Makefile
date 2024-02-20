@@ -61,7 +61,7 @@ endif
 
 
 # make variables public to other make files
-export USER_NAME USER_HOME BROWN BLUE END_COLOR PKGMGR
+export USER_NAME USER_HOME BROWN BLUE END_COLOR PKGMGR OS_NAME
 
 
 ############# ### ## #
