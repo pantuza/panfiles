@@ -29,3 +29,4 @@ cloudquery/tap/cloudquery
 node
 exa
 httpie
+gperftools
