@@ -1,13 +1,6 @@
 # Make file for install fish shell
 
-# defines the shell to the make application
-SHELL := /bin/bash
-
 CHSH := $(shell which chsh)
-
-OS_NAME := $(shell uname -s)
-
-USER := $(shell whoami)
 
 ifndef PKGMGR
 ifeq ($(shell test -e /usr/local/bin/fish && echo "exist"),exist)
@@ -33,13 +26,13 @@ ifeq ($(OS_NAME),Darwin)
 	$(PKGMGR) install fish
 	$(FISH_CMD) --command "fish_add_path --append /opt/homebrew/bin" || true
 ifneq ($(CURRENT_SHELL),$(FISH_CMD))
-	@${CHSH} -s $(FISH_CMD) ${USER}
+	@${CHSH} -s $(FISH_CMD) ${USER_NAME}
 endif
 else
 	@make -C ../third-party/ osshell
 	@make -C ../third-party/ python
 	$(eval FISH_CMD = $(shell which fish))
-	@${CHSH} -s $(FISH_CMD) ${USER}
+	@${CHSH} -s $(FISH_CMD) ${USER_NAME}
 endif
 	@mkdir -vp ${HOME}/.config/fish
 	@install -m 0644 config.fish $(HOME)/.config/fish/
