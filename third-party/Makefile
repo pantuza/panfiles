@@ -3,14 +3,6 @@
 #
 
 
-# Package Manager binary based on operating system
-ifeq ($(shell uname -s),Darwin)
-PKGMGR := brew
-else
-PKGMGR := $(shell which zypper || which yum)
-endif
-
-
 PACKMAN_REPO := "http://ftp.gwdg.de/pub/linux/packman/suse/openSUSE_Tumbleweed/packman.repo"
 
 
