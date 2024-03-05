@@ -168,7 +168,7 @@ deps: $(THIRD_PARTY)/Makefile
 	make install -C ${THIRD_PARTY}
 
 .PHONY: ruby
-ruby: ${RUBY_DIR}
+ruby:
 	make install -C ${RUBY_DIR}
 
 python: ${PYTHON_DIR}
