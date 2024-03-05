@@ -69,7 +69,7 @@ endif
 
 
 # make variables public to other make files
-export USER_NAME USER_HOME BROWN BLUE END_COLOR PKGMGR OS_NAME
+export USER_NAME USER_HOME BROWN BLUE END_COLOR PKGMGR OS_NAME SUDO INSTALL_OPTS
 
 
 ############# ### ## #
@@ -167,7 +167,8 @@ mail: ${MUTT_DIR}/muttrc
 deps: $(THIRD_PARTY)/Makefile
 	make install -C ${THIRD_PARTY}
 
-dev:
+.PHONY: ruby
+ruby: ${RUBY_DIR}
 	make install -C ${RUBY_DIR}
 
 python: ${PYTHON_DIR}
