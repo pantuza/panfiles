@@ -9,6 +9,9 @@ SHELL := /bin/bash
 install:
 	@echo -e "\n${BROWN}# RUBY INSTALL${END_COLOR}"
 	@make -C ../third-party rubydev
-	@gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-	@curl -sSL https://get.rvm.io | bash -s stable
+	@curl -sSL https://get.rvm.io | bash
+	@curl -L --create-dirs -o ~/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
+	@grep "rvm default" ~/.config/fish/config.fish > /dev/null \
+		&& echo "RVM already in fish config" \
+		|| echo -e "\n# Configure ruby RVM for fish\nrvm default" >> ~/.config/fish/config.fish
 	@echo -e "$(BROWN)**\n$(END_COLOR)"
