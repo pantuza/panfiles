@@ -43,8 +43,16 @@ BROWN=\$(COLOR_PREFIX)[0;33m
 BLUE=\$(COLOR_PREFIX)[1;34m
 END_COLOR=\$(COLOR_PREFIX)[0m
 
+# sudo command
+SUDO := $(which sudo)
+
+# Package managers command line options
+INSTALL_OPTS := -y
+
 # Package Manager binary based on operating system
 ifeq ($(OS_NAME),Darwin)
+	SUDO :=
+	INSTALL_OPTS :=
 ifeq ($(shell test -e /usr/local/bin/brew && echo "exist"),exist)
 	PKGMGR=/usr/local/bin/brew
 else
