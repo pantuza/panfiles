@@ -38,3 +38,6 @@ end
 
 # Loads all custom functions
 source ~/.config/fish/functions/*.fish
+
+# Dedup PATH variable that could be messed by external tools
+dedup_path
