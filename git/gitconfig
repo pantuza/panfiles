@@ -49,6 +49,25 @@
     df = diff
     lg = log --patch
     who = shortlog -s --
+    mp = "!merge_and_push() { \
+    BRANCH=$(git rev-parse --abbrev-ref HEAD); \
+    echo \"\n• Updating local branch: $BRANCH\"; \
+    git pull origin $BRANCH --no-rebase && \
+    MAIN_BRANCH=$(git ls-remote --heads origin main | wc -l | tr -d ' '); \
+    if [ \"$MAIN_BRANCH\" -eq \"1\" ]; then \
+      BASE_BRANCH=main; \
+    else \
+      BASE_BRANCH=master; \
+    fi; \
+    echo \"\n• Updating local base branch: $BASE_BRANCH\"; \
+    git checkout $BASE_BRANCH && \
+    git pull origin $BASE_BRANCH && \
+    echo \"\n• Merging $BASE_BRANCH into $BRANCH\"; \
+    git checkout $BRANCH && \
+    git merge $BASE_BRANCH --no-edit && \
+    echo \"\n• Pushing $BRANCH to origin\"; \
+    git push origin $BRANCH; \
+  }; merge_and_push"
     mm = "!merge_main() { \
     BRANCH=$(git rev-parse --abbrev-ref HEAD); \
     echo \"\n• Updating local branch: $BRANCH\"; \
