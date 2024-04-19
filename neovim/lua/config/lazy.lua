@@ -21,6 +21,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lang.helm" },
+		{ import = "lazyvim.plugins.extras.lang.ruby" },
 
 		-- import/override with your plugins
 		{ import = "plugins" },
