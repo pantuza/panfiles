@@ -1,23 +1,23 @@
-shell:
-  program: /opt/homebrew/bin/fish
-  args:
-    - -l
-    - -c
-    - "tmux new-session -A -s Root"
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
 
-font:
-  normal:
-    family: Hack Nerd Font Mono
-    style: Regular
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
 
-  bold:
-    family: Hack Nerd Font Mono
-    style: Bold
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
 
-  italic:
-    family: Hack Nerd Font Mono
-    style: Italic
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
 
-  bold_italic:
-    family: Hack Nerd Font Mono
-    style: Bold Italic
+[shell]
+args = ["-l", "-c", "tmux new-session -A -s Root"]
+program = "/opt/homebrew/bin/fish"
+
+[window]
+padding = { x = 5, y = 10}
+dynamic_padding = true
