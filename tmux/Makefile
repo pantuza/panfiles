@@ -5,7 +5,7 @@
 
 CONF_FILE := tmux.conf
 
-ALACRITTY_CFG := alacritty.yml
+ALACRITTY_CFG := alacritty.toml
 
 
 .PHONY := install
