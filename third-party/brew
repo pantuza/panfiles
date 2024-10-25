@@ -27,7 +27,7 @@ turbot/tap/steampipe
 fig
 cloudquery/tap/cloudquery
 node
-exa
+lsd
 httpie
 gperftools
 qpdf
