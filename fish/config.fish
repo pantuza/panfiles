@@ -26,8 +26,8 @@ switch (uname)
         alias ll="exa -abghHliS"
     case Darwin
         # Configure grc plugin
-        alias ls="grc --pty exa"
-        alias ll="grc --pty exa -abghHliS"
+        alias ls="grc --pty lsd"
+        alias ll="grc --pty lsd -al"
 
         # Creates alias to always use GNU Make instead of BSDs
         alias make gmake
